@@ -29,6 +29,8 @@ if (is_home()) {
 <meta name="description" content="<?php echo $description ?>" />
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/Diaspora.css" />
+<script src="<?php echo get_template_directory_uri(); ?>/assets/jquery.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/Diaspora.js"></script>
 <script>var duoshuoQuery = {short_name:'test123456'};</script>
 <!--
 <script src="<?php echo get_template_directory_uri(); ?>/js/basket.full.min-0.0.3.js"></script>

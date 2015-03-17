@@ -668,9 +668,7 @@ CanvasImage.prototype.blur = function(i){
 	this.context.globalAlpha=1
 };
 
-// ready !	
-$(document).ready(function() {
 
-	Anguli.init();
+$(function($) {
 
-});
+})
