@@ -115,6 +115,7 @@ body:before {
     position: absolute;
     bottom: 30px;
     left: 20px;
+    line-height: 24px;
     right: 20px;
 }
 .inner:hover .overlay {
@@ -123,3 +124,25 @@ body:before {
     -moz-transform: scale(1);
     opacity: 1;
 }
+.loader {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 2px;
+    background-image: -webkit-linear-gradient(180deg, #37cca2 0%, #46deb6 17%, #feed00 38%, #fbf27a 59%, #f24141 79%, #ffafaf 100%);
+    background-image: -moz-linear-gradient(right, #37cca2 0%, #46deb6 17%, #feed00 38%, #fbf27a 59%, #f24141 79%, #ffafaf 100%);
+    background-image: linear-gradient(to left, #37cca2 0%, #46deb6 17%, #feed00 38%, #fbf27a 59%, #f24141 79%, #ffafaf 100%);
+}
+.loader.loading {
+    -webkit-animation:loader 2s linear infinite;
+}
+/*
+@-webkit-keyframes loader {
+  0% {
+  	background-position: 0 0;
+  }
+  100% {
+  	background-position: 1349px 0;
+  }
+}
+*/

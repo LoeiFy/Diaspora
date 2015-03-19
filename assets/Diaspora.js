@@ -670,5 +670,22 @@ CanvasImage.prototype.blur = function(i){
 
 
 $(function($) {
+    
+    var loader = function() {
+        var w = window.innerWidth;
+        var css = '<style id="loaderstyle">@-webkit-keyframes loader{0%{background-position:0 0}100%{background-position:'+ w +'px 0}}></style>';
+        $('#loaderstyle').remove()
+        $('head').append(css)
+    }
+
+    loader()
+
+    //$('.loader').addClass('loading')
+
+    $(window).on('resize', function() {
+        $('.loader').removeClass('loading')
+        loader()
+        setTimeout(function() {$('.loader').addClass('loading')}, 0)
+    })
 
 })

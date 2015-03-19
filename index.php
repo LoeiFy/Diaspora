@@ -1,9 +1,8 @@
 <?php get_header(); ?>
-<body>
 
 <div id="container">	
 
-	<div id="header">
+	<div id="home">
 		<a id="logo" href="/" title="<?php bloginfo('name'); ?>"></a>
 		<?php wp_nav_menu( array( 'theme_location' => 'menu', 'container' => '', 'fallback_cb' => '' ) ); ?>
 	</div>
@@ -13,7 +12,7 @@
         <div class="group">
             <?php if (have_posts()) : $i = 0; while (have_posts()) : the_post(); $i ++; ?>
             <?php 
-                $size = rand(280, 480); $w = 1000; $h = 800;
+                $size = rand(280, 460); $w = 1000; $h = 800;
 
                 switch ($i % 4) 
                 {

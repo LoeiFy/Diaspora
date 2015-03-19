@@ -49,3 +49,5 @@ if (is_home()) {
 </script>
 -->
 </head>
+<body>
+<div class="loader"></div>
