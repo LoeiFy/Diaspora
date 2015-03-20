@@ -13,6 +13,13 @@ add_image_size( 'cover', 600, 600, true );
 // FRIENDS LINKS
 add_filter( 'pre_option_link_manager_enabled', '__return_true' );
 
+// HEADER IMAGE
+$args = array(   
+    'default-image' => get_template_directory_uri() . '/images/header.jpg',   
+    'uploads'       => true,   
+);   
+add_theme_support( 'custom-header', $args );  
+
 // RANDOM POSTS
 function random_posts($posts_num=8,$before='<li>',$after='</li>'){
     global $wpdb;

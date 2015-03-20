@@ -673,7 +673,7 @@ $(function($) {
     
     var loader = function() {
         var w = window.innerWidth;
-        var css = '<style id="loaderstyle">@-webkit-keyframes loader{0%{background-position:0 0}100%{background-position:'+ w +'px 0}}></style>';
+        var css = '<style id="loaderstyle">@-moz-keyframes loader{0%{background-position:0 0}100%{background-position:'+ w +'px 0}}@-webkit-keyframes loader{0%{background-position:0 0}100%{background-position:'+ w +'px 0}}></style>';
         $('#loaderstyle').remove()
         $('head').append(css)
     }
