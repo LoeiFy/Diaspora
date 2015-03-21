@@ -30,6 +30,7 @@ if (is_home()) {
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/Diaspora.css" />
 <script src="<?php echo get_template_directory_uri(); ?>/assets/jquery.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/CBFimage.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/Diaspora.js"></script>
 <script>var duoshuoQuery = {short_name:'test123456'};</script>
 <!--

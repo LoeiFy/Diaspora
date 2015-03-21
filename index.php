@@ -5,7 +5,7 @@
 	<div id="home">
 		<a id="logo" href="/" title="<?php bloginfo('name'); ?>"></a>
 		<?php wp_nav_menu( array( 'theme_location' => 'menu', 'container' => '', 'fallback_cb' => '' ) ); ?>
-        <img src="<?php header_image(); ?>" />
+        <canvas id="cover" url="<?php header_image(); ?>" version="0" blur="3"></canvas>
 	</div>
 
     <div id="primary">
@@ -13,7 +13,7 @@
         <div class="group">
             <?php if (have_posts()) : $i = 0; while (have_posts()) : the_post(); $i ++; ?>
             <?php 
-                $size = rand(300, 460); $w = 1000; $h = 1000;
+                $size = rand(300, 460); $w = 1000; $h = 800;
 
                 switch ($i % 4) 
                 {

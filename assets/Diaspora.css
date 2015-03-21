@@ -57,9 +57,9 @@ body:before {
 .group {
     position: relative;
     width: 1000px;
-    height: 1000px;
+    height: 800px;
     overflow: hidden;
-    margin: 30px auto;
+    margin: 50px auto;
 }
 .post {
     position: absolute;
@@ -143,3 +143,19 @@ body:before {
     padding-top: 2px;
     background: rgba(255,255,255,0.97);
 } 
+#home {
+    height: 360px;
+    margin-top: -60px;
+    transform: skewY(-2deg);
+    -moz-transform: skewY(-2deg);
+    -webkit-transform: skewY(-2deg);
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    outline: 1px solid transparent;
+    background: #333;
+}
+#cover {
+    transform: skewY(2deg);
+    -moz-transform: skewY(2deg);
+    -webkit-transform: skewY(2deg);
+}
