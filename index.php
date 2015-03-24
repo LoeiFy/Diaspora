@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
+<?php wp_nav_menu( array( 'theme_location' => 'menu', 'container' => '', 'fallback_cb' => '' ) ); ?>
 <div id="container">	
 
 	<div id="home">
 		<a id="logo" href="/" title="<?php bloginfo('name'); ?>"></a>
-		<?php wp_nav_menu( array( 'theme_location' => 'menu', 'container' => '', 'fallback_cb' => '' ) ); ?>
         <canvas id="cover" url="<?php header_image(); ?>" version="0" blur="3"></canvas>
 	</div>
 

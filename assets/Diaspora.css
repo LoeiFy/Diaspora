@@ -159,3 +159,11 @@ body:before {
     -moz-transform: skewY(2deg);
     -webkit-transform: skewY(2deg);
 }
+
+.menu {
+    position: fixed;
+    height: 100%;
+    width: 300px;
+    left: -300px;
+    top: 0;
+}
