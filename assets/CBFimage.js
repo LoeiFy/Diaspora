@@ -22,6 +22,7 @@
     var CBFimage = function(args) {
         // arguments
         args.tag = document.getElementById(args.id);
+        if (!args.tag) return;
         args.ver = args.tag.getAttribute('version');
         args.url = args.tag.getAttribute('url');
         args.cache = args.cache.toString() === 'false' ? false : true;
