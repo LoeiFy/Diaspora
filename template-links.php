@@ -19,5 +19,5 @@ Template Name: links
 	</ul>
 </div>
 </div>
-
-<?php get_footer(); ?>
+</body>
+</html><!--

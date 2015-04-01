@@ -28,6 +28,14 @@ if (is_home()) {
 <meta name="keywords" content="<?php echo $keywords ?>" />
 <meta name="description" content="<?php echo $description ?>" />
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<style>html{display:none}</style> 
+<script>
+if (self == top) {
+    document.documentElement.style.display = 'block'
+} else {
+    top.location = self.location
+}
+</script>
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/Diaspora.css" />
 <script src="<?php echo get_template_directory_uri(); ?>/assets/jquery.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/CBFimage.js"></script>

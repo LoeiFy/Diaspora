@@ -29,8 +29,6 @@
             <div class="like"></div>
         </div>
         <div class="control">
-            <span><?php the_time('F j, Y'); ?> </span>&nbsp; // &nbsp;
-            <span><?php echo getPostViews(get_the_ID()); ?> views</span>
         </div>
     </div>
 
@@ -54,8 +52,13 @@
         <div class="content">
 		    <?php the_content(); ?>
         </div>
+        
+        <div class="stuff">
+            <span><?php the_time('F j, Y'); ?> </span>
+            <span>Pageview <?php echo getPostViews(get_the_ID()); ?></span>
+        </div>
 
-		<?php get_template_part( 'comment-box' ); ?>
+        <div id="comment" class="link" data-id="<?php the_ID(); ?>">添加评论</div>
 
     </div>
 
@@ -66,3 +69,5 @@
 	<?php endwhile; endif; ?>
 
 </div>       
+</body>
+</html><!--

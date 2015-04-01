@@ -23,5 +23,5 @@ Template Name: feedback
 <?php endwhile; // end of the loop. ?>
 </div>
 </div>
-
-<?php get_footer(); ?>
+</body>
+</html><!--

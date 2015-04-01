@@ -1,4 +1,5 @@
-<ul class="related">
+<ul>
+<h3>NEXT STORY</h3>
 <?php
 $post_num = 7; // 數量設定.
 $exclude_id = $post->ID; // 單獨使用要開此行 //zww: edit
@@ -15,11 +16,15 @@ if ( $posttags ) {
     );
     query_posts($args);
     while( have_posts() ) { the_post();//edit by Jeff at DeveWork.com
-        $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id(), 'cover');?>
+        $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id(), 'thumbnail');?>
     <li>
-         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-         <img src="<?php echo $thumbnail[0]; ?>" alt="<?php the_title(); ?>" />
-         <p><?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 70,"..."); ?></p>
+        <div>
+            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+            <p><?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 170,"..."); ?></p>
+         </div><!--
+      --><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+            <img src="<?php echo $thumbnail[0]; ?>" alt="<?php the_title(); ?>" />
+         </a>
     </li>
  
     <?php
@@ -37,15 +42,19 @@ if ( $i < $post_num ) { // 當 tags 文章數量不足, 再取 category 補足.
     );
     query_posts($args);
     while( have_posts() ) { the_post(); //edit by Jeff at DeveWork.com
-     $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id(), 'cover');?>
+     $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id(), 'thumbnail');?>
     <li>
-         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-         <img src="<?php echo $thumbnail[0]; ?>" alt="<?php the_title(); ?>" />
-         <p><?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 70,"..."); ?></p>
+        <div>
+            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+            <p><?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 170,"..."); ?></p>
+         </div><!--
+      --><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+            <img src="<?php echo $thumbnail[0]; ?>" alt="<?php the_title(); ?>" />
+         </a>
     </li>
     <?php $i++;
     } wp_reset_query();
 }
-if ( $i  == 0 )  echo '<li>没有相关文章!</li>';
+if ( $i  == 0 )  echo '';
 ?>
 </ul>

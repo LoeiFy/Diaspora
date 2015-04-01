@@ -143,9 +143,7 @@ body:before {
     height: 60px;
     padding-top: 2px;
     background: rgba(255,255,255,0.97);
-    box-shadow: 0 0 1px rgba(0,0,0,0.15);
-    -moz-box-shadow: 0 0 1px rgba(0,0,0,0.15);
-    -webkit-box-shadow: 0 0 1px rgba(0,0,0,0.15);
+    border-bottom: 1px solid #f7f7f7;
 } 
 #home {
     height: 360px;
@@ -190,7 +188,67 @@ body:before {
     text-align: center;
     line-height: 1.3;
 }
+.stuff {
+    margin-top: 40px;
+    color: #666;
+    font-size: 13px;
+}
+.stuff span {
+    display: inline-block;
+    margin-right: 20px;
+}
+#comment {
+    width: 170px;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    border: 1px solid #888;
+    color: #888;
+    margin: 50px auto 0;
+    border-radius: 20px;
+    letter-spacing: 5px;
+}
+#comment.link {
+    cursor: pointer;
+}
 
 .relate {
-    background: #f2f0f0;
+    background: #fafafa;
+    padding: 50px 0;
+}
+.relate ul {
+    width: 700px;
+    margin: 0 auto;
+}
+.relate h3 {
+    font-size: 13px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+}
+.relate li {
+    padding: 25px 0 32px;
+    border-bottom: 1px solid #e8e8e8;
+}
+.relate li div {
+    display: inline-block;
+    width: 70%;
+    vertical-align: top;
+    margin-right: 3%;
+}
+.relate li > a {
+    display: inline-block;
+    width: 27%;
+    vertical-align: top;
+}
+.relate li div a {
+    font-size: 24px;
+    color: #333;
+    line-height: 1.3;
+}
+.relate li div p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.8;
+    margin-top: 10px;
 }
