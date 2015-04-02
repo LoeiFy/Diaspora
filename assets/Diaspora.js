@@ -23,15 +23,20 @@ var D = {
 	},
 
     PS: function() {
+        history.replaceState({u: home, t: document.title}, document.title, home);
 		window.addEventListener('popstate', function(e) {
 			var state = e.state;
 
 			if (!state) return;
 
-			document.title = state.title;
+			document.title = state.t;
 
-			if (state.url == home) {
-                $('#preview').html('')
+			if (state.u == home) {
+                $('#preview').css('right', - window.innerWidth)
+                setTimeout(function() {
+                    $('#container').show()
+                    $('#preview').html('')
+                }, 500)
 			} else {
 			}
 		})
@@ -62,6 +67,17 @@ var D = {
 
                 $('#preview').html($(data).filter('#single'))
 
+                setTimeout(function() {
+                    $('#preview').css('right', 0)
+                        $('#container').css({
+                            'height': window.innerHeight,
+                            'overflow': 'hidden'
+                        })
+                    setTimeout(function() {
+
+                    }, 2000)
+                }, 0)
+
             })
 
 		})
@@ -71,7 +87,14 @@ var D = {
 
 $(function($) {
 
+    D.PS()
+
     D.HS('.inner', 'push')
+
+    $('#preview').css({
+        'width': window.innerWidth,
+        'right': - window.innerWidth
+    })
 
     var loader = function() {
         var w = window.innerWidth;

@@ -152,7 +152,6 @@ body:before {
     -moz-transform: skewY(-2deg);
     -webkit-transform: skewY(-2deg);
     overflow: hidden;
-    -webkit-backface-visibility: hidden;
     outline: 1px solid transparent;
     background: #333;
 }
@@ -180,7 +179,6 @@ body:before {
 .article {
     width: 700px;
     margin: 0 auto;
-    padding: 70px 0;
 }
 .article h1 {
     font-size: 36px;
@@ -251,4 +249,21 @@ body:before {
     color: #666;
     line-height: 1.8;
     margin-top: 10px;
+}
+
+#preview {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    -webkit-transition: right 2s ease-in-out;
+    /*
+    -moz-transition: right .5s ease-in-out;
+    transition: right .5s ease-in-out;
+    */
+    z-index: 5;
+    height: 100%;
+    background: #fafafa;
+    padding: 0 0 70px;
+}
+#container {
 }
