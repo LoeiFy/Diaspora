@@ -56,7 +56,7 @@ var Diaspora = {
                     setTimeout(function() {
 
                         $('#preview').addClass('show')
-                        $('#container').data('scroll', window.scrollY)
+
                         setTimeout(function() {
                             $('#container').hide()
                             setTimeout(function() {
@@ -161,12 +161,24 @@ var Diaspora = {
 
 $(function($) {
 
-    Diaspora.PS()
+    if ($('#preview').length) {
 
-    Diaspora.HS('.inner', 'push')
+        Diaspora.PS()
 
-    Diaspora.loader()
+        Diaspora.HS('.inner', 'push')
 
-    CBFimage({id: 'cover', cache: true})
+        Diaspora.loader()
+
+        CBFimage({id: 'cover', cache: true})
+
+    } else {
+
+	    window.addEventListener('popstate', function(e) {
+
+			if (e.state) location.href = e.state.u;
+
+        })
+
+    }
 
 })
