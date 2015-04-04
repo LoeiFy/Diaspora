@@ -32,11 +32,15 @@ var D = {
 			document.title = state.t;
 
 			if (state.u == home) {
-                $('#preview').css('right', - window.innerWidth)
+                $('#preview').css('position', 'fixed')
                 setTimeout(function() {
+                    $('#preview').removeClass('show')
                     $('#container').show()
-                    $('#preview').html('')
-                }, 500)
+                    window.scrollTo(0, parseInt($('#container').data('scroll')))
+                    setTimeout(function() {
+                        $('#preview').html('')
+                    }, 300)
+                }, 0)
 			} else {
 			}
 		})
@@ -68,14 +72,17 @@ var D = {
                 $('#preview').html($(data).filter('#single'))
 
                 setTimeout(function() {
-                    $('#preview').css('right', 0)
-                        $('#container').css({
-                            'height': window.innerHeight,
-                            'overflow': 'hidden'
-                        })
+                    $('#preview').addClass('show')
+                    $('#container').data('scroll', window.scrollY)
                     setTimeout(function() {
-
-                    }, 2000)
+                        $('#container').hide()
+                        setTimeout(function() {
+                            $('#preview').css({
+                                'position': 'static',
+                                'overflow-y': 'auto'
+                            })
+                        }, 500)
+                    }, 300)
                 }, 0)
 
             })
@@ -91,10 +98,7 @@ $(function($) {
 
     D.HS('.inner', 'push')
 
-    $('#preview').css({
-        'width': window.innerWidth,
-        'right': - window.innerWidth
-    })
+    //$('#preview').height(window.innerHeight)
 
     var loader = function() {
         var w = window.innerWidth;

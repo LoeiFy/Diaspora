@@ -179,6 +179,7 @@ body:before {
 .article {
     width: 700px;
     margin: 0 auto;
+    padding: 70px 0;
 }
 .article h1 {
     font-size: 36px;
@@ -252,18 +253,29 @@ body:before {
 }
 
 #preview {
-    position: absolute;
-    width: 100%;
+    position: fixed;
     top: 0;
-    -webkit-transition: right 2s ease-in-out;
-    /*
-    -moz-transition: right .5s ease-in-out;
-    transition: right .5s ease-in-out;
-    */
-    z-index: 5;
+    width: 100%;
     height: 100%;
+    z-index: 5;
     background: #fafafa;
-    padding: 0 0 70px;
+    visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    transform: translateX(100%);
+    -webkit-transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+    -moz-transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+    transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+    overflow-y: scroll;
+}
+#preview.show {
+    visibility: visible;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
 }
 #container {
 }
