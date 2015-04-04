@@ -4,9 +4,9 @@
  * @url http://lorem.in
  */
 
-var home = location.href;
+var Home = location.href;
 
-var D = {
+var Diaspora = {
 
     L: function(url, f) {
 		$.ajax({
@@ -23,7 +23,7 @@ var D = {
 	},
 
     PS: function() {
-        history.replaceState({u: home, t: document.title}, document.title, home);
+        history.replaceState({u: Home, t: document.title}, document.title, Home);
 		window.addEventListener('popstate', function(e) {
 			var state = e.state;
 
@@ -31,7 +31,8 @@ var D = {
 
 			document.title = state.t;
 
-			if (state.u == home) {
+			if (state.u == Home) {
+
                 $('#preview').css('position', 'fixed')
                 setTimeout(function() {
                     $('#preview').removeClass('show')
@@ -41,19 +42,53 @@ var D = {
                         $('#preview').html('')
                     }, 300)
                 }, 0)
+
 			} else {
+
+                Diaspora.loading()
+
+                Diaspora.L(state.u, function(data) {
+
+                    document.title = state.t;
+
+                    $('#preview').html($(data).filter('#single'))
+
+                    setTimeout(function() {
+
+                        $('#preview').addClass('show')
+                        $('#container').data('scroll', window.scrollY)
+                        setTimeout(function() {
+                            $('#container').hide()
+                            setTimeout(function() {
+                                $('#preview').css({
+                                    'position': 'static',
+                                    'overflow-y': 'auto'
+                                })
+
+                                Diaspora.loaded()
+                            }, 500)
+                        }, 300)
+
+                        Diaspora.HS('.relate a', 'replace') 
+
+                    }, 0)
+
+                })
+
 			}
 		})
     },
 
 	HS: function(tag, flag) {
 		$(tag).on('click', function(e) {
-			e.preventDefault();
+			e.preventDefault()
+
+            Diaspora.loading()
 
 			var url = $(this).attr('href'), title = $(this).text(),
                 state = {t: title, u: url};
 
-            D.L(url, function(data) {
+            Diaspora.L(url, function(data) {
 
                 switch (flag) {
 
@@ -71,51 +106,66 @@ var D = {
 
                 $('#preview').html($(data).filter('#single'))
 
-                setTimeout(function() {
-                    $('#preview').addClass('show')
-                    $('#container').data('scroll', window.scrollY)
-                    setTimeout(function() {
-                        $('#container').hide()
+                switch (flag) {
+
+                    case 'push': 
                         setTimeout(function() {
-                            $('#preview').css({
-                                'position': 'static',
-                                'overflow-y': 'auto'
-                            })
-                        }, 500)
-                    }, 300)
-                }, 0)
+
+                            $('#preview').addClass('show')
+                            $('#container').data('scroll', window.scrollY)
+                            setTimeout(function() {
+                                $('#container').hide()
+                                setTimeout(function() {
+                                    $('#preview').css({
+                                        'position': 'static',
+                                        'overflow-y': 'auto'
+                                    })
+
+                                    Diaspora.loaded()
+                                }, 500)
+                            }, 300)
+
+                            Diaspora.HS('.relate a', 'replace') 
+
+                        }, 0)
+                    break;
+
+                    case 'replace':
+                        Diaspora.HS('.relate a', 'replace') 
+                        window.scrollTo(0, 0)
+                        Diaspora.loaded()
+                    break;
+                }
 
             })
 
 		})
-	}
+	},
+
+    loader: function() {
+        var w = window.innerWidth;
+        var css = '<style id="loaderstyle">@-moz-keyframes loader{0%{background-position:0 0}100%{background-position:'+ w +'px 0}}@-webkit-keyframes loader{0%{background-position:0 0}100%{background-position:'+ w +'px 0}}></style>';
+        $('#loaderstyle').remove()
+        $('head').append(css)
+    },
+
+    loading: function() {
+        $('.loader').addClass('loading').show()
+    },
+
+    loaded: function() {
+        $('.loader').removeClass('loading').hide()
+    }
 
 }
 
 $(function($) {
 
-    D.PS()
+    Diaspora.PS()
 
-    D.HS('.inner', 'push')
+    Diaspora.HS('.inner', 'push')
 
-    //$('#preview').height(window.innerHeight)
-
-    var loader = function() {
-        var w = window.innerWidth;
-        var css = '<style id="loaderstyle">@-moz-keyframes loader{0%{background-position:0 0}100%{background-position:'+ w +'px 0}}@-webkit-keyframes loader{0%{background-position:0 0}100%{background-position:'+ w +'px 0}}></style>';
-        $('#loaderstyle').remove()
-        $('head').append(css)
-    }
-
-    loader()
-
-    //$('.loader').addClass('loading')
-
-    $(window).on('resize', function() {
-        $('.loader').removeClass('loading')
-        loader()
-        setTimeout(function() {$('.loader').addClass('loading')}, 0)
-    })
+    Diaspora.loader()
 
     CBFimage({id: 'cover', cache: true})
 
