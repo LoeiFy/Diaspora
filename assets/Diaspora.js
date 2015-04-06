@@ -181,4 +181,9 @@ $(function($) {
 
     }
 
+    $('body').on('click', '#top', function() {
+        $('.images').justifiedGallery({ margins : 5 })
+        $('.zoom').Chocolat()
+    })
+
 })

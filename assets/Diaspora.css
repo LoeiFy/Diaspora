@@ -172,26 +172,128 @@ body:before {
 #single {
     background: #fff;
     position: relative;
+    overflow-x: hidden;
 }
-.images {
-    position: absolute;
-    top: 0;
-    visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-transform: translateX(100%);
-    -moz-transform: translateX(100%);
-    transform: translateX(100%);
+.section {
+    position: relative;
+    left: 0;
+    width: 200%;
+    overflow: hidden;
     -webkit-transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
     -moz-transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
     transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
 }
+.images, .article {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+.images a {
+    position: absolute;
+    display: block;
+}
+.images img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+#Choco_overlay{
+	background: #fff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	width: 100%;
+	height: 100%;
+	display:none;
+	padding:0;
+	margin:0;
+}
+#Choco_content{
+	display:none;
+	width:800px;
+	height:600px;
+	z-index:1001;
+	position:fixed;
+	left:50%;
+	top:50%;
+	margin-left:-400px;
+	margin-top:-300px;
+	border-top:1px solid transparent;
+}
+#Choco_left_arrow{
+	float:left;
+	left:-10%;
+}
+#Choco_right_arrow{
+	float:right;
+	left:10%;
+}
+.icon-arrow-left:before {
+	content: '\e693';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -30px;
+}
+.icon-arrow-right:before {
+	content: '\e696';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin-top: -30px;
+}
+.Choco_arrows{
+	font-size: 60px;
+	color: #000;
+	display:none;
+	position:relative;
+	cursor:pointer;
+	width:45%;
+	top:-100%;
+	height:100%;
+}
+#Choco_container_photo{
+	text-align:center;
+	width:800px;
+	height:600px;
+	position: relative;
+}
+#Choco_container_photo:before {
+	content: 'loading';
+	position: absolute;
+	left: 0;
+	bottom: 50%;
+	width: 100%;
+	text-align: center;
+}
+#Choco_loading{
+	width:9px;
+	height:11px;
+	background-repeat:no-repeat;
+	z-index:1002;
+	cursor:pointer;
+	float:right;
+	margin-top:-20px;
+	display:none;
+}
+#Choco_bigImage{
+	display:none;
+	position:relative;
+	width:100%;
+	height:100%;
+	margin-top:-5px;
+}
 
 .article {
+    display: none;
+}
+.article > div {
+    padding: 70px 0;
     width: 700px;
     margin: 0 auto;
-    padding: 70px 0;
 }
 .article h1 {
     font-size: 36px;
