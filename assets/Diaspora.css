@@ -146,7 +146,7 @@ body:before {
     border-bottom: 1px solid #f7f7f7;
 } 
 #home {
-    height: 360px;
+    height: 280px;
     margin-top: -60px;
     transform: skewY(-2deg);
     -moz-transform: skewY(-2deg);

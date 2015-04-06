@@ -36,6 +36,7 @@ if (self == top) {
     top.location = self.location
 }
 </script>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/icon.css" />
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/Diaspora.css" />
 <script src="<?php echo get_template_directory_uri(); ?>/assets/jquery.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/CBFimage.js"></script>

@@ -1,0 +1,81 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('images/icomoon.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-zoom:before {
+	content: "\e600";
+}
+
+.icon-menu:before {
+	content: "\e601";
+}
+
+.icon-pause:before {
+	content: "\e602";
+}
+
+.icon-play:before {
+	content: "\e603";
+}
+
+.icon-font:before {
+	content: "\e604";
+}
+
+.icon-next:before {
+	content: "\e605";
+}
+
+.icon-prev:before {
+	content: "\e606";
+}
+
+.icon-wechat:before {
+	content: "\e607";
+}
+
+.icon-weibo:before {
+	content: "\e608";
+}
+
+.icon-share:before {
+	content: "\e609";
+}
+
+.icon-like:before {
+	content: "\e60a";
+}
+
+.icon-images:before {
+	content: "\e60b";
+}
+
+.icon-text:before {
+	content: "\e60c";
+}
+
+.icon-logo:before {
+	content: "\e60d";
+}
+
+.icon-icon:before {
+	content: "\e60e";
+}
+
