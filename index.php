@@ -4,8 +4,8 @@
 <div id="container">	
 
 	<div id="home">
-		<a id="logo" href="/" title="<?php bloginfo('name'); ?>"></a>
-        <canvas id="cover" url="<?php header_image(); ?>" version="0" blur="3"></canvas>
+		<a id="logo" class="icon-logo" href="/" title="<?php bloginfo('name'); ?>"></a>
+        <div><canvas id="cover" url="<?php header_image(); ?>" version="0" blur="3"></canvas></div>
 	</div>
 
     <div id="primary">

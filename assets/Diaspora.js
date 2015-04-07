@@ -181,9 +181,34 @@ $(function($) {
 
     }
 
-    $('body').on('click', '#top', function() {
-        $('.images').justifiedGallery({ margins : 5 })
-        $('.zoom').Chocolat()
+    $('body').on('click', '.icon-images', function() {
+        $('.icon-text').removeClass('active')
+        $(this).addClass('active')
+
+        $('.images').css('height', $('.images').data('height'))
+
+        if ($(this).hasClass('tg')) {
+            $('.section').css('left', 0)
+        } else {
+            $('.zoom').Chocolat()
+            $('.images').justifiedGallery({ margins : 5 }).on('jg.complete', function () {
+                $('.section').css('left', 0)
+                $('.icon-images').addClass('tg')
+            })
+        }
+
+        setTimeout(function() { $('.article').css('height', '0') }, 0)
+    })
+
+    $('body').on('click', '.icon-text', function() {
+        $('.icon-images').removeClass('active')
+        $(this).addClass('active')
+
+        $('.article').css('height', 'auto')
+        $('.section').css('left', '-100%')
+        setTimeout(function() {
+            $('.images').data('height', $('.images').height()).css('height', '0') 
+        }, 0)
     })
 
 })

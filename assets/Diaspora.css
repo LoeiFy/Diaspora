@@ -142,18 +142,70 @@ body:before {
 #top {
     height: 60px;
     padding-top: 2px;
+    text-align: center;
     background: rgba(255,255,255,0.97);
     border-bottom: 1px solid #f7f7f7;
-} 
+    width: 100%;
+    position: relative;
+}
+.icon-icon {
+    color: #333;
+    font-size: 30px;
+    position: absolute;
+    left: 18px;
+    top: 18px;
+}
+.tab {
+    display: inline-block;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    margin-top: 14px;
+}
+.tab .active {
+    background: #eee;
+    color: #444;
+}
+.icon-text, .icon-images {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    color: #666;
+    vertical-align: middle;
+    padding: 5px 10px;
+}
+.icon-text {
+    border-right: 1px solid #e8e8e8;
+    padding-right: 8px;
+}
+.social {
+    position: absolute;
+    right: 18px;
+}
 #home {
-    height: 280px;
-    margin-top: -60px;
+    height: 240px;
+    text-align: center;
+}
+#home > div {
+    height: 300px;
+    position: absolute;
+    top: -60px;
+    width: 100%;
+    overflow: hidden;
     transform: skewY(-2deg);
     -moz-transform: skewY(-2deg);
     -webkit-transform: skewY(-2deg);
-    overflow: hidden;
     outline: 1px solid transparent;
     background: #333;
+}
+#logo {
+    position: relative;
+    margin-top: 100px;
+    display: inline-block;
+    z-index: 1;
+    color: #fff;
+    font-size: 50px;
 }
 #cover {
     transform: skewY(2deg);
@@ -176,7 +228,7 @@ body:before {
 }
 .section {
     position: relative;
-    left: 0;
+    left: -100%;
     width: 200%;
     overflow: hidden;
     -webkit-transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
@@ -287,9 +339,6 @@ body:before {
 	margin-top:-5px;
 }
 
-.article {
-    display: none;
-}
 .article > div {
     padding: 70px 0;
     width: 700px;
@@ -390,6 +439,4 @@ body:before {
     -webkit-transform: translateX(0);
     -moz-transform: translateX(0);
     transform: translateX(0);
-}
-#container {
 }

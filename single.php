@@ -17,18 +17,17 @@
     ); ?> 
 
     <div id="top">
-        <a href="javascript:history.back()">home</a>
+        <a class="icon-icon" href="javascript:history.back()"></a>
         <div class="tab">
-            <div class="text"></div>
-            <div class="pic"></div>
+            <div class="active icon-text"></div><div class="icon-images"></div>
         </div>
         <div class="social">
             <div class="share"></div>
 		    <?php tz_printLikes(get_the_ID()); ?>
 		    <?php get_template_part( 'social' ); ?>
             <div class="like"></div>
-        </div>
-        <div class="control">
+            <div class="control">
+            </div>
         </div>
     </div>
 
