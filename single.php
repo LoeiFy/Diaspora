@@ -22,11 +22,13 @@
             <div class="active icon-text"></div><div class="icon-images"></div>
         </div>
         <div class="social">
-            <div class="share"></div>
-		    <?php tz_printLikes(get_the_ID()); ?>
-		    <?php get_template_part( 'social' ); ?>
-            <div class="like"></div>
-            <div class="control">
+            <div class="icon-like">
+		        <?php tz_printLikes(get_the_ID()); ?>
+            </div>
+            <div class="icon-share">
+		        <?php get_template_part( 'social' ); ?>
+            </div>
+            <div class="icon-font">
             </div>
         </div>
     </div>

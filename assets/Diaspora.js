@@ -211,4 +211,16 @@ $(function($) {
         }, 0)
     })
 
+
+    $('body').on('click', '#comment', function() {
+        $(this).removeClass('link').html('')
+        var id = $(this).data('id');
+        $.getScript('http://static.duoshuo.com/embed.js', function() {
+			var el = document.createElement('div');
+    		el.setAttribute('data-thread-key', id)
+    		DUOSHUO.EmbedThread(el)
+    		$('#comment').html(el)
+		})
+    })
+
 })

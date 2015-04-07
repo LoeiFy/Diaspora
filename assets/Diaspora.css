@@ -182,6 +182,7 @@ body:before {
 .social {
     position: absolute;
     right: 18px;
+    top: 0;
 }
 #home {
     height: 240px;
@@ -360,18 +361,18 @@ body:before {
     margin-right: 20px;
 }
 #comment {
-    width: 170px;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 14px;
-    border: 1px solid #888;
-    color: #888;
     margin: 50px auto 0;
-    border-radius: 20px;
-    letter-spacing: 5px;
 }
 #comment.link {
     cursor: pointer;
+    border-radius: 20px;
+    letter-spacing: 5px;
+    border: 1px solid #888;
+    width: 170px;
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+    padding: 10px 0;
 }
 
 .relate {
