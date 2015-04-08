@@ -12,7 +12,7 @@ var Diaspora = {
 		$.ajax({
 			type: 'GET',
 			url: url,
-			timeout: 7000,
+			timeout: 10000,
 			success: function(data) {f(data)},
 			error: function() {window.location.href = url}
 		})

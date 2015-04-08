@@ -100,11 +100,11 @@ function tz_printLikes($post_id) {
 	
 	if(isset($_COOKIE["like_" + $post_id])) {
 
-	print '<a href="#" class="likeThis active" id="like-'.$post_id.'"><span class="icon"></span><span class="count">'.$likes.' Likes</span></a>';
+	print '<a href="#" class="likeThis active" id="like-'.$post_id.'"><span class="icon-like"></span><span class="count">'.$likes.'</span></a>';
 		return;
 	} //if
 
-	print '<a href="#" class="likeThis" id="like-'.$post_id.'"><span class="icon"></span><span class="count">'.$likes.' Likes</span></a>';
+	print '<a href="#" class="likeThis" id="like-'.$post_id.'"><span class="icon-like"></span><span class="count">'.$likes.'</span></a>';
 } //tz_printLikes
 
 

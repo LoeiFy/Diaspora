@@ -175,6 +175,31 @@ body:before {
     vertical-align: middle;
     padding: 5px 10px;
 }
+.like-icon {
+    position: relative;
+}
+.icon-like {
+    color: #333;
+}
+.likeThis.active .icon-like, .icon-like:hover {
+    color: #EF6D57;
+}
+.likeThis .count {
+    position: absolute;
+    display: none;
+    color: #fff;
+    padding: 3px 0;
+    width: 180%;
+    background: #666;
+    border-radius: 3px;
+    font-size: 13px;
+    text-align: center;
+    left: -40%;
+    top: 30px;
+}
+.likeThis:hover .count {
+    display: block;
+}
 .icon-text {
     border-right: 1px solid #e8e8e8;
     padding-right: 8px;
@@ -182,7 +207,35 @@ body:before {
 .social {
     position: absolute;
     right: 18px;
+    top: 20px;
+}
+.share a {
+    display: inline-block;
+    color: #333;
+    margin-right: 15px;
+}
+.share {
+    position: relative;
+}
+.share:after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    width: 1px;
+    background: #eee;
+    height: 24px;
     top: 0;
+}
+.social > div {
+    display: inline-block;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    margin-left: 15px;
+}
+.social > div:last-child {
+    font-size: 22px;
 }
 #home {
     height: 240px;
