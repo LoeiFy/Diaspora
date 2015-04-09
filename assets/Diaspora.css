@@ -237,6 +237,10 @@ body:before {
 .social > div:last-child {
     font-size: 22px;
 }
+#qr {
+    display: none;
+    position: absolute;
+}
 #home {
     height: 240px;
     text-align: center;
@@ -392,17 +396,28 @@ body:before {
 	height:100%;
 	margin-top:-5px;
 }
-
 .article > div {
     padding: 70px 0;
     width: 700px;
     margin: 0 auto;
 }
-.article h1 {
+h1.title {
     font-size: 36px;
     color: #333;
     text-align: center;
     line-height: 1.3;
+    position: relative;
+}
+h1.title:after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100px;
+    background: #eee;
+    position: absolute;
+    top: 80px;
+    margin-left: -50px;
+    left: 50%;
 }
 .stuff {
     margin-top: 40px;
@@ -493,4 +508,36 @@ body:before {
     -webkit-transform: translateX(0);
     -moz-transform: translateX(0);
     transform: translateX(0);
+}
+
+/* article content */
+.content {
+    margin-top: 60px;
+    font-size: 14px;
+    line-height: 2;
+    color: #333;
+    font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","WenQuanYi Micro Hei",sans-serif;
+}
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+    font-weight: normal;
+    color: #333;
+    margin: 0 0 10px 0;
+}
+.content h6 {
+    font-size: 16px;
+}
+.content h5 {
+    font-size: 18px;
+}
+.content h4 {
+    font-size: 20px;
+}
+.content h3 {
+    font-size: 22px;
+}
+.content h2 {
+    font-size: 24px;
+}
+.content h1 {
+    font-size: 26px;
 }
