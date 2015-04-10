@@ -223,6 +223,16 @@ $(function($) {
 		})
     })
 
+    $('body').on('click', '.icon-play', function() {
+        $(this).removeClass('icon-play').addClass('icon-pause')
+        $('#audio-'+ $(this).data('id') +'-1')[0].play()
+    })
+
+    $('body').on('click', '.icon-pause', function() {
+        $(this).removeClass('icon-pause').addClass('icon-play')
+        $('#audio-'+ $(this).data('id') +'-1')[0].pause()
+    })
+
     player(138)
     function player(id) {
 
@@ -230,16 +240,21 @@ $(function($) {
 
         player.on({
 
+            /*
             'canplay': function() {
             },
+            */
 
             'timeupdate': function() {
-                //console.log(player[0].currentTime +'#'+ player[0].duration)
+                $('.bar').css('width', player[0].currentTime / player[0].duration * 100 +'%')
             },
 
             'ended': function() {
+                $('.icon-pause').removeClass('icon-pause').addClass('icon-play')
             },
 
+
+            /*
             'play': function() {
             },
 
@@ -248,13 +263,15 @@ $(function($) {
 
             'waiting': function() {
             },
+            */
 
             'playing': function() {
-                console.log('p')
+                $('.icon-play').removeClass('icon-play').addClass('icon-pause')
             } 
 
         })
 
     }
+
 
 })

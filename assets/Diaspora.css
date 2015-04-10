@@ -241,6 +241,15 @@ body:before {
     display: none;
     position: absolute;
 }
+.bar {
+    height: 2px;
+    background: rgba(108, 161, 90, .7);
+    width: 0;
+    -webkit-transition: width .5s ease;
+    -moz-transition: width .5s ease;
+    transition: width .5s ease;
+}
+
 #home {
     height: 240px;
     text-align: center;

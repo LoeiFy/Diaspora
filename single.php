@@ -30,10 +30,12 @@
             </div><!--
          --><div class="icon-font">
             </div><!--
-         --><div class="icon-play">
+            --><div data-id="<?php the_ID() ?>" class="icon-play">
             </div>
         </div>
     </div>
+
+    <div class="bar"></div>
 
     <div class="section">
 
