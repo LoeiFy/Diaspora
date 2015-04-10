@@ -223,4 +223,38 @@ $(function($) {
 		})
     })
 
+    player(138)
+    function player(id) {
+
+        var player = $('#audio-'+ id +'-1');
+
+        player.on({
+
+            'canplay': function() {
+            },
+
+            'timeupdate': function() {
+                //console.log(player[0].currentTime +'#'+ player[0].duration)
+            },
+
+            'ended': function() {
+            },
+
+            'play': function() {
+            },
+
+            'pause': function() {
+            },
+
+            'waiting': function() {
+            },
+
+            'playing': function() {
+                console.log('p')
+            } 
+
+        })
+
+    }
+
 })
