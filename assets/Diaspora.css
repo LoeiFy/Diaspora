@@ -313,23 +313,67 @@ audio {
     top: 30px;
 }
 
-.menu {
+.nav {
     position: fixed;
     height: 100%;
     width: 100%;
-    top: 0;
-    background: rgba(255,255,255,.9);
+    background: rgba(255,255,255,.97);
     z-index: 6;
-    left: -100%;
-    -webkit-transition: left 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
-    -moz-transition: left 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
-    transition: left 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+    top: -100%;
+    -webkit-transition: top 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+    -moz-transition: top 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+    transition: top 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
 }
 body.mu {
     overflow: hidden;
 }
-body.mu .menu {
-    left: 0;
+body.mu .nav {
+    top: 0;
+}
+
+.nav > div {
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+}
+.left {
+    width: 24%;
+}
+.right {
+    width: 76%;
+    position: relative;
+}
+.nav .icon-close {
+    color: #333;
+    font-size: 24px;
+    margin: 30px 0 0 30px;
+    display: inline-block;
+    cursor: pointer;
+} 
+.nav .icon-logo {
+    font-size: 30px;
+    margin: 70px 0 0 30px;
+    color: #333;
+}
+.menu {
+    padding-top: 124px;
+}
+.menu li {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+.menu a {
+    color: #666;
+    letter-spacing: 5px;
+}
+.menu a:hover {
+    color: #333;
+}
+.right p {
+    color: #999;
+    font-size: 14px;
+    position: absolute;
+    bottom: 30px;
 }
 
 #single {

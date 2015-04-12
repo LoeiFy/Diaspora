@@ -1,7 +1,15 @@
 <?php get_header(); ?>
 
-
+<div class="nav">
+<div class="left">
+    <div class="icon-close"></div>
+    <h1 class="icon-logo"></h1>
+</div><div class="right">
 <?php wp_nav_menu( array( 'theme_location' => 'menu', 'container' => '', 'fallback_cb' => '' ) ); ?>
+<p>&copy; <?php echo date("Y"); ?> <?php bloginfo('name'); ?></p>
+</div>
+</div>
+
 <div id="container">	
 
 	<div id="home">

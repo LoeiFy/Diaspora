@@ -304,6 +304,9 @@ $(function($) {
     $('.icon-menu').on('click', function() {
         $('body').addClass('mu')
     })
+    $('.nav .icon-close').on('click', function() {
+        $('body').removeClass('mu')
+    })
 
 
 })
