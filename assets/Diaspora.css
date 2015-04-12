@@ -78,6 +78,22 @@ audio {
     -moz-transition: opacity .3s ease-in;
     -webkit-transition: opacity .3s ease-in;
 }
+#pager {
+    width: 170px;
+    letter-spacing: 5px;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px 0;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    margin: 30px auto 70px;
+    border: 1px solid #888;
+}
+#pager a{
+    color: #888;
+}
+
 .post:hover {
     z-index: 1;
     opacity: 1;
@@ -475,6 +491,8 @@ h1.title:after {
 #comment.link {
     cursor: pointer;
     border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
     letter-spacing: 5px;
     border: 1px solid #888;
     width: 170px;

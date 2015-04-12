@@ -181,6 +181,34 @@ $(function($) {
 
     }
 
+    $('body').on('click', '#pager a', function(e) {
+
+        e.preventDefault()
+
+        if ($(this).data('status') == 'loading') return;
+        
+        $(this).html('加载中..').data('status', 'loading')
+
+        Diaspora.loading()
+
+        Diaspora.L($(this).attr('href'), function(data) {
+
+            var link = $(data).find('#pager a').attr('href');
+
+            if (link != undefined) {
+                $('#pager a').attr('href', link).html('加载更多').data('status', 'loaded')
+            } else {
+                $('#pager').remove()
+            }
+
+            $('#primary').append($(data).find('.group'))
+
+            Diaspora.loaded()
+
+        })
+
+    })
+
     $('body').on('click', '.icon-images', function() {
         $('.icon-text').removeClass('active')
         $(this).addClass('active')
