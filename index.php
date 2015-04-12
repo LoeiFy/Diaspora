@@ -5,6 +5,7 @@
     <div class="icon-close"></div>
     <h1 class="icon-logo"></h1>
 </div><div class="right">
+<h2>Navigation</h2>
 <?php wp_nav_menu( array( 'theme_location' => 'menu', 'container' => '', 'fallback_cb' => '' ) ); ?>
 <p>&copy; <?php echo date("Y"); ?> <?php bloginfo('name'); ?></p>
 </div>

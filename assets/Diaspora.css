@@ -355,8 +355,24 @@ body.mu .nav {
     margin: 70px 0 0 30px;
     color: #333;
 }
+.right h2 {
+    font-size: 14px;
+    color: #999;
+    margin-top: 34px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.right h2:after {
+    content: '';
+    height: 1px;
+    width: 60px;
+    background: #d0d0d0;
+    margin-left: 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
 .menu {
-    padding-top: 124px;
+    padding-top: 72px;
 }
 .menu li {
     font-size: 24px;
