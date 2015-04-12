@@ -303,13 +303,33 @@ audio {
     -moz-transform: skewY(2deg);
     -webkit-transform: skewY(2deg);
 }
+.icon-menu {
+    position: absolute;
+    z-index: 4;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    left: 30px;
+    top: 30px;
+}
 
 .menu {
     position: fixed;
     height: 100%;
-    width: 300px;
-    left: -300px;
+    width: 100%;
     top: 0;
+    background: rgba(255,255,255,.9);
+    z-index: 6;
+    left: -100%;
+    -webkit-transition: left 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+    -moz-transition: left 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+    transition: left 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+}
+body.mu {
+    overflow: hidden;
+}
+body.mu .menu {
+    left: 0;
 }
 
 #single {

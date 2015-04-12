@@ -301,5 +301,9 @@ $(function($) {
 
     }
 
+    $('.icon-menu').on('click', function() {
+        $('body').addClass('mu')
+    })
+
 
 })
