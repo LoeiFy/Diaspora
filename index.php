@@ -48,10 +48,9 @@
             ?>
 
             <div style="width: <?php echo $size ?>px; height: <?php echo $size ?>px; margin-left: <?php echo $left ?>px; margin-top: <?php echo $top ?>px;" id="post<?php the_Id() ?>" class="post post<?php echo $i % 4; ?>">
-                    <a class="inner" title="<?php the_title(); ?>" href="<?php the_permalink(); ?>">
-                        <?php the_post_thumbnail('cover'); ?>
-                        <div style="background: rgba(<?php echo rand(0, 200); ?>, <?php echo rand(0, 200); ?>, <?php echo rand(0, 200); ?>, .7)" class="overlay"><p><?php the_title(); ?></p></div>
-                    </a>
+                <a class="inner" title="<?php the_title(); ?>" href="<?php the_permalink(); ?>">
+                    <?php the_post_thumbnail('cover'); ?>
+                </a>
             </div>
 
 <?php if ($i % 4 == 0) : ?>

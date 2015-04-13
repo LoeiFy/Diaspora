@@ -219,7 +219,7 @@ $(function($) {
             $('.section').css('left', 0)
         } else {
             $('.zoom').Chocolat()
-            $('.images').justifiedGallery({ margins: 5 }).on('jg.complete', function () {
+            $('.images').justifiedGallery({ margins: 5, rowHeight : 120 }).on('jg.complete', function () {
                 $('.section').css('left', 0)
                 $('.icon-images').addClass('tg')
             })
