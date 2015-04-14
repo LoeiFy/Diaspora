@@ -493,16 +493,13 @@ h1.title {
     position: relative;
     font-weight: bold;
 }
-h1.title:after {
+.content:before {
     content: '';
-    display: block;
     height: 1px;
     width: 100px;
     background: #eee;
-    position: absolute;
-    top: 80px;
-    margin-left: -50px;
-    left: 50%;
+    display: block;
+    margin: 30px auto 40px;
 }
 .stuff {
     margin-top: 40px;
@@ -599,7 +596,6 @@ h1.title:after {
 
 /* article content */
 .content {
-    margin-top: 60px;
     font-size: 14px;
     line-height: 2;
     color: #333;
