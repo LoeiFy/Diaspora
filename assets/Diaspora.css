@@ -316,11 +316,13 @@ body.mu #logo {
 }
 
 .menu {
-    padding-top: 72px;
+    text-align: center;
+    margin-top: 200px;
 }
 .menu li {
     font-size: 24px;
-    margin-bottom: 12px;
+    display: inline-block;
+    margin: 0 20px;
 }
 .menu a {
     color: #666;
@@ -329,10 +331,12 @@ body.mu #logo {
 .menu a:hover {
     color: #333;
 }
-.right p {
+.nav p {
     color: #999;
     font-size: 14px;
     position: absolute;
+    width: 100%;
+    text-align: center;
     bottom: 30px;
 }
 
