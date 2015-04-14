@@ -301,11 +301,13 @@ $(function($) {
 
     }
 
-    $('.icon-menu').on('click', function() {
-        $('body').addClass('mu')
+    $('.sw').on('click', function() {
+        window.scrollTo(0, 0)
+        $('body').toggleClass('mu')
     })
-    $('.nav .icon-close').on('click', function() {
-        $('body').removeClass('mu')
+
+    $('body').on('click', '.icon-wechat', function() {
+        $('#qr').qrcode({ width: 64, height: 64, text: location.href})
     })
 
 

@@ -77,6 +77,9 @@ audio {
     transition: opacity .3s ease-in;
     -moz-transition: opacity .3s ease-in;
     -webkit-transition: opacity .3s ease-in;
+    box-shadow: 0 0 1px rgba(0,0,0,.1);
+    -webkit-box-shadow: 0 0 1px rgba(0,0,0,.1);
+    -moz-box-shadow: 0 0 1px rgba(0,0,0,.1);
 }
 #pager {
     width: 170px;
@@ -90,7 +93,7 @@ audio {
     margin: 30px auto 70px;
     border: 1px solid #888;
 }
-#pager a{
+#pager a {
     color: #888;
 }
 
@@ -118,7 +121,7 @@ audio {
     display: block;
     position: relative;
     overflow: hidden;
-    margin: 30px;
+    margin: 40px;
 }
 .loader {
     display: none;
@@ -266,7 +269,7 @@ audio {
     position: relative;
     margin-top: 96px;
     display: inline-block;
-    z-index: 1;
+    z-index: 4;
     color: #fff;
     font-size: 50px;
 }
@@ -290,7 +293,7 @@ audio {
     height: 100%;
     width: 100%;
     background: rgba(255,255,255,.97);
-    z-index: 6;
+    z-index: 3;
     top: -100%;
     -webkit-transition: top 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
     -moz-transition: top 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
@@ -299,50 +302,19 @@ audio {
 body.mu {
     overflow: hidden;
 }
+body.mu .icon-menu {
+    color: #333;
+}
+body.mu .icon-menu:before {
+    content: "\e609";
+}
 body.mu .nav {
     top: 0;
 }
+body.mu #logo {
+    color: #333;
+}
 
-.nav > div {
-    display: inline-block;
-    vertical-align: top;
-    height: 100%;
-}
-.left {
-    width: 24%;
-}
-.right {
-    width: 76%;
-    position: relative;
-}
-.nav .icon-close {
-    color: #333;
-    font-size: 24px;
-    margin: 30px 0 0 30px;
-    display: inline-block;
-    cursor: pointer;
-} 
-.nav .icon-logo {
-    font-size: 30px;
-    margin: 70px 0 0 30px;
-    color: #333;
-}
-.right h2 {
-    font-size: 14px;
-    color: #999;
-    margin-top: 34px;
-    display: inline-block;
-    vertical-align: middle;
-}
-.right h2:after {
-    content: '';
-    height: 1px;
-    width: 60px;
-    background: #d0d0d0;
-    margin-left: 5px;
-    display: inline-block;
-    vertical-align: middle;
-}
 .menu {
     padding-top: 72px;
 }

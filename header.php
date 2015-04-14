@@ -42,6 +42,7 @@ if (self == top) {
 <script src="<?php echo get_template_directory_uri(); ?>/assets/CBFimage.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/jquery.justifiedGallery.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/Chocolate.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/jquery.qrcode.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/Diaspora.js"></script>
 <script>var duoshuoQuery = {short_name:'test123456'};</script>
 <!--
