@@ -10,6 +10,12 @@ add_action('init', 'register_menu');
 add_theme_support( 'post-thumbnails', array( 'post' ) );
 add_image_size( 'cover', 600, 600, true );
 
+// NEXT PAGE CLASS
+add_filter('next_posts_link_attributes', 'posts_link_attributes');
+function posts_link_attributes() {
+    return 'class="more"';
+}
+
 // FRIENDS LINKS
 add_filter( 'pre_option_link_manager_enabled', '__return_true' );
 

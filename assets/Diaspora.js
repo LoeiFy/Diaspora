@@ -181,7 +181,7 @@ $(function($) {
 
     }
 
-    $('body').on('click', '#pager a', function(e) {
+    $('body').on('click', '.more', function(e) {
 
         e.preventDefault()
 
@@ -193,10 +193,10 @@ $(function($) {
 
         Diaspora.L($(this).attr('href'), function(data) {
 
-            var link = $(data).find('#pager a').attr('href');
+            var link = $(data).find('.more').attr('href');
 
             if (link != undefined) {
-                $('#pager a').attr('href', link).html('加载更多').data('status', 'loaded')
+                $('.more').attr('href', link).html('加载更多').data('status', 'loaded')
             } else {
                 $('#pager').remove()
             }
@@ -240,7 +240,7 @@ $(function($) {
     })
 
 
-    $('body').on('click', '#comment', function() {
+    $('body').on('click', '.comment', function() {
         $(this).removeClass('link').html('')
         var id = $(this).data('id');
         $.getScript('http://static.duoshuo.com/embed.js', function() {
@@ -271,7 +271,7 @@ $(function($) {
             /*
             'canplay': function() {
             },
-            */
+            /
 
             'timeupdate': function() {
                 $('.bar').css('width', player[0].currentTime / player[0].duration * 100 +'%')
