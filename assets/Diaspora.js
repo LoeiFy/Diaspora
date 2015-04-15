@@ -210,7 +210,7 @@ $(function($) {
     })
 
     $('body').on('click', '.icon-images', function() {
-        $('.icon-text').removeClass('active')
+        $('.icon-font').removeClass('active')
         $(this).addClass('active')
 
         $('.images').css('height', $('.images').data('height'))
@@ -228,7 +228,7 @@ $(function($) {
         setTimeout(function() { $('.article').css('height', '0') }, 0)
     })
 
-    $('body').on('click', '.icon-text', function() {
+    $('body').on('click', '.icon-font', function() {
         $('.icon-images').removeClass('active')
         $(this).addClass('active')
 

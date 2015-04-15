@@ -19,7 +19,7 @@
     <div id="top">
         <a class="icon-icon" href="javascript:history.back()"></a>
         <div class="tab">
-            <div class="active icon-text"></div><div class="icon-images"></div>
+            <div class="active icon-font"></div><div class="icon-images"></div>
         </div>
         <div class="social">
             <div class="like-icon">
@@ -27,8 +27,6 @@
             </div><!--
          --><div>
 		        <?php get_template_part( 'social' ); ?>
-            </div><!--
-         --><div class="icon-font">
             </div><!--
             --><div data-id="<?php the_ID() ?>" class="icon-play">
             </div>

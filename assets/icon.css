@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('images/icomoon.ttf') format('truetype');
+    src:url('images/icomoon.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -17,6 +17,10 @@
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-font:before {
+	content: "\e604";
 }
 
 .icon-close:before {
@@ -37,10 +41,6 @@
 
 .icon-play:before {
 	content: "\e603";
-}
-
-.icon-font:before {
-	content: "\e604";
 }
 
 .icon-next:before {
@@ -65,10 +65,6 @@
 
 .icon-images:before {
 	content: "\e60b";
-}
-
-.icon-text:before {
-	content: "\e60c";
 }
 
 .icon-logo:before {

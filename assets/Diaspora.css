@@ -166,7 +166,7 @@ audio {
     background: #eee;
     color: #444;
 }
-.icon-text, .icon-images {
+.icon-font, .icon-images {
     cursor: pointer;
     display: inline-block;
     font-size: 20px;
@@ -199,7 +199,7 @@ audio {
 .likeThis:hover .count {
     display: block;
 }
-.icon-text {
+.icon-font {
     border-right: 1px solid #e8e8e8;
     padding-right: 8px;
 }
@@ -377,7 +377,7 @@ body.mu #logo {
     z-index: 3;
     left: 50%;
     top: 70%;
-    padding: 4px 4px 5px 6px;
+    padding: 5px;
     margin-top: -15px;
     margin-left: -15px;
     position: absolute;
