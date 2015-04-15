@@ -185,6 +185,8 @@ $(function($) {
 
         var tag = $(e.target).attr('class');
 
+        console.log(tag)
+
         switch (true) {
 
             // nav menu
@@ -275,27 +277,49 @@ $(function($) {
                 }
             break;
 
+            // audio play
+            case (tag.indexOf('icon-play') != -1):
+                $('#audio-'+ $('.icon-play').data('id') +'-1')[0].play()
+                $('.icon-play').removeClass('icon-play').addClass('icon-pause')
+            break;
+
+            // audio pause
+            case (tag.indexOf('icon-pause') != -1):
+                $('#audio-'+ $('.icon-pause').data('id') +'-1')[0].pause()
+                $('.icon-pause').removeClass('icon-pause').addClass('icon-play')
+            break;
+
+            // post like
+            case (tag.indexOf('icon-like') != -1):
+                var t = $('.icon-like').parent(),
+			        classes = t.attr('class');
+
+			    classes = classes.split(' ');
+			    if(classes[1] == 'active') return;
+
+			    t.addClass('active')
+
+			    var id = t.attr('id').split('like-');
+
+			    $.ajax({
+				    type: 'POST',
+				    url: '/index.php',
+				    data: 'likepost=' + id[1],
+				    success: function() {
+			            var text = $('#like-'+ id[1]).html(),
+			                patt= /(\d)+/,
+		                    num = patt.exec(text);
+
+			            num[0] ++;
+			            $('#like-'+ id[1]).html('<span class="icon-like"></span><span class="count">' + num[0] + '</span>')
+                    }
+			    })
+            break;
+
         }
 
     })
 
-
-
-
-
-
-
-
-
-    $('body').on('click', '.icon-play', function() {
-        $(this).removeClass('icon-play').addClass('icon-pause')
-        $('#audio-'+ $(this).data('id') +'-1')[0].play()
-    })
-
-    $('body').on('click', '.icon-pause', function() {
-        $(this).removeClass('icon-pause').addClass('icon-play')
-        $('#audio-'+ $(this).data('id') +'-1')[0].pause()
-    })
 
     player(138)
     function player(id) {
