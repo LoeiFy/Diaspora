@@ -6,7 +6,4 @@
 			
 </div>
 
-<div id="qr">
-    <img src="" />
-    <div class="icon-close"></div>
-</div>
+<div id="qr"></div>

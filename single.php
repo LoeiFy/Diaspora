@@ -60,7 +60,7 @@
             <span>Pageview <?php echo getPostViews(get_the_ID()); ?></span>
         </div>
 
-        <div class="comment" class="link" data-id="<?php the_ID(); ?>">添加评论</div>
+        <div class="comment link" data-id="<?php the_ID(); ?>">添加评论</div>
 
         </div>
 

@@ -181,75 +181,111 @@ $(function($) {
 
     }
 
-    $('body').on('click', '.more', function(e) {
+    $('body').on('click', function(e) {
 
-        e.preventDefault()
+        var tag = $(e.target).attr('class');
 
-        if ($(this).data('status') == 'loading') return;
+        switch (true) {
+
+            // nav menu
+            case (tag.indexOf('switchmenu') != -1):
+                window.scrollTo(0, 0)
+                $('body').toggleClass('mu')
+            break;
+
+            // next page
+            case (tag.indexOf('more') != -1):
+                if ($('.more').data('status') == 'loading') return false;
         
-        $(this).html('加载中..').data('status', 'loading')
+                $('.more').html('加载中..').data('status', 'loading')
+                Diaspora.loading()
 
-        Diaspora.loading()
+                Diaspora.L($('.more').attr('href'), function(data) {
+                    var link = $(data).find('.more').attr('href');
+                    if (link != undefined) {
+                        $('.more').attr('href', link).html('加载更多').data('status', 'loaded')
+                    } else {
+                        $('#pager').remove()
+                    }
 
-        Diaspora.L($(this).attr('href'), function(data) {
+                    $('#primary').append($(data).find('.group'))
 
-            var link = $(data).find('.more').attr('href');
+                    Diaspora.loaded()
+                })
 
-            if (link != undefined) {
-                $('.more').attr('href', link).html('加载更多').data('status', 'loaded')
-            } else {
-                $('#pager').remove()
-            }
+                return false;
+            break;
 
-            $('#primary').append($(data).find('.group'))
+            // comment
+            case (tag.indexOf('comment') != -1):
+                Diaspora.loading()
+                $('.comment').removeClass('link').html('')
 
-            Diaspora.loaded()
+                var id = $('.comment').data('id');
 
-        })
+                $.getScript('http://static.duoshuo.com/embed.js', function() {
+			        var el = document.createElement('div');
+    		        el.setAttribute('data-thread-key', id)
+    		        DUOSHUO.EmbedThread(el)
+    		        $('.comment').html(el)
 
-    })
+                    Diaspora.loaded()
+		        })
+            break;
 
-    $('body').on('click', '.icon-images', function() {
-        $('.icon-font').removeClass('active')
-        $(this).addClass('active')
+            // post images
+            case (tag.indexOf('icon-images') != -1):
+                $('.icon-font').removeClass('active')
+                $('.icon-images').addClass('active')
 
-        $('.images').css('height', $('.images').data('height'))
+                $('.images').css('height', $('.images').data('height'))
 
-        if ($(this).hasClass('tg')) {
-            $('.section').css('left', 0)
-        } else {
-            $('.zoom').Chocolat()
-            $('.images').justifiedGallery({ margins: 5, rowHeight : 120 }).on('jg.complete', function () {
-                $('.section').css('left', 0)
-                $('.icon-images').addClass('tg')
-            })
+                if ($('.icon-images').hasClass('tg')) {
+                    $('.section').css('left', 0)
+                } else {
+                    $('.zoom').Chocolat()
+                    $('.images').justifiedGallery({ margins: 5, rowHeight : 120 }).on('jg.complete', function () {
+                        $('.section').css('left', 0)
+                        $('.icon-images').addClass('tg')
+                    })
+                }
+
+                setTimeout(function() { $('.article').css('height', '0') }, 0)
+            break;
+
+            // post text
+            case (tag.indexOf('icon-font') != -1):
+                $('.icon-images').removeClass('active')
+                $('.icon-font').addClass('active')
+
+                $('.article').css('height', 'auto')
+                $('.section').css('left', '-100%')
+                setTimeout(function() {
+                    $('.images').data('height', $('.images').height()).css('height', '0') 
+                }, 0)
+            break;
+
+            // qrcode
+            case (tag.indexOf('icon-wechat') != -1):
+                if ($('.icon-wechat').hasClass('tg')) {
+                    $('#qr').toggle()
+                } else {
+                    $('.icon-wechat').addClass('tg')
+                    $('#qr').qrcode({ width: 128, height: 128, text: location.href}).toggle()
+                }
+            break;
+
         }
 
-        setTimeout(function() { $('.article').css('height', '0') }, 0)
-    })
-
-    $('body').on('click', '.icon-font', function() {
-        $('.icon-images').removeClass('active')
-        $(this).addClass('active')
-
-        $('.article').css('height', 'auto')
-        $('.section').css('left', '-100%')
-        setTimeout(function() {
-            $('.images').data('height', $('.images').height()).css('height', '0') 
-        }, 0)
     })
 
 
-    $('body').on('click', '.comment', function() {
-        $(this).removeClass('link').html('')
-        var id = $(this).data('id');
-        $.getScript('http://static.duoshuo.com/embed.js', function() {
-			var el = document.createElement('div');
-    		el.setAttribute('data-thread-key', id)
-    		DUOSHUO.EmbedThread(el)
-    		$('#comment').html(el)
-		})
-    })
+
+
+
+
+
+
 
     $('body').on('click', '.icon-play', function() {
         $(this).removeClass('icon-play').addClass('icon-pause')
@@ -271,7 +307,7 @@ $(function($) {
             /*
             'canplay': function() {
             },
-            /
+            */
 
             'timeupdate': function() {
                 $('.bar').css('width', player[0].currentTime / player[0].duration * 100 +'%')
@@ -300,15 +336,5 @@ $(function($) {
         })
 
     }
-
-    $('.sw').on('click', function() {
-        window.scrollTo(0, 0)
-        $('body').toggleClass('mu')
-    })
-
-    $('body').on('click', '.icon-wechat', function() {
-        $('#qr').qrcode({ width: 64, height: 64, text: location.href})
-    })
-
 
 })

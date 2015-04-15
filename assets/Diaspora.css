@@ -239,6 +239,14 @@ audio {
 #qr {
     display: none;
     position: absolute;
+    background: #fff;
+    padding: 30px;
+    border: 1px solid #999;
+    right: 0;
+    top: 60px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
 }
 .bar {
     height: 2px;

@@ -10,7 +10,7 @@
 	<div id="home">
 		<a id="logo" class="icon-logo" href="/" title="<?php bloginfo('name'); ?>"></a>
         <div><canvas id="cover" url="<?php header_image(); ?>" version="0" blur="3"></canvas></div>
-        <span class="icon-menu sw"></span>
+        <span class="icon-menu switchmenu"></span>
 	</div>
 
     <div id="primary">
