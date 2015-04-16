@@ -141,8 +141,8 @@ audio {
     height: 60px;
     padding-top: 2px;
     text-align: center;
-    background: rgba(255,255,255,0.97);
     border-bottom: 1px solid #f7f7f7;
+    background: #fefefe;
     width: 100%;
     position: relative;
 }
@@ -151,15 +151,16 @@ audio {
     font-size: 30px;
     position: absolute;
     left: 18px;
-    top: 18px;
+    top: 17px;
 }
 .tab {
     display: inline-block;
-    border: 1px solid #e8e8e8;
+    border: 1px solid #dbdbdb;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
-    margin-top: 14px;
+    margin-top: 12px;
+    overflow: hidden;
 }
 .tab .active {
     background: #eee;
@@ -168,7 +169,7 @@ audio {
 .icon-font, .icon-images {
     cursor: pointer;
     display: inline-block;
-    font-size: 20px;
+    font-size: 22px;
     color: #666;
     vertical-align: middle;
     padding: 5px 10px;
@@ -199,18 +200,21 @@ audio {
     display: block;
 }
 .icon-font {
-    border-right: 1px solid #e8e8e8;
+    border-right: 1px solid #dbdbdb;
     padding-right: 8px;
 }
 .social {
     position: absolute;
     right: 18px;
-    top: 20px;
+    top: 19px;
 }
 .share a {
     display: inline-block;
-    color: #333;
+    color: #666;
     margin-right: 15px;
+}
+.share a:hover {
+    color: #333;
 }
 .share {
     position: relative;
@@ -228,12 +232,15 @@ audio {
 .social > div {
     display: inline-block;
     font-size: 24px;
-    color: #333;
+    color: #666;
     cursor: pointer;
     margin-left: 15px;
 }
 .social > div:last-child {
     font-size: 22px;
+}
+.social > div:last-child:hover {
+    color: #333;
 }
 #qr {
     display: none;
@@ -259,6 +266,7 @@ audio {
 #home {
     height: 240px;
     text-align: center;
+    position: relative;
 }
 #home > div {
     height: 300px;
@@ -531,10 +539,10 @@ h1.title {
     -moz-border-radius: 20px;
     -webkit-border-radius: 20px;
     letter-spacing: 5px;
-    border: 1px solid #888;
+    border: 1px solid #999;
     width: 170px;
     text-align: center;
-    color: #888;
+    color: #666;
     font-size: 14px;
     padding: 10px 0;
 }
