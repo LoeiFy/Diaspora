@@ -37,15 +37,15 @@
 
     <div class="section">
 
-    <?php $attachments = get_posts($args); if ($attachments) { ?>
-
 	<div class="images">
+    <?php $attachments = get_posts($args); if ($attachments) { ?>
 
         <?php foreach ( $attachments as $attachment ) { $img = wp_get_attachment_image_src($attachment->ID,'thumbnail'); ?>
 			<a class="zoom icon-zoom" target="_blank" href="<?php echo wp_get_attachment_url( $attachment->ID , false ); ?>"><img width="300" height="<?php echo $img[2] ?>" src="<?php echo $img[0] ?>"/></a>
 		<?php } ?>
 
-	</div><?php } ?><div class="article">
+    <?php } ?>
+    </div><div class="article">
 
         <div>
 

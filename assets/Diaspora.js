@@ -61,9 +61,9 @@ var Diaspora = {
     },
 
 	HS: function(tag, flag) {
-        var id = tag.data('id'),
+        var id = tag.data('id') || 0,
             url = tag.attr('href'),
-            title = tag.attr('title');
+            title = tag.attr('title') || tag.text();
 
         if (!$('#preview').length) location.href = url;
 
@@ -127,6 +127,8 @@ var Diaspora = {
 
         var p = $('#audio-'+ id +'-1');
 
+        if (!p.length) return;
+
         p.on({
 
             'timeupdate': function() {
@@ -172,6 +174,8 @@ $(function($) {
 
         CBFimage({id: 'cover', cache: true})
 
+        $('.pview a').addClass('pviewa')
+
     } else {
 
 	    window.addEventListener('popstate', function(e) {
@@ -189,6 +193,8 @@ $(function($) {
     $('body').on('click', function(e) {
 
         var tag = $(e.target).attr('class');
+
+        if (!tag) return;
 
         switch (true) {
 
@@ -335,6 +341,21 @@ $(function($) {
             case (tag.indexOf('relateimg') != -1):
                 Diaspora.HS($(e.target).parent(), 'replace')
                 return false;
+            break;
+
+            // quick view
+            case (tag.indexOf('pviewa') != -1):
+                $('body').removeClass('mu')
+
+                setTimeout(function() {
+                    Diaspora.HS($(e.target), 'push')
+                }, 300)
+
+                return false;
+            break;
+
+            default:
+                return;
             break;
 
         }

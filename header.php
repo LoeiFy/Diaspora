@@ -62,5 +62,5 @@ if (self == top) {
 </script>
 -->
 </head>
-<body <?php body_class() ?>>
+<body>
 <div class="loader"></div>

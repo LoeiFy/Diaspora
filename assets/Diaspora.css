@@ -21,12 +21,9 @@ html, body {
     -webkit-font-smoothing: antialiased;
 }
 body {
-    background: #f2f0f0;
+    background: #fff;
     position: relative;
     overflow-x: hidden;
-}
-body.page {
-    background: #fff;
 }
 body:before {
     background: grey;
@@ -86,7 +83,7 @@ audio {
 }
 #pager {
     text-align: center;
-    margin: 30px 0 70px;
+    margin: 30px 0 0;
 }
 #pager a {
     font-size: 14px;
@@ -350,6 +347,11 @@ body.mu #logo {
     bottom: 30px;
 }
 
+#container {
+    background: #f2f0f0;
+    padding-bottom: 70px;
+}
+
 #single {
     background: #fff;
     position: relative;
@@ -584,7 +586,7 @@ h1.title {
     width: 100%;
     height: 100%;
     z-index: 5;
-    background: #fafafa;
+    background: #fff;
     visibility: hidden;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
