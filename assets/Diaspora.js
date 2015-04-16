@@ -180,6 +180,10 @@ $(function($) {
 
         })
 
+        Diaspora.player($('.icon-play').data('id'))
+
+        $('.icon-icon').attr('href', '/')
+
     }
 
     $('body').on('click', function(e) {

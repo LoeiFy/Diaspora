@@ -27,7 +27,7 @@ if (is_home()) {
 <title><?php bloginfo('name'); ?> <?php wp_title( '|', true, 'left' ); ?></title>
 <meta name="keywords" content="<?php echo $keywords ?>" />
 <meta name="description" content="<?php echo $description ?>" />
-<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/dist/ico.png" />
 <style>html{display:none}</style> 
 <script>
 if (self == top) {
@@ -62,5 +62,5 @@ if (self == top) {
 </script>
 -->
 </head>
-<body>
+<body <?php body_class() ?>>
 <div class="loader"></div>

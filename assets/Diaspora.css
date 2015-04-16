@@ -5,7 +5,7 @@ body, div, h1, h2, h3, h4, h5, p, ul, li {
     list-style: none;
 }
 body {
-    font-family: 'Andale Mono', 'PT Sans', tahoma, serif;
+    font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","WenQuanYi Micro Hei",sans-serif;
     font-size: 14px;
 }
 a, a:hover {
@@ -17,13 +17,16 @@ img {
     height: auto;
 }
 html, body {
-    background: #f2f0f0;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-font-smoothing: antialiased;
 }
 body {
+    background: #f2f0f0;
     position: relative;
     overflow-x: hidden;
+}
+body.page {
+    background: #fff;
 }
 body:before {
     background: grey;
@@ -91,7 +94,7 @@ audio {
     border-radius: 20px;
     -moz-border-radius: 20px;
     -webkit-border-radius: 20px;
-    color: #888;
+    color: #666;
     border: 1px solid #888;
     padding: 10px 40px;
 }
@@ -333,7 +336,7 @@ body.mu #logo {
 }
 .menu a {
     color: #666;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
 }
 .menu a:hover {
     color: #333;
@@ -606,7 +609,6 @@ h1.title {
     font-size: 14px;
     line-height: 2;
     color: #333;
-    font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","WenQuanYi Micro Hei",sans-serif;
 }
 .content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
     font-weight: normal;
@@ -656,4 +658,20 @@ h1.title {
 }
 .content ol li {
     list-style: decimal;
+}
+
+
+.friend {
+    margin-top: 30px;
+}
+.friend li {
+    display: inline-block;
+    margin: 10px 10px 10px 0;
+}
+.friend a {
+    display: block;
+    color: #666;
+    padding: 5px 13px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
 }

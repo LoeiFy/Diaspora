@@ -5,19 +5,35 @@ Template Name: links
 ?>
 
 <?php get_header(); ?>
-<div id="single" class="bgf w">
-	<div class="w900 center pt25" id="single_logo">
-		<a class="db center bg3" href="/"></a>
-	</div>
-<div id="s_wrapper">
-	<header class="s_header w900 center oh mt50">
-		<h2 class="f30 c3"><?php the_title(); ?></h2>
-	</header>
+<div id="single">
 
-	<ul class="mt25 w900 f16 links center">
-		<?php wp_list_bookmarks('title_li=&categorize=0'); ?>
-	</ul>
+<?php while ( have_posts() ) : the_post(); ?>
+
+    <div id="top">
+        <a class="icon-icon" href="javascript:history.back()"></a>
+    </div>
+
+    <div class="section">
+	<div class="images">
+	</div><div class="article">
+        <div>
+
+        <div class="content">
+		    <?php the_content(); ?>
+        </div>
+
+	    <ul class="friend">
+		    <?php wp_list_bookmarks('title_li=&categorize=0'); ?>
+	    </ul>
+        
+        </div>
+        </div>
+    </div>
+
+<?php endwhile; ?>
+
+
 </div>
-</div>
+
 </body>
 </html><!--
