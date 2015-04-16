@@ -80,67 +80,92 @@ var Diaspora = {
     },
 
 	HS: function(tag, flag) {
-		$(tag).on('click', function(e) {
-			e.preventDefault()
+        var id = tag.data('id'),
+            url = tag.attr('href'),
+            title = tag.attr('title');
 
-            Diaspora.loading()
+        if (!$('#preview').length) location.href = url;
 
-			var url = $(this).attr('href'), title = $(this).text(),
-                state = {t: title, u: url};
+        Diaspora.loading()
 
-            Diaspora.L(url, function(data) {
+        var state = {t: title, u: url};
 
-                switch (flag) {
+        Diaspora.L(url, function(data) {
 
-                    case 'push':
-                        history.pushState(state, title, url)
-                    break;
+            switch (flag) {
 
-                    case 'replace':
-				        history.replaceState(state, title, url)
-                    break;
+                case 'push':
+                    history.pushState(state, title, url)
+                break;
 
-                }
+                case 'replace':
+                    history.replaceState(state, title, url)
+                break;
 
-                document.title = title;
+            }
 
-                $('#preview').html($(data).filter('#single'))
+            document.title = title;
 
-                switch (flag) {
+            $('#preview').html($(data).filter('#single'))
 
-                    case 'push': 
-                        setTimeout(function() {
+            switch (flag) {
 
-                            $('#preview').addClass('show')
-                            $('#container').data('scroll', window.scrollY)
-                            setTimeout(function() {
-                                $('#container').hide()
-                                setTimeout(function() {
-                                    $('#preview').css({
-                                        'position': 'static',
-                                        'overflow-y': 'auto'
-                                    })
+                case 'push': 
+                    Diaspora.preview()
+                break;
 
-                                    Diaspora.loaded()
-                                }, 500)
-                            }, 300)
+                case 'replace':
+                    window.scrollTo(0, 0)
+                    Diaspora.loaded()
+                break;
+            }
 
-                            Diaspora.HS('.relate a', 'replace') 
+            setTimeout(function() {
+                Diaspora.player(id)
+            }, 0)
 
-                        }, 0)
-                    break;
-
-                    case 'replace':
-                        Diaspora.HS('.relate a', 'replace') 
-                        window.scrollTo(0, 0)
-                        Diaspora.loaded()
-                    break;
-                }
-
-            })
-
-		})
+        })
 	},
+
+    preview: function() {
+        setTimeout(function() {
+            $('#preview').addClass('show')
+            $('#container').data('scroll', window.scrollY)
+            setTimeout(function() {
+                $('#container').hide()
+                setTimeout(function() {
+                    $('#preview').css({
+                        'position': 'static',
+                        'overflow-y': 'auto'
+                    })
+
+                    Diaspora.loaded()
+                }, 500)
+            }, 300)
+        }, 0)
+    },
+
+    player: function(id) {
+
+        var p = $('#audio-'+ id +'-1');
+
+        p.on({
+
+            'timeupdate': function() {
+                $('.bar').css('width', p[0].currentTime / p[0].duration * 100 +'%')
+            },
+
+            'ended': function() {
+                $('.icon-pause').removeClass('icon-pause').addClass('icon-play')
+            },
+
+            'playing': function() {
+                $('.icon-play').removeClass('icon-play').addClass('icon-pause')
+            } 
+
+        })
+
+    },
 
     loader: function() {
         var w = window.innerWidth;
@@ -165,8 +190,6 @@ $(function($) {
 
         Diaspora.PS()
 
-        Diaspora.HS('.inner', 'push')
-
         Diaspora.loader()
 
         CBFimage({id: 'cover', cache: true})
@@ -184,8 +207,6 @@ $(function($) {
     $('body').on('click', function(e) {
 
         var tag = $(e.target).attr('class');
-
-        console.log(tag)
 
         switch (true) {
 
@@ -316,49 +337,27 @@ $(function($) {
 			    })
             break;
 
+            // history state
+            case (tag.indexOf('cover') != -1):
+                Diaspora.HS($(e.target).parent(), 'push')
+                return false;
+            break;
+
+            // relate post
+            case (tag.indexOf('relatea') != -1):
+                Diaspora.HS($(e.target), 'replace')
+                return false;
+            break;
+
+            // relate post
+            case (tag.indexOf('relateimg') != -1):
+                Diaspora.HS($(e.target).parent(), 'replace')
+                return false;
+            break;
+
         }
 
     })
 
-
-    player(138)
-    function player(id) {
-
-        var player = $('#audio-'+ id +'-1');
-
-        player.on({
-
-            /*
-            'canplay': function() {
-            },
-            */
-
-            'timeupdate': function() {
-                $('.bar').css('width', player[0].currentTime / player[0].duration * 100 +'%')
-            },
-
-            'ended': function() {
-                $('.icon-pause').removeClass('icon-pause').addClass('icon-play')
-            },
-
-
-            /*
-            'play': function() {
-            },
-
-            'pause': function() {
-            },
-
-            'waiting': function() {
-            },
-            */
-
-            'playing': function() {
-                $('.icon-play').removeClass('icon-play').addClass('icon-pause')
-            } 
-
-        })
-
-    }
 
 })

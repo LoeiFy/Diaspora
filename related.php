@@ -19,11 +19,11 @@ if ( $posttags ) {
         $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id(), 'thumbnail');?>
     <li>
         <div>
-            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+            <a class="relatea" data-id="<?php the_ID() ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
             <p><?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 170,"..."); ?></p>
          </div><!--
-      --><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-            <img src="<?php echo $thumbnail[0]; ?>" alt="<?php the_title(); ?>" />
+      --><a href="<?php the_permalink(); ?>" data-id="<?php the_ID() ?>" title="<?php the_title(); ?>">
+            <img class="relateimg" src="<?php echo $thumbnail[0]; ?>" alt="<?php the_title(); ?>" />
          </a>
     </li>
  
@@ -45,11 +45,11 @@ if ( $i < $post_num ) { // 當 tags 文章數量不足, 再取 category 補足.
      $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id(), 'thumbnail');?>
     <li>
         <div>
-            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+            <a class="relatea" data-id="<?php the_ID() ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
             <p><?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 170,"..."); ?></p>
          </div><!--
-      --><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-            <img src="<?php echo $thumbnail[0]; ?>" alt="<?php the_title(); ?>" />
+      --><a data-id="<?php the_ID() ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+            <img class="relateimg" src="<?php echo $thumbnail[0]; ?>" alt="<?php the_title(); ?>" />
          </a>
     </li>
     <?php $i++;
