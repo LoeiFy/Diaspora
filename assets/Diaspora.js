@@ -23,7 +23,8 @@ var Diaspora = {
 	},
 
     PS: function() {
-        history.replaceState({u: Home, t: document.title}, document.title, Home);
+        history.replaceState({u: Home, t: document.title}, document.title, Home)
+
 		window.addEventListener('popstate', function(e) {
 			var state = e.state;
 
@@ -32,7 +33,6 @@ var Diaspora = {
 			document.title = state.t;
 
 			if (state.u == Home) {
-
                 $('#preview').css('position', 'fixed')
                 setTimeout(function() {
                     $('#preview').removeClass('show')
@@ -42,9 +42,7 @@ var Diaspora = {
                         $('#preview').html('')
                     }, 300)
                 }, 0)
-
 			} else {
-
                 Diaspora.loading()
 
                 Diaspora.L(state.u, function(data) {
@@ -53,29 +51,12 @@ var Diaspora = {
 
                     $('#preview').html($(data).filter('#single'))
 
-                    setTimeout(function() {
+                    Diaspora.preview()
 
-                        $('#preview').addClass('show')
-
-                        setTimeout(function() {
-                            $('#container').hide()
-                            setTimeout(function() {
-                                $('#preview').css({
-                                    'position': 'static',
-                                    'overflow-y': 'auto'
-                                })
-
-                                Diaspora.loaded()
-                            }, 500)
-                        }, 300)
-
-                        Diaspora.HS('.relate a', 'replace') 
-
-                    }, 0)
-
+                    setTimeout(function() { Diaspora.player(state.d) }, 0)
                 })
-
 			}
+
 		})
     },
 
@@ -88,7 +69,7 @@ var Diaspora = {
 
         Diaspora.loading()
 
-        var state = {t: title, u: url};
+        var state = {d: id, t: title, u: url};
 
         Diaspora.L(url, function(data) {
 
@@ -120,10 +101,7 @@ var Diaspora = {
                 break;
             }
 
-            setTimeout(function() {
-                Diaspora.player(id)
-            }, 0)
-
+            setTimeout(function() { Diaspora.player(id) }, 0)
         })
 	},
 
