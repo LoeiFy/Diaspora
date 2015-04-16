@@ -206,6 +206,7 @@
 
             fullBg(args.tag, image.width, image.height)
             window.onresize = function() {
+                if (!args.tag.parentNode.clientHeight) return;
                 fullBg(args.tag, image.width, image.height)
             }
 
