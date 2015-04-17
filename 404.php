@@ -6,4 +6,3 @@
         <a href="/"> - Back Home -</a>
     </p>
 </div>
-<?php get_footer(); ?>

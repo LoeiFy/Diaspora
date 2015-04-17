@@ -2,7 +2,7 @@
 
 <div class="nav">
 <?php wp_nav_menu( array( 'theme_location' => 'menu', 'container' => '', 'fallback_cb' => '' ) ); ?>
-<p>&copy; <?php echo date("Y"); ?> <?php bloginfo('name'); ?></p>
+<p>&copy; <?php echo date("Y"); ?> <?php bloginfo('name'); ?>. Powered by WordPress</p>
 </div>
 
 <div id="container">	

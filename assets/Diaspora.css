@@ -337,7 +337,7 @@ body.mu #logo {
 .menu li {
     font-size: 20px;
     display: inline-block;
-    margin: 0 20px;
+    margin: 0 20px 20px 0;
 }
 .menu a {
     color: #666;
@@ -684,4 +684,75 @@ h1.title {
     padding: 5px 13px;
     border: 1px solid #ddd;
     border-radius: 3px;
+}
+
+@media screen and (max-width: 600px) {
+    #home {
+        height: 200px;
+        overflow: hidden;
+        box-shadow: 0 0 1px rgba(0,0,0,.3);
+        -webkit-box-shadow: 0 0 1px rgba(0,0,0,.3);
+        -moz-box-shadow: 0 0 1px rgba(0,0,0,.3);
+    }
+    #logo {
+        margin-top: 80px;
+        font-size: 40px;
+    }
+    .icon-menu {
+        left: 20px;
+        top: 20px;
+    }
+    .menu {
+        width: 80%;
+        margin: 160px auto 0;
+    }
+    .menu li {
+        font-size: 16px;
+    }
+    .group {
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+    }
+    .group:first-child {
+        margin-top: 30px;
+    }
+    .post {
+        width: 96%!important;
+        height: auto!important;
+        position: static;
+        opacity: 1;
+        margin: 0 0 20px 2%!important;
+        overflow: hidden;
+    }
+    .inner {
+        margin: 10px;
+    }
+
+    .article > div {
+        width: 90%;
+        padding: 30px 0;
+    }
+    h1.title {
+        font-size: 20px;
+    }
+    .tab {
+        display: none;
+    }
+    .icon-wechat {
+        display: none!important;
+    }
+    .relate ul {
+        width: 90%;
+    }
+    .relate li div a {
+        font-size: 18px;
+    }
+    .relate li div p {
+        font-size: 12px;
+    }
+    .comment.link {
+        width: 140px;
+        padding: 5px 0;
+    }
 }

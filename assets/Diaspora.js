@@ -23,6 +23,9 @@ var Diaspora = {
 	},
 
     PS: function() {
+
+        if (!(window.history && history.pushState)) return;
+
         history.replaceState({u: Home, t: document.title}, document.title, Home)
 
 		window.addEventListener('popstate', function(e) {
@@ -65,7 +68,7 @@ var Diaspora = {
             url = tag.attr('href'),
             title = tag.attr('title') || tag.text();
 
-        if (!$('#preview').length) location.href = url;
+        if (!$('#preview').length || !(window.history && history.pushState)) location.href = url;
 
         Diaspora.loading()
 
