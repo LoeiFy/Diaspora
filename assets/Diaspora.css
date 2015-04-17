@@ -43,6 +43,9 @@ body:before {
     -moz-animation:loading 2s ease-out forwards infinite;
     display: none;
 }
+body.loading:before {
+    display: block;
+}
 @-webkit-keyframes loading {
   0% { -webkit-transform:scale(0.3); }
   50% { -webkit-transform:scale(1.0); }
@@ -52,6 +55,12 @@ body:before {
   0% { -moz-transform:scale(0.3); }
   50% { -moz-transform:scale(1.0); }
   100% { -moz-transform:scale(0.3); }
+}
+body.loading #container, body.loading #single {
+    opacity: 0;
+}
+html.loading, body.loading {
+    height: 100%;
 }
 
 audio {

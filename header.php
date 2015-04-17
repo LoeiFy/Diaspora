@@ -16,7 +16,7 @@ if (is_home()) {
 }
 ?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="loading">
 <head>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -62,5 +62,5 @@ if (self == top) {
 </script>
 -->
 </head>
-<body>
+<body class="loading">
 <div class="loader"></div>

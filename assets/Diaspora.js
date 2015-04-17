@@ -169,6 +169,10 @@ var Diaspora = {
 
 $(function($) {
 
+    setTimeout(function() {
+        $('html, body').removeClass('loading')
+    }, 1000)
+
     if ($('#preview').length) {
 
         Diaspora.PS()
