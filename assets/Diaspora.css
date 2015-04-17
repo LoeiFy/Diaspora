@@ -61,6 +61,7 @@ body.loading #container, body.loading #single {
 }
 html.loading, body.loading {
     height: 100%;
+    overflow: hidden;
 }
 
 audio {
@@ -130,6 +131,13 @@ audio {
     position: relative;
     overflow: hidden;
     margin: 40px;
+}
+.posttitle {
+    color: #333;
+    margin: 10px;
+    font-size: 16px;
+    display: none;
+    line-height: 1.6;
 }
 .loader {
     display: none;
@@ -735,7 +743,10 @@ h1.title {
         overflow: hidden;
     }
     .inner {
-        margin: 10px;
+        margin: 0;
+    }
+    .posttitle {
+        display: block;
     }
 
     .article > div {

@@ -44,6 +44,7 @@
             <div style="width: <?php echo $size ?>px; height: <?php echo $size ?>px; margin-left: <?php echo $left ?>px; margin-top: <?php echo $top ?>px;" id="post<?php the_Id() ?>" class="post post<?php echo $i % 4; ?>">
                 <a class="inner" data-id="<?php the_ID() ?>" title="<?php the_title(); ?>" href="<?php the_permalink(); ?>">
                     <?php the_post_thumbnail( 'cover', array( 'class' => 'cover' ) ); ?>
+                    <div class="posttitle"><?php the_title(); ?></div>
                 </a>
             </div>
 

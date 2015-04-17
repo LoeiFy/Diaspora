@@ -338,6 +338,12 @@ $(function($) {
                 return false;
             break;
 
+            // history state
+            case (tag.indexOf('posttitle') != -1):
+                Diaspora.HS($(e.target).parent(), 'push')
+                return false;
+            break;
+
             // relate post
             case (tag.indexOf('relatea') != -1):
                 Diaspora.HS($(e.target), 'replace')
