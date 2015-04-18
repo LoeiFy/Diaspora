@@ -44,7 +44,7 @@ body.loading:before {
   50% { -moz-transform:scale(1.0); }
   100% { -moz-transform:scale(0.3); }
 }
-body.loading #container, body.loading #single {
+body.loading #container, body.loading #single, body.loading .nav {
     opacity: 0;
 }
 html.loading, body.loading {
