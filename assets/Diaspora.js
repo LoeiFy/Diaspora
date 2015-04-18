@@ -179,7 +179,13 @@ $(function($) {
 
         Diaspora.loader()
 
-        CBFimage({id: 'cover', cache: true})
+        CBFimage({
+            id: 'cover',
+            cache: true,
+            start: function() {},
+            progress: function(loaded, total) {},
+            end: function() {}
+        })
 
         $('.pview a').addClass('pviewa')
 

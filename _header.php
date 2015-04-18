@@ -36,34 +36,10 @@ if (self == top) {
     top.location = self.location
 }
 </script>
+<style>
 @@css
+</style>
 @@static
-<!--
-<script>var duoshuoQuery = {short_name:'test123456'};</script>
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/base.css" />
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/icon.css" />
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/Diaspora.css" />
-<script src="<?php echo get_template_directory_uri(); ?>/assets/jquery.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/assets/CBFimage.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/assets/jquery.justifiedGallery.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/assets/Chocolate.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/assets/jquery.qrcode.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/assets/Diaspora.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/basket.full.min-0.0.3.js"></script>
-<script>
-	basket.require({ url: '<?php bloginfo('stylesheet_url'); ?>', unique: 0.3,  execute: false })
-	.then(function(responses) {
-        _stylesheet.appendStyleSheet(responses[0], function() {});
-		basket.require({ url: '<?php echo get_template_directory_uri(); ?>/js/jquery.min.js' })
-		.then(function() {
-			basket.require({ url: '<?php echo get_template_directory_uri(); ?>/js/plugin.js', unique: 0.3 })
-			.then(function() {
-        		basket.require({ url: '<?php echo get_template_directory_uri(); ?>/js/anguli.js', unique: 0.3 })
-			})
-		})
-	});
-</script>
--->
 </head>
 <body class="loading">
 <div class="loader"></div>

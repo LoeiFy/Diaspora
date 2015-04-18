@@ -11,11 +11,12 @@ module.exports = function(grunt) {
                 },
                 files: {
                     'dist/Diaspora.js': [
+                        'assets/CBFimage.js',
                         'assets/Diaspora.js'
                     ]
                 }
             }
-            
+
         },
 
         // concat js
@@ -25,7 +26,6 @@ module.exports = function(grunt) {
 
                 files: {
                     'dist/plugin.js': [
-                        'assets/CBFimage.js',
                         'assets/Chocolate.js',
                         'assets/jquery.justifiedGallery.min.js',
                         'assets/jquery.qrcode.min.js'
@@ -73,7 +73,7 @@ module.exports = function(grunt) {
                     ]
                 },
                 files: [
-                    {expand: true, flatten: true, src: ['_header.php'], dest: 'header.php'}
+                    {src: ['_header.php'], dest: 'header.php'}
                 ]
             },
 
@@ -91,7 +91,7 @@ module.exports = function(grunt) {
                     ]
                 },
                 files: [
-                    {expand: true, flatten: true, src: ['_header.php'], dest: 'header.php'}
+                    {src: ['_header.php'], dest: 'header.php'}
                 ]
             }
 
@@ -105,7 +105,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-replace');
     grunt.loadNpmTasks('grunt-contrib-concat');
 
-    grunt.registerTask('default', ['uglify', 'concat', 'cssmin', 'replace: basket']);
-    grunt.registerTask('dev', ['replace: dev']);
+    grunt.registerTask('default', ['uglify', 'concat', 'cssmin', 'replace:basket']);
+    grunt.registerTask('dev', ['replace:dev']);
 
 };

@@ -4,7 +4,7 @@
 	basket.require({ url: '<?php echo get_template_directory_uri(); ?>/dist/Diaspora.css', unique: 2.0,  execute: false })
 	.then(function(responses) {
         _stylesheet.appendStyleSheet(responses[0], function() {});
-		basket.require({ url: '<?php echo get_template_directory_uri(); ?>/dist/jquery.min.js', unique: 2.0 })
+		basket.require({ url: '<?php echo get_template_directory_uri(); ?>/static/jquery.min.js', unique: 2.0 })
 		.then(function() {
 			basket.require({ url: '<?php echo get_template_directory_uri(); ?>/dist/plugin.js', unique: 2.0 })
 			.then(function() {
