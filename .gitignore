@@ -1,7 +1,8 @@
 *.bak
 *.swp
-*.swo
 *.log
 *~
-*.[a|o]
 .DS_Store
+
+node_modules/*
+dist/*

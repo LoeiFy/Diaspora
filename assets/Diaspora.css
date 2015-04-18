@@ -1,9 +1,11 @@
+/*
 body, div, h1, h2, h3, h4, h5, p, ul, li {
     margin: 0;
     padding: 0;
     font-weight: normal;
     list-style: none;
 }
+*/
 body {
     font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","WenQuanYi Micro Hei",sans-serif;
     font-size: 14px;
@@ -16,6 +18,7 @@ img {
     max-width: 100%;
     height: auto;
 }
+/*
 html, body {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-font-smoothing: antialiased;
@@ -63,7 +66,7 @@ html.loading, body.loading {
     height: 100%;
     overflow: hidden;
 }
-
+*/
 audio {
     display: none;
     visibility: hidden;

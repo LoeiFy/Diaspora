@@ -27,7 +27,7 @@ if (is_home()) {
 <title><?php bloginfo('name'); ?> <?php wp_title( '|', true, 'left' ); ?></title>
 <meta name="keywords" content="<?php echo $keywords ?>" />
 <meta name="description" content="<?php echo $description ?>" />
-<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/dist/ico.png" />
+<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/static/ico.png" />
 <style>html{display:none}</style> 
 <script>
 if (self == top) {
@@ -36,6 +36,11 @@ if (self == top) {
     top.location = self.location
 }
 </script>
+@@css
+@@static
+<!--
+<script>var duoshuoQuery = {short_name:'test123456'};</script>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/base.css" />
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/icon.css" />
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/Diaspora.css" />
 <script src="<?php echo get_template_directory_uri(); ?>/assets/jquery.min.js"></script>
@@ -44,8 +49,6 @@ if (self == top) {
 <script src="<?php echo get_template_directory_uri(); ?>/assets/Chocolate.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/jquery.qrcode.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/Diaspora.js"></script>
-<script>var duoshuoQuery = {short_name:'test123456'};</script>
-<!--
 <script src="<?php echo get_template_directory_uri(); ?>/js/basket.full.min-0.0.3.js"></script>
 <script>
 	basket.require({ url: '<?php bloginfo('stylesheet_url'); ?>', unique: 0.3,  execute: false })
