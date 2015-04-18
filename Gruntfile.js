@@ -105,6 +105,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-replace');
     grunt.loadNpmTasks('grunt-contrib-concat');
 
-    grunt.registerTask('default', ['uglify:global', 'cssmin:global', 'cssmin:base']);
+    grunt.registerTask('default', ['uglify', 'concat', 'cssmin', 'replace: basket']);
+    grunt.registerTask('dev', ['replace: dev']);
 
 };
