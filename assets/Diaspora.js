@@ -169,8 +169,10 @@ var Diaspora = {
 
 $(function($) {
 
+    if (Diaspora.P()) $('#home').removeClass('skew');
+
     setTimeout(function() {
-        $('html, body').removeClass('loading')
+        $('html, body, #home').removeClass('loading')
     }, 1000)
 
     if ($('#preview').length) {

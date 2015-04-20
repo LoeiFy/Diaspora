@@ -1,11 +1,3 @@
-/*
-body, div, h1, h2, h3, h4, h5, p, ul, li {
-    margin: 0;
-    padding: 0;
-    font-weight: normal;
-    list-style: none;
-}
-*/
 body {
     font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","WenQuanYi Micro Hei",sans-serif;
     font-size: 14px;
@@ -18,55 +10,6 @@ img {
     max-width: 100%;
     height: auto;
 }
-/*
-html, body {
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    -webkit-font-smoothing: antialiased;
-}
-body {
-    background: #fff;
-    position: relative;
-    overflow-x: hidden;
-}
-body:before {
-    background: grey;
-    position: absolute;
-    content: '';
-    display: block;
-    width: 14px;
-    height: 14px;
-    left: 50%;
-    top: 50%;
-    margin-left: -7px;
-    margin-top: -7px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -webkit-animation:loading 2s ease-out forwards infinite;
-    -moz-animation:loading 2s ease-out forwards infinite;
-    display: none;
-}
-body.loading:before {
-    display: block;
-}
-@-webkit-keyframes loading {
-  0% { -webkit-transform:scale(0.3); }
-  50% { -webkit-transform:scale(1.0); }
-  100% { -webkit-transform:scale(0.3); }
-}
-@-moz-keyframes loading {
-  0% { -moz-transform:scale(0.3); }
-  50% { -moz-transform:scale(1.0); }
-  100% { -moz-transform:scale(0.3); }
-}
-body.loading #container, body.loading #single {
-    opacity: 0;
-}
-html.loading, body.loading {
-    height: 100%;
-    overflow: hidden;
-}
-*/
 audio {
     display: none;
     visibility: hidden;
@@ -78,22 +21,18 @@ audio {
 .group {
     position: relative;
     width: 1000px;
-    height: 800px;
+    height: 920px;
     overflow: hidden;
     margin: 50px auto 0;
 }
 .post {
     position: absolute;
     background: #fff;
-    z-index: 0;
-    opacity: .87;
-    transition: opacity .3s ease-in;
-    -moz-transition: opacity .3s ease-in;
-    -webkit-transition: opacity .3s ease-in;
     box-shadow: 0 0 1px rgba(0,0,0,.1);
     -webkit-box-shadow: 0 0 1px rgba(0,0,0,.1);
     -moz-box-shadow: 0 0 1px rgba(0,0,0,.1);
 }
+
 #pager {
     text-align: center;
     margin: 70px 0 0;
@@ -110,18 +49,16 @@ audio {
 }
 
 .post:hover {
-    z-index: 1;
-    opacity: 1;
 }
-.post1 {
+.post2 {
     left: 50%;
     top: 0;
 }
-.post2 {
+.post3 {
     left: 0;
     top: 50%;
 }
-.post3 {
+.post1 {
     left: 0;
     top: 0;
 }
@@ -133,15 +70,22 @@ audio {
     display: block;
     position: relative;
     overflow: hidden;
-    margin: 40px;
+    margin: 30px;
 }
 .posttitle {
     color: #333;
-    margin: 10px;
     font-size: 16px;
-    display: none;
     line-height: 1.6;
+    background: #fff;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    padding-top: 20px;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    white-space:nowrap;
 }
+
 .loader {
     display: none;
     position: fixed;
@@ -288,17 +232,27 @@ audio {
     text-align: center;
     position: relative;
 }
+#home.loading > div {
+    background: #333;
+}
 #home > div {
     height: 300px;
     position: absolute;
     top: -60px;
     width: 100%;
     overflow: hidden;
+    background: transparent;
+}
+#home.skew > div {
     transform: skewY(-2deg);
     -moz-transform: skewY(-2deg);
     -webkit-transform: skewY(-2deg);
     outline: 1px solid transparent;
-    background: #333;
+    -webkit-backface-visibility: hidden; 
+    border-bottom: 1px solid transparent
+    box-shadow: 0 0 1px rgba(0,0,0,.1);
+    -webkit-box-shadow: 0 0 1px rgba(0,0,0,.1);
+    -moz-box-shadow: 0 0 1px rgba(0,0,0,.1);
 }
 #logo {
     position: relative;
@@ -308,7 +262,7 @@ audio {
     color: #fff;
     font-size: 50px;
 }
-#cover {
+#home.skew #cover {
     transform: skewY(2deg);
     -moz-transform: skewY(2deg);
     -webkit-transform: skewY(2deg);
@@ -689,6 +643,17 @@ h1.title {
 .content ol li {
     list-style: decimal;
 }
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 
 .friend {
@@ -707,6 +672,9 @@ h1.title {
 }
 
 @media screen and (max-width: 600px) {
+    #container {
+        padding-bottom: 50px;
+    }
     #home {
         height: 200px;
         overflow: hidden;
@@ -749,7 +717,13 @@ h1.title {
         margin: 0;
     }
     .posttitle {
-        display: block;
+        margin: 10px;
+        position: static;
+        padding: 0;
+        width: auto;
+    }
+    #pager {
+        margin: 30px 0 0;
     }
 
     .article > div {
@@ -772,7 +746,7 @@ h1.title {
         font-size: 18px;
     }
     .relate li div p {
-        font-size: 12px;
+        display: none;
     }
     .comment.link {
         width: 140px;

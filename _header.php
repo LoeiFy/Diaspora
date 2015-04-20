@@ -27,7 +27,12 @@ if (is_home()) {
 <title><?php bloginfo('name'); ?> <?php wp_title( '|', true, 'left' ); ?></title>
 <meta name="keywords" content="<?php echo $keywords ?>" />
 <meta name="description" content="<?php echo $description ?>" />
-<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/static/ico.png" />
+<meta name="author" content="LoeiFy">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>/static/144.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/static/114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/static/72.png">
+<link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/static/57.png">
+<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/static/32.png" />
 <style>html{display:none}</style> 
 <script>
 if (self == top) {
