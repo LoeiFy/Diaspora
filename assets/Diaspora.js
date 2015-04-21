@@ -104,7 +104,13 @@ var Diaspora = {
                 break;
             }
 
-            setTimeout(function() { Diaspora.player(id) }, 0)
+            setTimeout(function() {
+                Diaspora.player(id)
+
+                // ga
+                try {_gaq.push(['_trackPageview', url])} catch(e) {}
+            }, 0)
+
         })
 	},
 

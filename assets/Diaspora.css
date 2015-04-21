@@ -495,6 +495,9 @@ h1.title {
     display: block;
     margin: 30px auto 40px;
 }
+.page .content:before {
+    display: none;
+}
 .stuff {
     margin-top: 40px;
     color: #666;

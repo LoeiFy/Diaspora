@@ -22,7 +22,7 @@ if (is_home()) {
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="google" content="notranslate" />
 <title><?php bloginfo('name'); ?> <?php wp_title( '|', true, 'left' ); ?></title>
 <meta name="keywords" content="<?php echo $keywords ?>" />

@@ -1,15 +1,28 @@
 <script>var duoshuoQuery = {short_name:'guolu'};</script>
 <script src="<?php echo get_template_directory_uri(); ?>/static/basket.js?000"></script>
 <script>
-	basket.require({ url: '<?php echo get_template_directory_uri(); ?>/dist/Diaspora.css', unique: 2.1,  execute: false })
+	basket.require({ url: '<?php echo get_template_directory_uri(); ?>/dist/Diaspora.css', unique: 2.2,  execute: false })
 	.then(function(responses) {
         _stylesheet.appendStyleSheet(responses[0], function() {});
 		basket.require({ url: '<?php echo get_template_directory_uri(); ?>/static/jquery.min.js', unique: 2.0 })
 		.then(function() {
 			basket.require({ url: '<?php echo get_template_directory_uri(); ?>/dist/plugin.js', unique: 2.0 })
 			.then(function() {
-        		basket.require({ url: '<?php echo get_template_directory_uri(); ?>/dist/Diaspora.js', unique: 2.1 })
+        		basket.require({ url: '<?php echo get_template_directory_uri(); ?>/dist/Diaspora.js', unique: 2.2 })
 			})
 		})
 	});
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-5594807-7']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
 </script>

@@ -6,7 +6,7 @@ Template Name: feedback
 
 <?php get_header(); ?>
 
-<div id="single">
+<div id="single" class="page">
 
 <?php while ( have_posts() ) : the_post(); ?>
 
