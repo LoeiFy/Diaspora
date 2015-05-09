@@ -9,58 +9,29 @@
 
 	<div id="home" class="loading skew">
 		<a id="logo" class="icon-logo" href="/" title="<?php bloginfo('name'); ?>"></a>
-        <div><canvas id="cover" url="<?php header_image(); ?>" version="0" blur="3"></canvas></div>
         <span class="icon-menu switchmenu"></span>
 	</div>
 
+    <?php if (have_posts()) : $count = 0;  while (have_posts()) : the_post(); $count++; if( $count <= 1 ): ?>
+
+	<?php $cover = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full'); ?>
+	
+	<div id="screen" data-img="<?php echo $cover[0] ?>" data-width="<?php echo $cover[1] ?>" data-height="<?php echo $cover[2] ?>">
+		<a href="<?php the_permalink(); ?>"><?php the_title() ?></a>
+	</div>
+
+	<div style="display: none;">
+	    <?php get_template_part( 'post' ); ?>
+	</div>
+
+    <?php else : ?>
+
     <div id="primary">
+
+        <?php get_template_part( 'post' ); ?>
+  
+    <?php endif; endwhile; endif; ?>
     
-        <div class="group">
-            <?php if (have_posts()) : $i = 0; while (have_posts()) : the_post(); $i ++; ?>
-            <?php 
-                $size = rand(300, 460); $w = 1000; $h = 920;
-                $left = rand(0, $w / 2 - $size);
-                $top = rand(0, $h / 2 - $size);
-
-                /*
-                switch ($i % 4) 
-                {
-                    case 2:
-                        $left = rand(-($size / 4), $w / 2 - $size);
-                        $top = rand(0, $h / 2 - $size / 4 * 3);
-                    break;
-                    case 0:
-                        $left = rand(-($size / 4), $w / 2 - $size);
-                        $top = rand(-($size / 4), $h / 2 - $size);
-                    break;
-                    case 3:
-                        $left = rand(0, $w / 2 - $size / 4 * 3);
-                        $top = rand(-($size / 4), $h / 2 - $size);
-                    break;
-                    case 1:
-                        $left = rand(0, $w / 2 - $size / 4 * 3);
-                        $top = rand(0, $h / 2 - $size / 4 * 3);
-                    break;
-                }
-                */
-            ?>
-
-            <div style="width: <?php echo $size ?>px; height: <?php echo $size ?>px; margin-left: <?php echo $left ?>px; margin-top: <?php echo $top ?>px;" id="post<?php the_Id() ?>" class="post post<?php echo $i % 4; ?>">
-                <a class="inner" data-id="<?php the_ID() ?>" title="<?php the_title(); ?>" href="<?php the_permalink(); ?>">
-                    <?php the_post_thumbnail( 'cover', array( 'class' => 'cover' ) ); ?>
-                    <div class="posttitle"><?php the_title(); ?></div>
-                </a>
-            </div>
-
-<?php if ($i % 4 == 0) : ?>
-        </div>
-
-        <div class="group">
-        <?php endif; endwhile; endif; ?>
-        </div>
-
-    </div>
-
     <div id="pager"><?php next_posts_link(('加载更多')); ?></div>
   
 </div>
