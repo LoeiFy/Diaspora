@@ -18,15 +18,14 @@ audio {
     height: 0;
 }
 
-.group {
-    position: relative;
-    width: 1000px;
-    height: 920px;
-    overflow: hidden;
-    margin: 50px auto 0;
+#cover, #canvas {
+    position: fixed;
+    z-index: -1;
+    max-width: none;
+    transition: opacity .1s ease;
 }
+
 .post {
-    position: absolute;
     background: #fff;
     box-shadow: 0 0 1px rgba(0,0,0,.1);
     -webkit-box-shadow: 0 0 1px rgba(0,0,0,.1);
@@ -46,44 +45,6 @@ audio {
     color: #666;
     border: 1px solid #888;
     padding: 10px 40px;
-}
-
-.post:hover {
-}
-.post2 {
-    left: 50%;
-    top: 0;
-}
-.post3 {
-    left: 0;
-    top: 50%;
-}
-.post1 {
-    left: 0;
-    top: 0;
-}
-.post0 {
-    left: 50%;
-    top: 50%;
-}
-.inner {
-    display: block;
-    position: relative;
-    overflow: hidden;
-    margin: 30px;
-}
-.posttitle {
-    color: #333;
-    font-size: 16px;
-    line-height: 1.6;
-    background: #fff;
-    bottom: 0;
-    position: absolute;
-    width: 100%;
-    padding-top: 20px;
-    text-overflow:ellipsis;
-    overflow:hidden;
-    white-space:nowrap;
 }
 
 .loader {
@@ -227,46 +188,6 @@ audio {
     transition: width .5s ease;
 }
 
-#home {
-    height: 240px;
-    text-align: center;
-    position: relative;
-}
-#home.loading > div {
-    background: #333;
-}
-#home > div {
-    height: 300px;
-    position: absolute;
-    top: -60px;
-    width: 100%;
-    overflow: hidden;
-    background: transparent;
-}
-#home.skew > div {
-    transform: skewY(-2deg);
-    -moz-transform: skewY(-2deg);
-    -webkit-transform: skewY(-2deg);
-    outline: 1px solid transparent;
-    -webkit-backface-visibility: hidden; 
-    border-bottom: 1px solid transparent
-    box-shadow: 0 0 1px rgba(0,0,0,.1);
-    -webkit-box-shadow: 0 0 1px rgba(0,0,0,.1);
-    -moz-box-shadow: 0 0 1px rgba(0,0,0,.1);
-}
-#logo {
-    position: relative;
-    margin-top: 96px;
-    display: inline-block;
-    z-index: 4;
-    color: #fff;
-    font-size: 50px;
-}
-#home.skew #cover {
-    transform: skewY(2deg);
-    -moz-transform: skewY(2deg);
-    -webkit-transform: skewY(2deg);
-}
 .icon-menu {
     position: absolute;
     z-index: 4;
@@ -330,7 +251,6 @@ body.mu #logo {
 }
 
 #container {
-    background: #f2f0f0;
     padding-bottom: 100px;
 }
 
@@ -678,17 +598,6 @@ h1.title {
     #container {
         padding-bottom: 50px;
     }
-    #home {
-        height: 200px;
-        overflow: hidden;
-        box-shadow: 0 0 1px rgba(0,0,0,.3);
-        -webkit-box-shadow: 0 0 1px rgba(0,0,0,.3);
-        -moz-box-shadow: 0 0 1px rgba(0,0,0,.3);
-    }
-    #logo {
-        margin-top: 80px;
-        font-size: 40px;
-    }
     .icon-menu {
         left: 20px;
         top: 20px;
@@ -699,31 +608,6 @@ h1.title {
     }
     .menu li {
         font-size: 16px;
-    }
-    .group {
-        width: 100%;
-        height: auto;
-        margin-top: 0;
-    }
-    .group:first-child {
-        margin-top: 30px;
-    }
-    .post {
-        width: 96%!important;
-        height: auto!important;
-        position: static;
-        opacity: 1;
-        margin: 0 0 20px 2%!important;
-        overflow: hidden;
-    }
-    .inner {
-        margin: 0;
-    }
-    .posttitle {
-        margin: 10px;
-        position: static;
-        padding: 0;
-        width: auto;
     }
     #pager {
         margin: 30px 0 0;

@@ -9,18 +9,18 @@ var Home = location.href;
 var Diaspora = {
 
     L: function(url, f) {
-		$.ajax({
-			type: 'GET',
-			url: url,
-			timeout: 10000,
-			success: function(data) {f(data)},
-			error: function() {window.location.href = url}
-		})
+        $.ajax({
+            type: 'GET',
+            url: url,
+            timeout: 10000,
+            success: function(data) {f(data)},
+            error: function() {window.location.href = url}
+        })
     },
 
     P: function() {
-		return !!('ontouchstart' in window);
-	},
+        return !!('ontouchstart' in window);
+    },
 
     PS: function() {
 
@@ -28,14 +28,14 @@ var Diaspora = {
 
         history.replaceState({u: Home, t: document.title}, document.title, Home)
 
-		window.addEventListener('popstate', function(e) {
-			var state = e.state;
+        window.addEventListener('popstate', function(e) {
+            var state = e.state;
 
-			if (!state) return;
+            if (!state) return;
 
-			document.title = state.t;
+            document.title = state.t;
 
-			if (state.u == Home) {
+            if (state.u == Home) {
                 $('#preview').css('position', 'fixed')
                 setTimeout(function() {
                     $('#preview').removeClass('show')
@@ -45,7 +45,7 @@ var Diaspora = {
                         $('#preview').html('')
                     }, 300)
                 }, 0)
-			} else {
+            } else {
                 Diaspora.loading()
 
                 Diaspora.L(state.u, function(data) {
@@ -58,12 +58,12 @@ var Diaspora = {
 
                     setTimeout(function() { Diaspora.player(state.d) }, 0)
                 })
-			}
+            }
 
-		})
+        })
     },
 
-	HS: function(tag, flag) {
+    HS: function(tag, flag) {
         var id = tag.data('id') || 0,
             url = tag.attr('href'),
             title = tag.attr('title') || tag.text();
@@ -112,7 +112,7 @@ var Diaspora = {
             }, 0)
 
         })
-	},
+    },
 
     preview: function() {
         setTimeout(function() {
@@ -169,14 +169,89 @@ var Diaspora = {
 
     loaded: function() {
         $('.loader').removeClass('loading').hide()
+    },
+
+    F: function(id, w, h) {
+        var _height = window.innerHeight,
+            _width = window.innerWidth,
+            ratio = h / w;
+
+        if (_height / _width > ratio) {
+            id.style.height = _height +'px';
+            id.style.width = _height / ratio +'px';
+        } else {
+            id.style.width = _width +'px';
+            id.style.height = _width * ratio +'px';
+        }
+
+        id.style.left = (_width - parseInt(id.style.width)) / 2 +'px';
+        id.style.top = (_height - parseInt(id.style.height)) / 2 +'px';
+    },
+
+    CB: function (ele, img) {
+        var i = 3;
+
+        this.element = ele;
+        this.image = img;
+
+        this.element.width = this.image.width;
+        this.element.height = this.image.height;
+
+        this.context = this.element.getContext('2d');
+        this.context.drawImage(this.image,0,0)
+
+        this.context.globalAlpha = 0.5;
+
+        for (var y = -i; y <= i; y += 2) {
+            for (var x = -i; x <= i; x += 2) {
+                this.context.drawImage(this.element, x, y)
+
+                if (x >= 0 && y >= 0) {
+                    this.context.drawImage(this.element, -(x-1), -(y-1))
+                }
+            }
+        }
+
+        this.context.globalAlpha = 1;
     }
 
 }
 
 $(function($) {
 
-    if (Diaspora.P()) $('#home').removeClass('skew');
+    //if (Diaspora.P()) $('#home').removeClass('skew');
+    
+    (function f() {
 
+        var screen = $('#screen'),
+            w = screen.data('width'),
+            h = screen.data('height'),
+            url = screen.data('url');
+
+        $('<img id="cover" src="'+ url +'" width="'+ w +'" height="'+ h +'"/>').on('load', function() {
+            $('body').prepend($(this))
+            $('#cover').before('<canvas id="canvas"></canvas>')
+
+            Diaspora.F($('#cover')[0], w, h)
+            Diaspora.F($('#canvas')[0], w, h)
+
+            Diaspora.CB($('#canvas')[0], $('#cover')[0])
+        })    
+
+        screen.height(window.innerHeight)
+
+    })();
+
+    $(window).on('scroll', function() {
+
+        var t = $(window).scrollTop();
+
+        if (t > window.innerHeight) return;
+
+        $('#cover').css('opacity', 1 - t / window.innerHeight)
+
+    })
+        
     setTimeout(function() {
         $('html, body, #home').removeClass('loading')
     }, 1000)
@@ -187,21 +262,13 @@ $(function($) {
 
         Diaspora.loader()
 
-        CBFimage({
-            id: 'cover',
-            cache: true,
-            start: function() {},
-            progress: function(loaded, total) {},
-            end: function() {}
-        })
-
         $('.pview a').addClass('pviewa')
 
     } else {
 
-	    window.addEventListener('popstate', function(e) {
+        window.addEventListener('popstate', function(e) {
 
-			if (e.state) location.href = e.state.u;
+            if (e.state) location.href = e.state.u;
 
         })
 
@@ -256,13 +323,13 @@ $(function($) {
                 var id = $('.comment').data('id');
 
                 $.getScript('http://static.duoshuo.com/embed.js', function() {
-			        var el = document.createElement('div');
-    		        el.setAttribute('data-thread-key', id)
-    		        DUOSHUO.EmbedThread(el)
-    		        $('.comment').html(el)
+                    var el = document.createElement('div');
+                    el.setAttribute('data-thread-key', id)
+                    DUOSHUO.EmbedThread(el)
+                    $('.comment').html(el)
 
                     Diaspora.loaded()
-		        })
+                })
             break;
 
             // post images
@@ -322,28 +389,28 @@ $(function($) {
             // post like
             case (tag.indexOf('icon-like') != -1):
                 var t = $('.icon-like').parent(),
-			        classes = t.attr('class');
+                    classes = t.attr('class');
 
-			    classes = classes.split(' ');
-			    if(classes[1] == 'active') return;
+                classes = classes.split(' ');
+                if(classes[1] == 'active') return;
 
-			    t.addClass('active')
+                t.addClass('active')
 
-			    var id = t.attr('id').split('like-');
+                var id = t.attr('id').split('like-');
 
-			    $.ajax({
-				    type: 'POST',
-				    url: '/index.php',
-				    data: 'likepost=' + id[1],
-				    success: function() {
-			            var text = $('#like-'+ id[1]).html(),
-			                patt= /(\d)+/,
-		                    num = patt.exec(text);
+                $.ajax({
+                    type: 'POST',
+                    url: '/index.php',
+                    data: 'likepost=' + id[1],
+                    success: function() {
+                        var text = $('#like-'+ id[1]).html(),
+                            patt= /(\d)+/,
+                            num = patt.exec(text);
 
-			            num[0] ++;
-			            $('#like-'+ id[1]).html('<span class="icon-like"></span><span class="count">' + num[0] + '</span>')
+                        num[0] ++;
+                        $('#like-'+ id[1]).html('<span class="icon-like"></span><span class="count">' + num[0] + '</span>')
                     }
-			    })
+                })
             break;
 
             // history state
