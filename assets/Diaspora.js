@@ -4,6 +4,17 @@
  * @url http://lorem.in
  */
 
+window.requestAnimFrame = (function() {
+
+    return  window.requestAnimationFrame       || 
+            window.webkitRequestAnimationFrame || 
+            window.mozRequestAnimationFrame    || 
+            function(callback) {
+                window.setTimeout(callback, 1000 / 60);
+            }
+
+})();
+
 var Home = location.href;
 
 var Diaspora = {
@@ -172,8 +183,8 @@ var Diaspora = {
     },
 
     F: function(id, w, h) {
-        var _height = window.innerHeight,
-            _width = window.innerWidth,
+        var _height = $(id).parent().height(),
+            _width = $(id).parent().width(),
             ratio = h / w;
 
         if (_height / _width > ratio) {
@@ -186,33 +197,6 @@ var Diaspora = {
 
         id.style.left = (_width - parseInt(id.style.width)) / 2 +'px';
         id.style.top = (_height - parseInt(id.style.height)) / 2 +'px';
-    },
-
-    CB: function (ele, img) {
-        var i = 3;
-
-        this.element = ele;
-        this.image = img;
-
-        this.element.width = this.image.width;
-        this.element.height = this.image.height;
-
-        this.context = this.element.getContext('2d');
-        this.context.drawImage(this.image,0,0)
-
-        this.context.globalAlpha = 0.5;
-
-        for (var y = -i; y <= i; y += 2) {
-            for (var x = -i; x <= i; x += 2) {
-                this.context.drawImage(this.element, x, y)
-
-                if (x >= 0 && y >= 0) {
-                    this.context.drawImage(this.element, -(x-1), -(y-1))
-                }
-            }
-        }
-
-        this.context.globalAlpha = 1;
     }
 
 }
@@ -228,14 +212,18 @@ $(function($) {
             h = screen.data('height'),
             url = screen.data('url');
 
-        $('<img id="cover" src="'+ url +'" width="'+ w +'" height="'+ h +'"/>').on('load', function() {
-            $('body').prepend($(this))
-            $('#cover').before('<canvas id="canvas"></canvas>')
+        $('<img src="'+ url +'" />').on('load', function() {
+            var images = '<img id="back" class="cover" src="'+ url +'" width="'+ w +'" height="'+ h +'"/>'+
+                         '<img id="front" class="cover" src="'+ url +'" width="'+ w +'" height="'+ h +'"/>';
 
-            Diaspora.F($('#cover')[0], w, h)
-            Diaspora.F($('#canvas')[0], w, h)
+            $('body').prepend($('<div id="markw"><div id="mark">'+ images +'</div></div>'))
 
-            Diaspora.CB($('#canvas')[0], $('#cover')[0])
+            $('#markw').width(window.innerWidth).height(window.innerHeight)
+            $('#mark').width(window.innerWidth + 60).height(window.innerHeight + 60)
+
+            $('.cover').each(function() {
+                Diaspora.F($(this)[0], w, h)
+            })
         })    
 
         screen.height(window.innerHeight)
@@ -248,7 +236,7 @@ $(function($) {
 
         if (t > window.innerHeight) return;
 
-        $('#cover').css('opacity', 1 - t / window.innerHeight)
+        $('#front').css('opacity', 1 - 2 * t / window.innerHeight)
 
     })
         

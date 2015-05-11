@@ -18,11 +18,24 @@ audio {
     height: 0;
 }
 
-#cover, #canvas {
+#markw {
     position: fixed;
     z-index: -1;
+    overflow: hidden;
+}
+#mark {
+    position: absolute;
+    top: -30px;
+    left: -30px;
+}
+.cover {
+    position: absolute;
     max-width: none;
-    transition: opacity .1s ease;
+}
+#back {
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    filter: blur(10px);
 }
 
 .post {
@@ -306,93 +319,93 @@ body.mu #logo {
 }
 
 #Choco_overlay{
-	background: #fff;
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 1000;
-	width: 100%;
-	height: 100%;
-	display:none;
-	padding:0;
-	margin:0;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    display:none;
+    padding:0;
+    margin:0;
 }
 #Choco_content{
-	display:none;
-	width:800px;
-	height:600px;
-	z-index:1001;
-	position:fixed;
-	left:50%;
-	top:50%;
-	margin-left:-400px;
-	margin-top:-300px;
-	border-top:1px solid transparent;
+    display:none;
+    width:800px;
+    height:600px;
+    z-index:1001;
+    position:fixed;
+    left:50%;
+    top:50%;
+    margin-left:-400px;
+    margin-top:-300px;
+    border-top:1px solid transparent;
 }
 #Choco_left_arrow{
-	float:left;
-	left:-10%;
+    float:left;
+    left:-10%;
 }
 #Choco_right_arrow{
-	float:right;
-	left:10%;
+    float:right;
+    left:10%;
 }
 .icon-arrow-left:before {
-	content: '\e606';
-	position: absolute;
-	left: 0;
-	top: 50%;
-	margin-top: -30px;
+    content: '\e606';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -30px;
     color: #666;
 }
 .icon-arrow-right:before {
-	content: '\e605';
-	position: absolute;
-	right: 0;
-	top: 50%;
-	margin-top: -30px;
+    content: '\e605';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -30px;
     color: #666;
 }
 .Choco_arrows{
-	font-size: 60px;
-	color: #000;
-	display:none;
-	position:relative;
-	cursor:pointer;
-	width:45%;
-	top:-100%;
-	height:100%;
+    font-size: 60px;
+    color: #000;
+    display:none;
+    position:relative;
+    cursor:pointer;
+    width:45%;
+    top:-100%;
+    height:100%;
 }
 #Choco_container_photo{
-	text-align:center;
-	width:800px;
-	height:600px;
-	position: relative;
+    text-align:center;
+    width:800px;
+    height:600px;
+    position: relative;
 }
 #Choco_container_photo:before {
-	content: 'loading';
-	position: absolute;
-	left: 0;
-	bottom: 50%;
-	width: 100%;
-	text-align: center;
+    content: 'loading';
+    position: absolute;
+    left: 0;
+    bottom: 50%;
+    width: 100%;
+    text-align: center;
 }
 #Choco_loading{
-	width:9px;
-	height:11px;
-	background-repeat:no-repeat;
-	z-index:1002;
-	cursor:pointer;
-	float:right;
-	margin-top:-20px;
-	display:none;
+    width:9px;
+    height:11px;
+    background-repeat:no-repeat;
+    z-index:1002;
+    cursor:pointer;
+    float:right;
+    margin-top:-20px;
+    display:none;
 }
 #Choco_bigImage{
-	display:none;
-	position:relative;
-	width:100%;
-	height:100%;
-	margin-top:-5px;
+    display:none;
+    position:relative;
+    width:100%;
+    height:100%;
+    margin-top:-5px;
 }
 .article > div {
     padding: 70px 0;
@@ -567,15 +580,15 @@ h1.title {
     list-style: decimal;
 }
 .alignleft {
-	float: left;
+    float: left;
 }
 .alignright {
-	float: right;
+    float: right;
 }
 .aligncenter {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
