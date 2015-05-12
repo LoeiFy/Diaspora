@@ -18,17 +18,15 @@ audio {
     height: 0;
 }
 
-#markw {
+#mark {
     position: fixed;
     z-index: -1;
     overflow: hidden;
 }
-#mark {
-    position: absolute;
-    top: -30px;
-    left: -30px;
+.layer {
+    position: relative;
 }
-.cover {
+#cover {
     position: absolute;
     max-width: none;
 }

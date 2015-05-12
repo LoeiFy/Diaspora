@@ -213,17 +213,35 @@ $(function($) {
             url = screen.data('url');
 
         $('<img src="'+ url +'" />').on('load', function() {
-            var images = '<img id="back" class="cover" src="'+ url +'" width="'+ w +'" height="'+ h +'"/>'+
-                         '<img id="front" class="cover" src="'+ url +'" width="'+ w +'" height="'+ h +'"/>';
+            var images = '<img id="cover" src="'+ url +'" width="'+ w +'" height="'+ h +'"/>';
 
-            $('body').prepend($('<div id="markw"><div id="mark">'+ images +'</div></div>'))
+            $('body').prepend($('<ul id="mark"><li class="layer" data-depth="0.4">'+ images +'</li></ul>'))
 
-            $('#markw').width(window.innerWidth).height(window.innerHeight)
-            $('#mark').width(window.innerWidth + 60).height(window.innerHeight + 60)
+            var _w = window.innerWidth, _h = window.innerHeight, x, y, i;
 
-            $('.cover').each(function() {
-                Diaspora.F($(this)[0], w, h)
+            $('#mark').width(_w).height(_h)
+            //$('#mark li').width(_w + 100).height(window.innerHeight + 50)
+
+            if (_w >= _h) {
+                i = _w / 1000 * 50;
+                y = i;
+                x = i * _w / _h;
+            } else {
+                i = _h / 1000 * 50;
+                x = i;
+                y = i * _h / _w;
+            }
+
+            $('#mark li').css({
+                'width': _w + x,
+                'height': _h + y,
+                'marginLeft': - 0.5 * x,
+                'marginTop': - 0.5 * y
             })
+
+            Diaspora.F($('#cover')[0], w, h)
+
+            $('#mark').parallax()
         })    
 
         screen.height(window.innerHeight)
@@ -236,10 +254,10 @@ $(function($) {
 
         if (t > window.innerHeight) return;
 
-        $('#front').css('opacity', 1 - 2 * t / window.innerHeight)
+        //$('#front').css('opacity', 1 - 2 * t / window.innerHeight)
 
     })
-        
+
     setTimeout(function() {
         $('html, body, #home').removeClass('loading')
     }, 1000)
