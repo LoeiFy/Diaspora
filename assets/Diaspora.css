@@ -30,11 +30,6 @@ audio {
     position: absolute;
     max-width: none;
 }
-#back {
-    -webkit-filter: blur(10px);
-    -moz-filter: blur(10px);
-    filter: blur(10px);
-}
 
 .post {
     background: #fff;

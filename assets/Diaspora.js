@@ -205,29 +205,32 @@ $(function($) {
 
     //if (Diaspora.P()) $('#home').removeClass('skew');
     
-    (function f() {
+    var cover = [];
 
-        var screen = $('#screen'),
-            w = screen.data('width'),
-            h = screen.data('height'),
-            url = screen.data('url');
+    cover.t = $('#screen'),
+    cover.w = cover.t.data('width'),
+    cover.h = cover.t.data('height'),
+    cover.u = cover.t.data('url');
 
-        $('<img src="'+ url +'" />').on('load', function() {
-            var images = '<img id="cover" src="'+ url +'" width="'+ w +'" height="'+ h +'"/>';
+    $('<img src="'+ cover.u +'" />').on('load', function() {
 
-            $('body').prepend($('<ul id="mark"><li class="layer" data-depth="0.4">'+ images +'</li></ul>'))
+        var images = '<img id="cover" src="'+ cover.u +'" width="'+ cover.w +'" height="'+ cover.h +'"/>';
+        $('body').prepend($('<ul id="mark"><li class="layer" data-depth="0.4">'+ images +'</li></ul>'));
+    
+        (cover.f = function() {
 
-            var _w = window.innerWidth, _h = window.innerHeight, x, y, i;
+            var _w = window.innerWidth, _h = window.innerHeight, x, y, i, e;
 
             $('#mark').width(_w).height(_h)
-            //$('#mark li').width(_w + 100).height(window.innerHeight + 50)
+
+            e = (_w >= 1000 || _h >= 1000) ? 1000 : 700;
 
             if (_w >= _h) {
-                i = _w / 1000 * 50;
+                i = _w / e * 50;
                 y = i;
                 x = i * _w / _h;
             } else {
-                i = _h / 1000 * 50;
+                i = _h / e * 50;
                 x = i;
                 y = i * _h / _w;
             }
@@ -239,22 +242,25 @@ $(function($) {
                 'marginTop': - 0.5 * y
             })
 
-            Diaspora.F($('#cover')[0], w, h)
+            Diaspora.F($('#cover')[0], cover.w, cover.h)
 
-            $('#mark').parallax()
-        })    
+            cover.t.height(window.innerHeight)
 
-        screen.height(window.innerHeight)
+        })();
 
-    })();
+        $('#mark').parallax()
+
+    })
+
+    $(window).on('resize', function() {
+        cover.f()
+    })  
 
     $(window).on('scroll', function() {
 
         var t = $(window).scrollTop();
 
         if (t > window.innerHeight) return;
-
-        //$('#front').css('opacity', 1 - 2 * t / window.innerHeight)
 
     })
 
