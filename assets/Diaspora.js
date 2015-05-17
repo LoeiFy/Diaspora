@@ -4,17 +4,6 @@
  * @url http://lorem.in
  */
 
-window.requestAnimFrame = (function() {
-
-    return  window.requestAnimationFrame       || 
-            window.webkitRequestAnimationFrame || 
-            window.mozRequestAnimationFrame    || 
-            function(callback) {
-                window.setTimeout(callback, 1000 / 60);
-            }
-
-})();
-
 var Home = location.href;
 
 var Diaspora = {
@@ -205,37 +194,32 @@ $(function($) {
 
     //if (Diaspora.P()) $('#home').removeClass('skew');
     
+
     var cover = [];
 
-    cover.t = $('#screen'),
-    cover.w = cover.t.data('width'),
-    cover.h = cover.t.data('height'),
-    cover.u = cover.t.data('url');
+    cover.t = $('#cover'),
+    cover.w = cover.t.attr('width'),
+    cover.h = cover.t.attr('height');
 
-    $('<img src="'+ cover.u +'" />').on('load', function() {
+    $(cover.t).on('load', function() {
 
-        var images = '<img id="cover" src="'+ cover.u +'" width="'+ cover.w +'" height="'+ cover.h +'"/>';
-        $('body').prepend($('<ul id="mark"><li class="layer" data-depth="0.4">'+ images +'</li></ul>'));
-    
         (cover.f = function() {
 
-            var _w = window.innerWidth, _h = window.innerHeight, x, y, i, e;
-
-            $('#mark').width(_w).height(_h)
+            var _w = $('#mark').width(), _h = $('#mark').height(), x, y, i, e;
 
             e = (_w >= 1000 || _h >= 1000) ? 1000 : 700;
 
             if (_w >= _h) {
-                i = _w / e * 50;
+                i = _w / e * 70;
                 y = i;
                 x = i * _w / _h;
             } else {
-                i = _h / e * 50;
+                i = _h / e * 70;
                 x = i;
                 y = i * _h / _w;
             }
 
-            $('#mark li').css({
+            $('.layer').css({
                 'width': _w + x,
                 'height': _h + y,
                 'marginLeft': - 0.5 * x,
@@ -244,8 +228,6 @@ $(function($) {
 
             Diaspora.F($('#cover')[0], cover.w, cover.h)
 
-            cover.t.height(window.innerHeight)
-
         })();
 
         $('#mark').parallax()
@@ -253,16 +235,8 @@ $(function($) {
     })
 
     $(window).on('resize', function() {
-        cover.f()
+        if ($('#mark').width() <= 1200) cover.f();
     })  
-
-    $(window).on('scroll', function() {
-
-        var t = $(window).scrollTop();
-
-        if (t > window.innerHeight) return;
-
-    })
 
     setTimeout(function() {
         $('html, body, #home').removeClass('loading')

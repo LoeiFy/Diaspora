@@ -18,13 +18,23 @@ audio {
     height: 0;
 }
 
+#screen {
+    padding: 30px 0;
+    position: relative;
+}
+
 #mark {
-    position: fixed;
-    z-index: -1;
+    width: 1200px;
+    margin: 0 auto;
+    height: 600px;
     overflow: hidden;
 }
 .layer {
     position: relative;
+    width: 1400px;
+    height: 840px;
+    margin-left: -100px;
+    margin-top: -100px;
 }
 #cover {
     position: absolute;
