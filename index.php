@@ -7,7 +7,6 @@
 
 <div id="container">	
 
-    <!--<a class="icon-menu switchmenu"></a>-->
     <?php if (have_posts()) : $count = 0;  while (have_posts()) : the_post(); $count++; if( $count <= 1 ): ?>
 
 	<?php $cover = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full'); ?>
@@ -16,6 +15,18 @@
         <div id="mark">
             <div class="layer" data-depth="0.4">
                 <img id="cover" src="<?php echo $cover[0] ?>" width="<?php echo $cover[1] ?>" height="<?php echo $cover[2] ?>"/>
+            </div>
+        </div>
+        <div id="header"><div>
+            <span class="icon-menu switchmenu"></span>
+        </div></div>
+        <div id="post0">
+            <h2><a href="<?php the_permalink(); ?>" /><?php the_title(); ?></a></h2>
+            <p><?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 100,"..."); ?></p>
+            <div class="staff">
+                <p><?php the_time(); ?></p>
+                <p><?php echo getPostViews(get_the_ID()); ?></p>
+                <p><?php tz_printLikes(get_the_ID()); ?></p>
             </div>
         </div>
 	</div>

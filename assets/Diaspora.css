@@ -19,28 +19,42 @@ audio {
 }
 
 #screen {
-    padding: 30px 0;
     position: relative;
 }
 
 #mark {
-    width: 1200px;
-    margin: 0 auto;
-    height: 600px;
+    width: 100%;
+    height: 560px;
     overflow: hidden;
 }
 .layer {
     position: relative;
-    width: 1400px;
-    height: 840px;
-    margin-left: -100px;
-    margin-top: -100px;
 }
 #cover {
     position: absolute;
     max-width: none;
 }
 
+#header {
+    background: -moz-linear-gradient(top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.3)), color-stop(100%,rgba(0,0,0,0)));
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%);
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+#header > div {
+    width: 1200px;
+    padding: 24px 0;
+    margin: 0 auto;
+} 
+.icon-menu {
+    color: #fff;
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+}
 .post {
     background: #fff;
     box-shadow: 0 0 1px rgba(0,0,0,.1);
@@ -51,6 +65,7 @@ audio {
 #pager {
     text-align: center;
     margin: 70px 0 0;
+    position: relative;
 }
 #pager a {
     font-size: 14px;
@@ -203,17 +218,6 @@ audio {
     -moz-transition: width .5s ease;
     transition: width .5s ease;
 }
-
-.icon-menu {
-    position: absolute;
-    z-index: 4;
-    color: #fff;
-    font-size: 24px;
-    cursor: pointer;
-    left: 30px;
-    top: 30px;
-}
-
 .nav {
     position: fixed;
     height: 100%;
@@ -268,8 +272,26 @@ body.mu #logo {
 
 #container {
     padding-bottom: 100px;
+    overflow: hidden;
+    position: relative;
 }
-
+#container:before {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 200%;
+    position: absolute;
+    left: 50%;
+    background: #cbcbcb;
+    top: -50%;
+    transform: rotate(-4deg);
+    -webkit-transform: rotate(-4deg);
+    -moz-transform: rotate(-4deg);
+    z-index: 0;
+}
+#primary {
+    position: relative;
+}
 #single {
     background: #fff;
     position: relative;
