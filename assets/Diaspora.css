@@ -111,6 +111,24 @@ audio {
 .post:nth-child(even) .else {
     right: 600px;
 }
+.else p:first-child {
+    color: #999;
+    font-size: 12px;
+    margin: 80px 0 0 80px;
+}
+.else h3 {
+    font-size: 36px;
+    line-height: 1.1;
+    margin: 10px 100px 0 80px;
+}
+.else h3 a {
+    color: #222;
+}
+.else h3 + p {
+    color: #555;
+    margin: 10px 100px 0 80px;
+    font-size: 14px;
+}
 
 #pager {
     text-align: center;
