@@ -55,11 +55,61 @@ audio {
     font-size: 24px;
     cursor: pointer;
 }
-.post {
+#post0 {
     background: #fff;
-    box-shadow: 0 0 1px rgba(0,0,0,.1);
-    -webkit-box-shadow: 0 0 1px rgba(0,0,0,.1);
-    -moz-box-shadow: 0 0 1px rgba(0,0,0,.1);
+    width: 1200px;
+    padding: 50px 0;
+    margin: -80px auto 0;
+    position: relative;
+}
+#post0 p:first-child {
+    text-align: center;
+    color: #999;
+    font-size: 12px;
+}
+#post0 h2 {
+    color: #222;
+    font-size: 36px;
+    margin-top: 5px;
+    text-align: center;
+}
+#post0 h2 a {
+    color: #222;
+}
+#post0 h2 + p {
+    color: #555;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.post {
+    margin: 100px auto 0; 
+    width: 1200px;
+    position: relative;
+}
+.post > a {
+    display: inline-block;
+}
+.else {
+    position: absolute;
+    background: #fff;
+    text-align: left;
+    top: 20px;
+    height: 400px;
+    width: 560px;
+}
+.post:nth-child(odd) {
+    text-align: left;
+}
+.post:nth-child(even) {
+    text-align: right;
+}
+.post:nth-child(odd) .else {
+    left: 600px;
+}
+.post:nth-child(even) .else {
+    right: 600px;
 }
 
 #pager {

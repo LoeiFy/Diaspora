@@ -21,13 +21,10 @@
             <span class="icon-menu switchmenu"></span>
         </div></div>
         <div id="post0">
+            <p><?php the_time('F j, Y'); ?></p>
             <h2><a href="<?php the_permalink(); ?>" /><?php the_title(); ?></a></h2>
             <p><?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 100,"..."); ?></p>
-            <div class="staff">
-                <p><?php the_time(); ?></p>
-                <p><?php echo getPostViews(get_the_ID()); ?></p>
-                <p><?php tz_printLikes(get_the_ID()); ?></p>
-            </div>
+            <p><?php echo getPostViews(get_the_ID()); ?><?php tz_printLikes(get_the_ID()); ?></p>
         </div>
 	</div>
 
