@@ -128,6 +128,49 @@ audio {
     color: #555;
     margin: 10px 100px 0 80px;
     font-size: 14px;
+    line-height: 1.8;
+}
+.here {
+    position: absolute;
+    left: 80px;
+    bottom: 80px;
+    color: #999;
+    font-size: 13px;
+}
+.here span {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.here span:before {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 7px;
+    font-size: 16px;
+}
+.here span a {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: default;
+}
+.here span .icon-like {
+    color: #999;
+    margin-right: 0;
+}
+.here .likeThis .count {
+    display: inline-block;
+    vertical-align: middle;
+    position: static;
+    color: #999;
+    background: none;
+    padding: 0;
+    width: auto;
+}
+.here .likeThis:hover .count {
+    display: inline-block;
+}
+.here .likeThis.active .icon-like {
+    color: #999;
 }
 
 #pager {

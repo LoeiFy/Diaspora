@@ -173,6 +173,12 @@ class timthumb {
 	protected static $curlDataWritten = 0;
 	protected static $curlFH = false;
 	public static function start(){
+        if (LIMIT_ON) {
+            if (count($_GET) > 1 || !$_GET['src'] || $_POST) {
+                return;
+            }
+        }
+
 		$tim = new timthumb();
 		$tim->handleErrors();
 		$tim->securityChecks();
@@ -1093,11 +1099,6 @@ class timthumb {
 	protected function securityChecks(){
 	}
 	protected function param($property, $default = ''){
-        if (LIMIT_ON) {
-            if (count($_GET) > 1) {
-                return false;
-            }
-        }
 		if (isset ($_GET[$property])) {
 		    return $_GET[$property];
 		} else {

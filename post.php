@@ -7,6 +7,10 @@
         <p><?php the_time('F j, Y'); ?></p>
         <h3><a href="<?php the_permalink(); ?>" /><?php the_title(); ?></a></h3>
         <p><?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 100,"..."); ?></p>
-        <p><?php echo getPostViews(get_the_ID()); ?><?php tz_printLikes(get_the_ID()); ?><?php echo count_words ($text); ?></p>
+        <p class="here">
+            <span class="icon-letter"><?php echo count_words ($text); ?></span>
+            <span class="icon-view"><?php echo getPostViews(get_the_ID()); ?></span>
+            <span><?php tz_printLikes(get_the_ID()); ?></span>
+        </p>
     </div>
 </div>

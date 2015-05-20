@@ -28,13 +28,6 @@ function posts_link_attributes() {
 // FRIENDS LINKS
 add_filter( 'pre_option_link_manager_enabled', '__return_true' );
 
-// HEADER IMAGE
-$args = array(   
-    'default-image' => get_template_directory_uri() . '/images/header.jpg',   
-    'uploads'       => true,   
-);   
-add_theme_support( 'custom-header', $args );  
-
 // POSTVIEW 
 function getPostViews($postID){
     $count_key = 'post_views_count';
