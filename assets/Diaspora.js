@@ -210,11 +210,11 @@ $(function($) {
             e = (_w >= 1000 || _h >= 1000) ? 1000 : 700;
 
             if (_w >= _h) {
-                i = _w / e * 70;
+                i = _w / e * 50;
                 y = i;
                 x = i * _w / _h;
             } else {
-                i = _h / e * 70;
+                i = _h / e * 50;
                 x = i;
                 y = i * _h / _w;
             }
@@ -230,19 +230,21 @@ $(function($) {
 
         })();
 
+        setTimeout(function() {
+            $('html, body, #home').removeClass('loading')
+        }, 1000)
+
         $('#mark').parallax()
 
     })
 
     $(window).on('resize', function() {
-        if ($('#mark').width() <= 1200) cover.f();
+        cover.f()
     })  
 
-    setTimeout(function() {
-        $('html, body, #home').removeClass('loading')
-    }, 1000)
-
     if ($('#preview').length) {
+
+        $('#preview').css('min-height', window.innerHeight)
 
         Diaspora.PS()
 
@@ -251,6 +253,10 @@ $(function($) {
         $('.pview a').addClass('pviewa')
 
     } else {
+
+        setTimeout(function() {
+            $('html, body, #home').removeClass('loading')
+        }, 1000)
 
         window.addEventListener('popstate', function(e) {
 
@@ -293,7 +299,7 @@ $(function($) {
                         $('#pager').remove()
                     }
 
-                    $('#primary').append($(data).find('.group'))
+                    $('#primary').append($(data).find('.post'))
 
                     Diaspora.loaded()
                 })
@@ -374,8 +380,10 @@ $(function($) {
 
             // post like
             case (tag.indexOf('icon-like') != -1):
-                var t = $('.icon-like').parent(),
+                var t = $(e.target).parent(),
                     classes = t.attr('class');
+
+                if (t.prev().hasClass('icon-view')) return;
 
                 classes = classes.split(' ');
                 if(classes[1] == 'active') return;
@@ -407,7 +415,7 @@ $(function($) {
 
             // history state
             case (tag.indexOf('posttitle') != -1):
-                Diaspora.HS($(e.target).parent(), 'push')
+                Diaspora.HS($(e.target), 'push')
                 return false;
             break;
 
