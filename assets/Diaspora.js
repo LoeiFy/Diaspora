@@ -194,16 +194,17 @@ $(function($) {
 
     //if (Diaspora.P()) $('#home').removeClass('skew');
     
-
     var cover = [];
-
-    cover.t = $('#cover'),
-    cover.w = cover.t.attr('width'),
+    cover.t = $('#cover');
+    cover.w = cover.t.attr('width');
     cover.h = cover.t.attr('height');
 
-    if (cover.t.prop('complete')) cover.t.load();
+    if (cover.t.prop('complete')) {
+        // why setTimeout ?
+        setTimeout(function() { cover.t.load() }, 0)
+    }
 
-    $(cover.t).on('load', function() {
+    cover.t.on('load', function() {
 
         (cover.f = function() {
 
@@ -233,7 +234,7 @@ $(function($) {
         })();
 
         setTimeout(function() {
-            $('html, body, #home').removeClass('loading')
+            $('html, body').removeClass('loading')
         }, 1000)
 
         $('#mark').parallax()
