@@ -101,6 +101,9 @@ audio {
 }
 .post > a {
     display: inline-block;
+    width: 680px;
+    height: 440px;
+    overflow: hidden;
 }
 .else {
     position: absolute;
@@ -765,6 +768,50 @@ h1.title {
     border-radius: 3px;
 }
 
+@media screen and (max-width: 1200px) {
+    #header > div {
+        width: 900px;
+    }
+    #post0 {
+        width: 750px;
+    }
+    #post0 h2 {
+        font-size: 24px;
+    }
+    .post {
+        width: 900px;
+    }
+    .post > a {
+        width: 480px;
+        height: 310px;
+    }
+    .else {
+        top: 10px;
+        width: 440px;
+        height: 290px;
+    }
+    .post:nth-child(odd) .else {
+        left: 430px;
+    }
+    .post:nth-child(even) .else {
+        right: 430px;
+    }
+    .else p:first-child {
+        font-size: 12px;
+        margin: 50px 0 0 60px;
+    }
+    .else h3 {
+        font-size: 28px;
+        margin: 10px 60px 0 60px;
+    }
+    .else h3 + p {
+        margin: 10px 60px 0 60px;
+    }
+    .here {
+        left: 60px;
+        bottom: 50px;
+    }
+}
 @media screen and (max-width: 600px) {
     #container {
         padding-bottom: 50px;
