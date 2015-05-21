@@ -362,6 +362,8 @@ body.mu .nav {
 }
 body.mu .icon-logo {
     color: #333;
+    font-size: 36px;
+    margin-top: 40px;
 }
 
 .menu {
