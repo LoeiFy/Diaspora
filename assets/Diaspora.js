@@ -256,6 +256,8 @@ $(function($) {
 
     } else {
 
+        $('#single').css('min-height', window.innerHeight)
+
         setTimeout(function() {
             $('html, body, #home').removeClass('loading')
         }, 1000)
