@@ -611,6 +611,21 @@ h1.title {
     padding-bottom: 10px;
     border-bottom: 1px solid #ddd;
     color: #333;
+    position: relative;
+}
+.relate h3 span {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+}
+.relate h3 a {
+    color: #666;
+    font-size: 14px;
+    margin-left: 14px;
+    display: inline-block;
+}
+.relate h3 a:hover {
+    color: #333;
 }
 .relate li {
     padding: 25px 0 32px;

@@ -1,5 +1,5 @@
 <ul>
-<h3>NEXT STORY</h3>
+<h3>NEXT STORY<span><?php previous_post_link('%link', '上一篇'); ?><?php next_post_link('%link', '下一篇'); ?></span></h3>
 <?php
 $post_num = 7; // 數量設定.
 $exclude_id = $post->ID; // 單獨使用要開此行 //zww: edit
@@ -11,7 +11,7 @@ if ( $posttags ) {
         'tag__in' => explode(',', $tags), // 只選 tags 的文章. //zww: edit
         'post__not_in' => explode(',', $exclude_id), // 排除已出現過的文章.
         'caller_get_posts' => 1,
-        'orderby' => 'comment_date', // 依評論日期排序.
+        'orderby' => 'rand', // 依評論日期排序.
         'posts_per_page' => $post_num
     );
     query_posts($args);
@@ -37,7 +37,7 @@ if ( $i < $post_num ) { // 當 tags 文章數量不足, 再取 category 補足.
         'category__in' => explode(',', $cats), // 只選 category 的文章.
         'post__not_in' => explode(',', $exclude_id),
         'caller_get_posts' => 1,
-        'orderby' => 'comment_date',
+        'orderby' => 'rand',
         'posts_per_page' => $post_num - $i
     );
     query_posts($args);

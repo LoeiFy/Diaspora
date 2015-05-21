@@ -8,7 +8,7 @@ function count_words ($text) {
         if (mb_strlen($output, 'UTF-8') < mb_strlen($text, 'UTF-8')) $output .= '' . mb_strlen(preg_replace('/\s/','',html_entity_decode(strip_tags($post->post_content))),'UTF-8') . '';   
         return $output;   
     }   
-}  
+}
 
 // MENU SUPPORT
 function register_menu() {

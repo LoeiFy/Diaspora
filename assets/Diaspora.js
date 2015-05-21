@@ -201,6 +201,8 @@ $(function($) {
     cover.w = cover.t.attr('width'),
     cover.h = cover.t.attr('height');
 
+    if (cover.t.prop('complete')) cover.t.load();
+
     $(cover.t).on('load', function() {
 
         (cover.f = function() {
@@ -238,10 +240,6 @@ $(function($) {
 
     })
 
-    $(window).on('resize', function() {
-        cover.f()
-    })  
-
     if ($('#preview').length) {
 
         $('#preview').css('min-height', window.innerHeight)
@@ -251,6 +249,10 @@ $(function($) {
         Diaspora.loader()
 
         $('.pview a').addClass('pviewa')
+
+        $(window).on('resize', function() {
+            cover.f()
+        })  
 
     } else {
 
@@ -272,9 +274,10 @@ $(function($) {
 
     $('body').on('click', function(e) {
 
-        var tag = $(e.target).attr('class');
+        var tag = $(e.target).attr('class') || '',
+            rel = $(e.target).attr('rel') || '';
 
-        if (!tag) return;
+        if (!tag && !rel) return;
 
         switch (true) {
 
@@ -334,6 +337,9 @@ $(function($) {
                 if ($('.icon-images').hasClass('tg')) {
                     $('.section').css('left', 0)
                 } else {
+                    $('.zoom img').each(function() {
+                        $(this).attr('src', $(this).data('src'))
+                    })
                     $('.zoom').Chocolat()
                     $('.images').justifiedGallery({ margins: 5, rowHeight : 120 }).on('jg.complete', function () {
                         $('.section').css('left', 0)
@@ -428,6 +434,12 @@ $(function($) {
             // relate post
             case (tag.indexOf('relateimg') != -1):
                 Diaspora.HS($(e.target).parent(), 'replace')
+                return false;
+            break;
+
+            // prev, next post
+            case (rel == 'prev' || rel == 'next'):
+                Diaspora.HS($(e.target), 'replace')
                 return false;
             break;
 
