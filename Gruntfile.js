@@ -11,7 +11,6 @@ module.exports = function(grunt) {
                 },
                 files: {
                     'dist/Diaspora.js': [
-                        'assets/CBFimage.js',
                         'assets/Diaspora.js'
                     ]
                 }
@@ -28,6 +27,7 @@ module.exports = function(grunt) {
                     'dist/plugin.js': [
                         'assets/Chocolate.js',
                         'assets/jquery.justifiedGallery.min.js',
+                        'assets/jquery.parallax.js',
                         'assets/jquery.qrcode.min.js'
                     ]
                 }
