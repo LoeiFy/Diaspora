@@ -105,6 +105,7 @@ var Diaspora = {
             }
 
             setTimeout(function() {
+                if (!id) id = $('.icon-play').data('id');
                 Diaspora.player(id)
 
                 // ga
@@ -256,7 +257,7 @@ $(function($) {
         $('.pview a').addClass('pviewa')
 
         $(window).on('resize', function() {
-            if (!Diaspora.P()) {
+            if (!Diaspora.P() && location.href == Home) {
                 cover.o()
                 cover.f()
             }

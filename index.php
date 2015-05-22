@@ -23,7 +23,7 @@
         </div></div>
         <div id="post0">
             <p><?php the_time('F j, Y'); ?></p>
-            <h2><a class="posttitle" href="<?php the_permalink(); ?>" /><?php the_title(); ?></a></h2>
+            <h2><a data-id="<?php the_ID() ?>" class="posttitle" href="<?php the_permalink(); ?>" /><?php the_title(); ?></a></h2>
             <p><?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 100,"..."); ?></p>
         </div>
 	</div>
