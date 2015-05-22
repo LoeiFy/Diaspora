@@ -812,13 +812,59 @@ h1.title {
         bottom: 50px;
     }
 }
+@media screen and (max-width: 900px) {
+    #mark {
+        height: 480px;
+    }
+    #header > div {
+        width: 90%;
+    }
+    #post0 {
+        width: 100%;
+    }
+    #post0 h2 {
+        font-size: 20px;
+    }
+    .post {
+        width: 100%;
+        margin-top: 60px;
+        background: #fff;
+        padding-bottom: 30px;
+    }
+    .post > a {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        height: auto;
+    }
+    .post > a img {
+        margin: 0 auto;
+    }
+    .else {
+        height: auto;
+        position: static;
+        width: 90%;
+        margin: 0 auto;
+        background: transparent;
+    }
+    .else p:first-child {
+        margin: 30px 0 0 20px;
+    }
+    .else h3 {
+        font-size: 24px;
+        margin: 10px 30px 0 20px;
+    }
+    .else h3 + p {
+        margin: 10px 30px 0 20px;
+    }
+    .here {
+        position: static;
+        margin: 20px 0 20px 20px;
+    }
+}
 @media screen and (max-width: 600px) {
     #container {
         padding-bottom: 50px;
-    }
-    .icon-menu {
-        left: 20px;
-        top: 20px;
     }
     .menu {
         width: 80%;
