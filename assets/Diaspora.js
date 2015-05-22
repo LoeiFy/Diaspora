@@ -256,8 +256,10 @@ $(function($) {
         $('.pview a').addClass('pviewa')
 
         $(window).on('resize', function() {
-            cover.o()
-            cover.f()
+            if (!Diaspora.P()) {
+                cover.o()
+                cover.f()
+            }
         })  
 
     } else {
@@ -265,7 +267,7 @@ $(function($) {
         $('#single').css('min-height', window.innerHeight)
 
         setTimeout(function() {
-            $('html, body, #home').removeClass('loading')
+            $('html, body').removeClass('loading')
         }, 1000)
 
         window.addEventListener('popstate', function(e) {
