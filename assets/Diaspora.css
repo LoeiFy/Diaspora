@@ -862,7 +862,7 @@ h1.title {
         margin: 20px 0 20px 20px;
     }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 780px) {
     #container {
         padding-bottom: 50px;
     }
@@ -896,11 +896,28 @@ h1.title {
     .relate li div a {
         font-size: 18px;
     }
-    .relate li div p {
-        display: none;
-    }
     .comment.link {
         width: 140px;
         padding: 5px 0;
+    }
+}
+@media screen and (max-width: 480px) {
+    #post0 {
+        background: transparent;
+        position: absolute;
+        bottom: 30px;
+    }
+    #post0 p:first-child, #post0 h2 + p {
+        display: none;
+    }
+    #post0 h2 {
+        text-align: left;
+        margin: 0 10px 0 20px;
+    }
+    #post0 h2 a {
+        color: #fff;
+    }
+    .relate li {
+        display: none;
     }
 }

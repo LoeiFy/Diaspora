@@ -191,13 +191,17 @@ var Diaspora = {
 }
 
 $(function($) {
-
-    //if (Diaspora.P()) $('#home').removeClass('skew');
     
     var cover = [];
     cover.t = $('#cover');
     cover.w = cover.t.attr('width');
     cover.h = cover.t.attr('height');
+
+    (cover.o = function() {
+        if (Diaspora.P() && window.innerWidth <= 480) {
+            $('#mark').height(window.innerHeight)
+        }
+    })();
 
     if (cover.t.prop('complete')) {
         // why setTimeout ?
@@ -210,7 +214,7 @@ $(function($) {
 
             var _w = $('#mark').width(), _h = $('#mark').height(), x, y, i, e;
 
-            e = (_w >= 1000 || _h >= 1000) ? 1000 : 700;
+            e = (_w >= 1000 || _h >= 1000) ? 1000 : 500;
 
             if (_w >= _h) {
                 i = _w / e * 50;
@@ -252,6 +256,7 @@ $(function($) {
         $('.pview a').addClass('pviewa')
 
         $(window).on('resize', function() {
+            cover.o()
             cover.f()
         })  
 
