@@ -198,7 +198,8 @@ $(function($) {
     cover.w = cover.t.attr('width');
     cover.h = cover.t.attr('height');
 
-    (cover.o = function() {
+    ;(cover.o = function() {
+        $('#mark').height(window.innerHeight - $('#post0').height() - 20)
         if (Diaspora.P() && window.innerWidth <= 480) {
             $('#mark').height(window.innerHeight)
         }
@@ -211,7 +212,7 @@ $(function($) {
 
     cover.t.on('load', function() {
 
-        (cover.f = function() {
+        ;(cover.f = function() {
 
             var _w = $('#mark').width(), _h = $('#mark').height(), x, y, i, e;
 

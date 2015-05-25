@@ -158,7 +158,7 @@ audio {
 }
 .here span:before {
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: top;
     margin-right: 7px;
     font-size: 16px;
 }
@@ -172,7 +172,6 @@ audio {
 }
 .here .likeThis .count {
     display: inline-block;
-    vertical-align: middle;
     position: static;
     color: #999;
     background: none;
@@ -408,9 +407,9 @@ body.mu .icon-logo {
     left: 50%;
     background: #cbcbcb;
     top: -50%;
-    transform: rotate(-4deg);
-    -webkit-transform: rotate(-4deg);
-    -moz-transform: rotate(-4deg);
+    transform: rotate(-2deg);
+    -webkit-transform: rotate(-2deg);
+    -moz-transform: rotate(-2deg);
     z-index: 0;
 }
 #primary {
@@ -907,12 +906,18 @@ h1.title {
         position: absolute;
         bottom: 30px;
     }
-    #post0 p:first-child, #post0 h2 + p {
+    #post0 p:first-child {
         display: none;
     }
     #post0 h2 {
         text-align: left;
         margin: 0 10px 0 20px;
+    }
+    #post0 h2 + p {
+        text-align: left;
+        margin: 10px 20px 0 20px;
+        color: #f2f2f2;
+        font-size: 12px;
     }
     #post0 h2 a {
         color: #fff;
