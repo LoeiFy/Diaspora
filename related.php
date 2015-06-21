@@ -1,5 +1,9 @@
 <ul>
-<h3>NEXT STORY<span><?php previous_post_link('%link', '上一篇'); ?><?php next_post_link('%link', '下一篇'); ?></span></h3>
+<h3>NEXT STORY<span>
+    <a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+    <?php previous_post_link('%link', '上一篇'); ?>
+    <?php next_post_link('%link', '下一篇'); ?>
+</span></h3>
 <p id="prev_next" style="display: none;"><?php previous_post_link('%link'); ?><?php next_post_link('%link'); ?></p>
 <?php
 $post_num = 7; // 數量設定.
