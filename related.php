@@ -1,5 +1,6 @@
 <ul>
 <h3>NEXT STORY<span><?php previous_post_link('%link', '上一篇'); ?><?php next_post_link('%link', '下一篇'); ?></span></h3>
+<p id="prev_next" style="display: none;"><?php previous_post_link('%link'); ?><?php next_post_link('%link'); ?></p>
 <?php
 $post_num = 7; // 數量設定.
 $exclude_id = $post->ID; // 單獨使用要開此行 //zww: edit

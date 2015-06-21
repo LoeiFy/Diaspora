@@ -451,6 +451,13 @@ $(function($) {
 
             // prev, next post
             case (rel == 'prev' || rel == 'next'):
+                if (rel == 'prev') {
+                    var t = $('#prev_next a')[0].text
+                } else {
+                    var t = $('#prev_next a')[1].text
+                }
+                $(e.target).attr('title', t)
+
                 Diaspora.HS($(e.target), 'replace')
                 return false;
             break;
