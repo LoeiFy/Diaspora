@@ -199,7 +199,7 @@ $(function($) {
     cover.h = cover.t.attr('height');
 
     ;(cover.o = function() {
-        $('#mark').height(window.innerHeight - $('#post0').height() - 20)
+        $('#mark').height(window.innerHeight - $('#post0').height() + 30)
         if (Diaspora.P() && window.innerWidth <= 480) {
             $('#mark').height(window.innerHeight)
         }
