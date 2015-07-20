@@ -17,7 +17,13 @@
                 <img id="cover" src="<?php echo $cover[0] ?>" width="<?php echo $cover[1] ?>" height="<?php echo $cover[2] ?>"/>
             </div>
         </div>
-        <div id="vibrant"></div>
+
+        <div id="vibrant">
+            <svg viewBox="0 0 2880 1620" height="100%" preserveAspectRatio="xMaxYMax slice">
+				<polygon opacity="0.7" points="2000,1620 0,1620 0,0 600,0 "/>
+			</svg>
+        </div>
+
         <div id="header"><div>
             <div class="icon-menu switchmenu"></div>
             <a class="icon-logo" href="/"></a>
@@ -25,7 +31,7 @@
         <div id="post0">
             <p><?php the_time('F j, Y'); ?></p>
             <h2><a data-id="<?php the_ID() ?>" class="posttitle" href="<?php the_permalink(); ?>" /><?php the_title(); ?></a></h2>
-            <!--p><?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 100,"..."); ?></p-->
+            <p><?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 100,"..."); ?></p>
         </div>
 	</div>
 

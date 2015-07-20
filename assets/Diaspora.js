@@ -247,7 +247,7 @@ $(function($) {
 
         var vibrant = new Vibrant(cover.t[0]);
         var swatches = vibrant.swatches()
-        $('#vibrant').css('background', swatches['DarkVibrant'].getHex())
+        $('#vibrant polygon').css('fill', swatches['DarkVibrant'].getHex())
 
     })
 
