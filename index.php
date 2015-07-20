@@ -25,8 +25,8 @@
         </div>
 
         <div id="header"><div>
-            <div class="icon-menu switchmenu"></div>
             <a class="icon-logo" href="/"></a>
+            <div class="icon-menu switchmenu"></div>
         </div></div>
         <div id="post0">
             <p><?php the_time('F j, Y'); ?></p>
