@@ -10,7 +10,7 @@ html {
 html, body {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-font-smoothing: antialiased;
-    background: #f2f2f2;
+    background: #fff;
 }
 body {
     position: relative;

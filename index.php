@@ -17,6 +17,7 @@
                 <img id="cover" src="<?php echo $cover[0] ?>" width="<?php echo $cover[1] ?>" height="<?php echo $cover[2] ?>"/>
             </div>
         </div>
+        <div id="vibrant"></div>
         <div id="header"><div>
             <div class="icon-menu switchmenu"></div>
             <a class="icon-logo" href="/"></a>
@@ -24,7 +25,7 @@
         <div id="post0">
             <p><?php the_time('F j, Y'); ?></p>
             <h2><a data-id="<?php the_ID() ?>" class="posttitle" href="<?php the_permalink(); ?>" /><?php the_title(); ?></a></h2>
-            <p><?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 100,"..."); ?></p>
+            <!--p><?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 100,"..."); ?></p-->
         </div>
 	</div>
 

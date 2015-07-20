@@ -36,10 +36,6 @@ audio {
 }
 
 #header {
-    background: -moz-linear-gradient(top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.3)), color-stop(100%,rgba(0,0,0,0)));
-    background: -webkit-linear-gradient(top, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%);
-    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%);
     position: absolute;
     top: 0;
     width: 100%;
@@ -66,12 +62,20 @@ audio {
     position: relative;
     z-index: 4;
 }
-#post0 {
+#vibrant {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .7;
     background: #fff;
+}
+#post0 {
     width: 900px;
-    padding: 30px 0;
-    margin: -100px auto 0;
-    position: relative;
+    padding: 30px;
+    position: absolute;
+    bottom: 30px;
 }
 #post0 p:first-child {
     text-align: center;
@@ -104,6 +108,8 @@ audio {
     width: 680px;
     height: 440px;
     overflow: hidden;
+    position: relative;
+    z-index: 3;
 }
 .else {
     position: absolute;
@@ -111,7 +117,7 @@ audio {
     text-align: left;
     top: 20px;
     height: 400px;
-    width: 560px;
+    width: 500px;
 }
 .post:nth-child(odd) {
     text-align: left;
@@ -120,10 +126,10 @@ audio {
     text-align: right;
 }
 .post:nth-child(odd) .else {
-    left: 600px;
+    left: 660px;
 }
 .post:nth-child(even) .else {
-    right: 600px;
+    right: 660px;
 }
 .else p:first-child {
     color: #999;
@@ -320,6 +326,7 @@ audio {
     color: #333;
 }
 #qr {
+    z-index: 10;
     display: none;
     position: absolute;
     background: #fff;
@@ -407,9 +414,6 @@ body.mu .icon-logo {
     left: 50%;
     background: #cbcbcb;
     top: -50%;
-    transform: rotate(-2deg);
-    -webkit-transform: rotate(-2deg);
-    -moz-transform: rotate(-2deg);
     z-index: 0;
 }
 #primary {

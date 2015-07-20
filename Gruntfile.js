@@ -28,7 +28,8 @@ module.exports = function(grunt) {
                         'assets/Chocolate.js',
                         'assets/jquery.justifiedGallery.min.js',
                         'assets/jquery.parallax.js',
-                        'assets/jquery.qrcode.min.js'
+                        'assets/jquery.qrcode.min.js',
+                        'assets/Vibrant.js'
                     ]
                 }
 

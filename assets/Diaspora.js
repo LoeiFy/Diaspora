@@ -199,10 +199,10 @@ $(function($) {
     cover.h = cover.t.attr('height');
 
     ;(cover.o = function() {
-        $('#mark').height(window.innerHeight - $('#post0').height() + 30)
-        if (Diaspora.P() && window.innerWidth <= 480) {
-            $('#mark').height(window.innerHeight)
-        }
+        //$('#mark').height(window.innerHeight - $('#post0').height() + 30)
+        //if (Diaspora.P() && window.innerWidth <= 480) {
+        $('#mark').height(window.innerHeight)
+        //}
     })();
 
     if (cover.t.prop('complete')) {
@@ -244,6 +244,10 @@ $(function($) {
         }, 1000)
 
         $('#mark').parallax()
+
+        var vibrant = new Vibrant(cover.t[0]);
+        var swatches = vibrant.swatches()
+        $('#vibrant').css('background', swatches['DarkVibrant'].getHex())
 
     })
 
