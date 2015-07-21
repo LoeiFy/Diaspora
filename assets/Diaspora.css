@@ -771,7 +771,7 @@ h1.title {
         width: 900px;
     }
     #post0 {
-        width: 750px;
+        width: 32%;
     }
     #post0 h2 {
         font-size: 24px;
@@ -785,14 +785,14 @@ h1.title {
     }
     .else {
         top: 10px;
-        width: 440px;
+        width: 420px;
         height: 290px;
     }
     .post:nth-child(odd) .else {
-        left: 430px;
+        left: 450px;
     }
     .post:nth-child(even) .else {
-        right: 430px;
+        right: 450px;
     }
     .else p:first-child {
         font-size: 12px;
@@ -817,8 +817,13 @@ h1.title {
     #header > div {
         width: 90%;
     }
+    #vibrant polygon {
+        transform: translateX(-10%);
+        -moz-transform: translateX(-10%);
+        -webkit-transform: translateX(-10%);
+    }
     #post0 {
-        width: 100%;
+        width: 40%;
     }
     #post0 h2 {
         font-size: 20px;
@@ -828,6 +833,7 @@ h1.title {
         margin-top: 60px;
         background: #fff;
         padding-bottom: 30px;
+        border-bottom: 1px solid #eaeaea;
     }
     .post > a {
         display: block;
@@ -841,9 +847,10 @@ h1.title {
     .else {
         height: auto;
         position: static;
-        width: 90%;
+        width: 96%;
         margin: 0 auto;
         background: transparent;
+        border: none;
     }
     .else p:first-child {
         margin: 30px 0 0 20px;
@@ -861,8 +868,20 @@ h1.title {
     }
 }
 @media screen and (max-width: 780px) {
+    #header {
+        top: 40px;
+    }
+    #vibrant {
+        display: none;
+    }
     #container {
         padding-bottom: 50px;
+    }
+    #post0 {
+        bottom: 60px;
+        top: auto;
+        width: 70%;
+        left: 5%;
     }
     .menu {
         width: 80%;
@@ -900,21 +919,16 @@ h1.title {
     }
 }
 @media screen and (max-width: 480px) {
-    #post0 {
-        background: transparent;
-        position: absolute;
-        bottom: 30px;
-    }
     #post0 p:first-child {
         display: none;
     }
     #post0 h2 {
         text-align: left;
-        margin: 0 10px 0 20px;
+        margin: 0 10px 0 0;
     }
     #post0 h2 + p {
         text-align: left;
-        margin: 10px 20px 0 20px;
+        margin: 10px 20px 0 0;
         color: #f2f2f2;
         font-size: 12px;
     }
