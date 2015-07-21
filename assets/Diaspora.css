@@ -112,8 +112,9 @@ audio {
     background: #fff;
     text-align: left;
     top: 20px;
-    height: 400px;
-    width: 500px;
+    height: 398px;
+    width: 498px;
+    border: 1px solid #eaeaea;
 }
 .post:nth-child(odd) {
     text-align: left;
@@ -406,7 +407,7 @@ body.mu .icon-logo {
     height: 200%;
     position: absolute;
     left: 50%;
-    background: #cbcbcb;
+    background: #eaeaea;
     top: -50%;
     z-index: 0;
 }
