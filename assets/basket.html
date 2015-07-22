@@ -1,14 +1,14 @@
 <script>var duoshuoQuery = {short_name:'guolu'};</script>
 <script src="<?php echo get_template_directory_uri(); ?>/static/basket.js?000"></script>
 <script>
-	basket.require({ url: '<?php echo get_template_directory_uri(); ?>/dist/Diaspora.css', unique: 2.7,  execute: false })
+	basket.require({ url: '<?php echo get_template_directory_uri(); ?>/dist/Diaspora.css', unique: 2.8,  execute: false })
 	.then(function(responses) {
         _stylesheet.appendStyleSheet(responses[0], function() {});
 		basket.require({ url: '<?php echo get_template_directory_uri(); ?>/static/jquery.min.js', unique: 2.0 })
 		.then(function() {
-			basket.require({ url: '<?php echo get_template_directory_uri(); ?>/dist/plugin.js', unique: 2.1 })
+			basket.require({ url: '<?php echo get_template_directory_uri(); ?>/dist/plugin.js', unique: 2.2 })
 			.then(function() {
-        		basket.require({ url: '<?php echo get_template_directory_uri(); ?>/dist/Diaspora.js', unique: 2.7 })
+        		basket.require({ url: '<?php echo get_template_directory_uri(); ?>/dist/Diaspora.js', unique: 2.8 })
 			})
 		})
 	});
