@@ -41,8 +41,7 @@ audio {
     width: 100%;
 }
 #header > div {
-    width: 1200px;
-    margin: 0 auto;
+    margin: 0 60px;
     position: relative;
 } 
 .icon-menu {
@@ -769,6 +768,7 @@ h1.title {
 @media screen and (max-width: 1200px) {
     #header > div {
         width: 900px;
+        margin: 0 auto;
     }
     #post0 {
         width: 32%;
