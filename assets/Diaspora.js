@@ -109,7 +109,7 @@ var Diaspora = {
                 Diaspora.player(id)
 
                 // ga
-                try {_gaq.push(['_trackPageview', url])} catch(e) {}
+                //try {_gaq.push(['_trackPageview', url])} catch(e) {}
             }, 0)
 
         })
