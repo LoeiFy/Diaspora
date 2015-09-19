@@ -51,13 +51,16 @@
 
 		<h1 class="title"><?php the_title(); ?></h1>
 
-        <div class="content">
-		    <?php the_content(); ?>
-        </div>
-        
         <div class="stuff">
             <span><?php the_time('F j, Y'); ?> </span>
-            <span>Pageview <?php echo getPostViews(get_the_ID()); ?></span>
+            <span>阅读 <?php echo getPostViews(get_the_ID()); ?></span>
+            <span>字数 <?php echo count_words ($text); ?></span>
+            <span>评论 <?php comments_number( '0', '1', '%' ); ?></span>
+            <span>喜欢 <?php tz_printLikes(get_the_ID()); ?></span>
+        </div>
+
+        <div class="content">
+		    <?php the_content(); ?>
         </div>
 
         <div class="comment link" data-id="<?php the_ID(); ?>">添加评论</div>

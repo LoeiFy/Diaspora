@@ -107,9 +107,6 @@ var Diaspora = {
             setTimeout(function() {
                 if (!id) id = $('.icon-play').data('id');
                 Diaspora.player(id)
-
-                // ga
-                //try {_gaq.push(['_trackPageview', url])} catch(e) {}
             }, 0)
 
         })

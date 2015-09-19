@@ -217,13 +217,15 @@ audio {
     -moz-animation:loader 2s linear infinite;
 }
 #top {
-    height: 60px;
+    height: 50px;
     padding-top: 2px;
     text-align: center;
     border-bottom: 1px solid #f7f7f7;
     background: #fefefe;
     width: 100%;
-    position: relative;
+    position: fixed;
+    top: 0;
+    z-index: 10;
 }
 .icon-icon {
     color: #333;
@@ -259,24 +261,11 @@ audio {
 .icon-like {
     color: #666;
 }
+#top .count {
+    display: none;
+}
 .likeThis.active .icon-like, .icon-like:hover {
     color: #EF6D57;
-}
-.likeThis .count {
-    position: absolute;
-    display: none;
-    color: #fff;
-    padding: 3px 0;
-    width: 180%;
-    background: #666;
-    border-radius: 3px;
-    font-size: 13px;
-    text-align: center;
-    left: -40%;
-    top: 30px;
-}
-.likeThis:hover .count {
-    display: block;
 }
 .icon-font {
     border-right: 1px solid #dbdbdb;
@@ -433,6 +422,9 @@ body.mu .icon-logo {
     vertical-align: top;
     position: relative;
 }
+.images {
+    margin-top: 70px;
+}
 .images a {
     position: absolute;
     display: block;
@@ -554,14 +546,13 @@ body.mu .icon-logo {
     margin-top:-5px;
 }
 .article > div {
-    padding: 50px 0;
+    padding: 100px 0;
     width: 700px;
     margin: 0 auto;
 }
 h1.title {
     font-size: 36px;
     color: #333;
-    text-align: center;
     line-height: 1.3;
     position: relative;
     font-weight: bold;
@@ -578,13 +569,22 @@ h1.title {
     display: none;
 }
 .stuff {
-    margin-top: 40px;
+    margin-top: 20px;
     color: #666;
     font-size: 13px;
 }
 .stuff span {
     display: inline-block;
     margin-right: 20px;
+}
+.stuff .likeThis {
+    pointer-events: none;
+}
+.stuff .icon-like {
+    display: none;
+}
+.stuff .count {
+    color: #666;
 }
 .comment {
     margin: 50px auto 0;
@@ -666,23 +666,13 @@ h1.title {
     height: 100%;
     z-index: 5;
     background: #fff;
-    visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-transform: translateX(100%);
-    -moz-transform: translateX(100%);
-    transform: translateX(100%);
-    -webkit-transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+    left: 100%;
     -moz-transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
     transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
     overflow-y: scroll;
 }
 #preview.show {
-    visibility: visible;
-    -webkit-transform: translateX(0);
-    -moz-transform: translateX(0);
-    transform: translateX(0);
+    left: 0;
 }
 
 /* article content */
