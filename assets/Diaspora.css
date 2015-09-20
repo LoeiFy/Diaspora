@@ -218,7 +218,6 @@ audio {
 }
 #top {
     height: 50px;
-    padding-top: 2px;
     text-align: center;
     border-bottom: 1px solid #f7f7f7;
     background: #fefefe;
@@ -324,8 +323,10 @@ audio {
     -moz-border-radius: 5px;
 }
 .bar {
-    height: 2px;
-    background: rgba(108, 161, 90, .7);
+    position: absolute;
+    height: 100%;
+    background: rgba(0, 0, 0, .07);
+    z-index: -1;
     width: 0;
     -webkit-transition: width .5s ease;
     -moz-transition: width .5s ease;

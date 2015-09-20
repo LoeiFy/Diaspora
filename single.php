@@ -17,6 +17,7 @@
     ); ?> 
 
     <div id="top">
+        <div class="bar"></div>
         <a class="icon-icon" href="javascript:history.back()"></a>
         <div class="tab">
             <div class="active icon-font"></div><div class="icon-images"></div>
@@ -32,8 +33,6 @@
             </div>
         </div>
     </div>
-
-    <div class="bar"></div>
 
     <div class="section">
 
