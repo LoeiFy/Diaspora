@@ -423,7 +423,7 @@ body.mu .icon-logo {
     position: relative;
 }
 .images {
-    margin-top: 70px;
+    margin-top: 50px;
 }
 .images a {
     position: absolute;
@@ -589,7 +589,7 @@ h1.title {
 .comment {
     margin: 50px auto 0;
 }
-.comment.link {
+.comment.link, .downloadlink {
     cursor: pointer;
     letter-spacing: 5px;
     border: 1px solid #dadada;
@@ -598,6 +598,10 @@ h1.title {
     color: #666;
     font-size: 14px;
     padding: 10px 0;
+}
+.images .downloadlink {
+    position: static;
+    margin: 50px auto 70px;
 }
 
 .relate {

@@ -107,6 +107,14 @@ var Diaspora = {
             setTimeout(function() {
                 if (!id) id = $('.icon-play').data('id');
                 Diaspora.player(id)
+
+                // get download link
+                $('.content img').each(function() {
+                    if ($(this).attr('src').indexOf('/uploads/2014/downloading.png') > -1) {
+                        $(this).hide()
+                        $('.downloadlink').attr('href', $(this).parent().attr('href'))
+                    }
+                })
             }, 0)
 
         })
@@ -284,6 +292,14 @@ $(function($) {
 
         $('.icon-icon').attr('href', '/')
 
+        // get download link
+        $('.content img').each(function() {
+            if ($(this).attr('src').indexOf('/uploads/2014/downloading.png') > -1) {
+                $(this).hide()
+                $('.downloadlink').attr('href', $(this).parent().attr('href'))
+            }
+        })
+
     }
 
     $('body').on('click', function(e) {
@@ -355,7 +371,8 @@ $(function($) {
                         $(this).attr('src', $(this).data('src'))
                     })
                     $('.zoom').Chocolat()
-                    $('.images').justifiedGallery({ margins: 5, rowHeight : 120 }).on('jg.complete', function () {
+
+                    $('#jg').justifiedGallery({ margins: 5, rowHeight : 120 }).on('jg.complete', function () {
                         $('.section').css('left', 0)
                         $('.icon-images').addClass('tg')
                     })

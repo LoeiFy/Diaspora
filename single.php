@@ -38,6 +38,7 @@
     <div class="section">
 
 	<div class="images">
+    <div id="jg">
     <?php $attachments = get_posts($args); if ($attachments) { ?>
 
         <?php foreach ( $attachments as $attachment ) { $img = wp_get_attachment_image_src($attachment->ID,'thumbnail'); ?>
@@ -45,6 +46,8 @@
 		<?php } ?>
 
     <?php } ?>
+    </div>
+    <a target="_blank" class="downloadlink">壁纸下载</a>
     </div><div class="article">
 
         <div>
