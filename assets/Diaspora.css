@@ -332,6 +332,16 @@ audio {
     -moz-transition: width .5s ease;
     transition: width .5s ease;
 }
+.scrollbar {
+    position: absolute;
+    height: 2px;
+    width: 30px;
+    top: 0;
+    background-color: #50bcb6;
+    -webkit-transition: width .5s ease;
+    -moz-transition: width .5s ease;
+    transition: width .5s ease;
+}
 .nav {
     position: fixed;
     height: 100%;
@@ -422,8 +432,6 @@ body.mu .icon-logo {
     display: inline-block;
     vertical-align: top;
     position: relative;
-}
-.images {
     margin-top: 50px;
 }
 .images a {
@@ -547,7 +555,7 @@ body.mu .icon-logo {
     margin-top:-5px;
 }
 .article > div {
-    padding: 100px 0;
+    padding: 50px 0;
     width: 700px;
     margin: 0 auto;
 }

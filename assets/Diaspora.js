@@ -302,6 +302,17 @@ $(function($) {
 
     }
 
+    $(window).on('scroll', function() {
+        if ($('.scrollbar').length) {
+            var st = $(window).scrollTop(),
+                ct = $('.content').height();
+
+            if (st <= ct) {
+                $('.scrollbar').width((50 + st) / ct * 100 +'%')
+            }
+        }
+    })
+
     $('body').on('click', function(e) {
 
         var tag = $(e.target).attr('class') || '',
@@ -495,10 +506,7 @@ $(function($) {
             default:
                 return;
             break;
-
         }
 
     })
-
-
 })

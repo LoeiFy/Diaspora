@@ -32,6 +32,7 @@
             --><div data-id="<?php the_ID() ?>" class="icon-play">
             </div>
         </div>
+        <div class="scrollbar"></div>
     </div>
 
     <div class="section">
