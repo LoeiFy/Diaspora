@@ -227,7 +227,7 @@ audio {
     z-index: 10;
 }
 body.touch #top {
-    position: static;
+    position: relative;
 }
 .icon-icon {
     color: #333;
@@ -239,7 +239,7 @@ body.touch #top {
 .subtitle {
     color: #666;
     font-size: 14px;
-    margin-top: 17px;
+    margin-top: 16px;
     display: none;
 }
 .icon-play, .icon-pause, .icon-images {
@@ -270,7 +270,7 @@ body.touch #top {
 }
 .social {
     position: absolute;
-    right: 14px;
+    right: 0;
     top: 16px;
 }
 .share a {
@@ -938,7 +938,13 @@ h1.title {
     .relate h3 > em {
         display: none;
     }
+    .stuff span {
+        margin-right: 10px;
+    }
     .stuff span:first-child {
         display: none;
+    }
+    .icon-pause, .icon-play {
+        left: 50px;
     }
 }
