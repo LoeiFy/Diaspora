@@ -226,6 +226,9 @@ audio {
     top: 0;
     z-index: 10;
 }
+body.touch #top {
+    position: static;
+}
 .icon-icon {
     color: #333;
     font-size: 20px;
@@ -321,6 +324,9 @@ audio {
     -moz-transition: width .5s ease;
     transition: width .5s ease;
 }
+body.touch .scrollbar {
+    display: none;
+}
 .nav {
     position: fixed;
     height: 100%;
@@ -412,6 +418,9 @@ body.mu .icon-logo {
     vertical-align: top;
     position: relative;
     margin-top: 50px;
+}
+body.touch .images, body.touch .article {
+    margin-top: 0;
 }
 .images a {
     position: absolute;
@@ -891,6 +900,9 @@ h1.title {
     }
     .icon-wechat {
         display: none!important;
+    }
+    .icon-images {
+        display: none;
     }
     .relate ul {
         width: 90%;
