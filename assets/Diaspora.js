@@ -382,6 +382,8 @@ $(function($) {
 
             // post images
             case (tag.indexOf('icon-images') != -1):
+                window.scrollTo(0, 0)
+
                 var d = $('.icon-images');
 
                 if (d.hasClass('active')) {
