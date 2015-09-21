@@ -307,13 +307,18 @@ $(function($) {
             var st = $(window).scrollTop(),
                 ct = $('.content').height();
 
+            if (window.innerWidth < 600) {
+                st = st + 250
+            }
+
             if (st > ct) {
                 st = ct
             }
 
+
             $('.scrollbar').width((50 + st) / ct * 100 +'%')
 
-            if (st > 80) {
+            if (st > 80 && window.innerWidth > 800) {
                 $('.subtitle').fadeIn()
             } else {
                 $('.subtitle').fadeOut()

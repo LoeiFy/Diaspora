@@ -926,4 +926,7 @@ h1.title {
     .relate h3 > em {
         display: none;
     }
+    .stuff span:first-child {
+        display: none;
+    }
 }
