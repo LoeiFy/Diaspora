@@ -1,1 +1,2 @@
 # Diaspora
+http://guo.lu
