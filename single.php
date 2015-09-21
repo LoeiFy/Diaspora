@@ -19,17 +19,15 @@
     <div id="top">
         <div class="bar"></div>
         <a class="icon-icon" href="javascript:history.back()"></a>
-        <div class="tab">
-            <div class="active icon-font"></div><div class="icon-images"></div>
-        </div>
+        <div title="播放/暂停" data-id="<?php the_ID() ?>" class="icon-play"></div>
+        <div title="查看壁纸" class="icon-images"></div>
+		<h3 class="subtitle"><?php the_title(); ?></h3>
         <div class="social">
             <div class="like-icon">
 		        <?php tz_printLikes(get_the_ID()); ?>
             </div><!--
          --><div>
 		        <?php get_template_part( 'social' ); ?>
-            </div><!--
-            --><div data-id="<?php the_ID() ?>" class="icon-play">
             </div>
         </div>
         <div class="scrollbar"></div>

@@ -307,8 +307,16 @@ $(function($) {
             var st = $(window).scrollTop(),
                 ct = $('.content').height();
 
-            if (st <= ct) {
-                $('.scrollbar').width((50 + st) / ct * 100 +'%')
+            if (st > ct) {
+                st = ct
+            }
+
+            $('.scrollbar').width((50 + st) / ct * 100 +'%')
+
+            if (st > 80) {
+                $('.subtitle').fadeIn()
+            } else {
+                $('.subtitle').fadeOut()
             }
         }
     })
@@ -370,38 +378,37 @@ $(function($) {
 
             // post images
             case (tag.indexOf('icon-images') != -1):
-                $('.icon-font').removeClass('active')
-                $('.icon-images').addClass('active')
+                var d = $('.icon-images');
 
-                $('.images').css('height', $('.images').data('height'))
+                if (d.hasClass('active')) {
+                    d.removeClass('active')
 
-                if ($('.icon-images').hasClass('tg')) {
-                    $('.section').css('left', 0)
+                    $('.article').css('height', 'auto')
+                    $('.section').css('left', '-100%')
+                    setTimeout(function() {
+                        $('.images').data('height', $('.images').height()).css('height', '0') 
+                    }, 0)
                 } else {
-                    $('.zoom img').each(function() {
-                        $(this).attr('src', $(this).data('src'))
-                    })
-                    $('.zoom').Chocolat()
+                    d.addClass('active')
 
-                    $('#jg').justifiedGallery({ margins: 5, rowHeight : 120 }).on('jg.complete', function () {
+                    $('.images').css('height', $('.images').data('height'))
+
+                    if ($('.icon-images').hasClass('tg')) {
                         $('.section').css('left', 0)
-                        $('.icon-images').addClass('tg')
-                    })
+                    } else {
+                        $('.zoom img').each(function() {
+                            $(this).attr('src', $(this).data('src'))
+                        })
+                        $('.zoom').Chocolat()
+
+                        $('#jg').justifiedGallery({ margins: 5, rowHeight : 120 }).on('jg.complete', function () {
+                            $('.section').css('left', 0)
+                            $('.icon-images').addClass('tg')
+                        })
+                    }
+
+                    setTimeout(function() { $('.article').css('height', '0') }, 0)
                 }
-
-                setTimeout(function() { $('.article').css('height', '0') }, 0)
-            break;
-
-            // post text
-            case (tag.indexOf('icon-font') != -1):
-                $('.icon-images').removeClass('active')
-                $('.icon-font').addClass('active')
-
-                $('.article').css('height', 'auto')
-                $('.section').css('left', '-100%')
-                setTimeout(function() {
-                    $('.images').data('height', $('.images').height()).css('height', '0') 
-                }, 0)
             break;
 
             // qrcode

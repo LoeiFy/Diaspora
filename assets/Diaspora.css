@@ -228,31 +228,30 @@ audio {
 }
 .icon-icon {
     color: #333;
-    font-size: 30px;
+    font-size: 20px;
     position: absolute;
-    left: 18px;
-    top: 17px;
+    left: 14px;
+    top: 16px;
 }
-.tab {
-    display: inline-block;
-    border: 1px solid #dbdbdb;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    margin-top: 12px;
-    overflow: hidden;
-}
-.tab .active {
-    background: #eee;
-    color: #444;
-}
-.icon-font, .icon-images {
-    cursor: pointer;
-    display: inline-block;
-    font-size: 22px;
+.subtitle {
     color: #666;
-    vertical-align: middle;
-    padding: 5px 10px;
+    font-size: 14px;
+    margin-top: 17px;
+    display: none;
+}
+.icon-play, .icon-pause, .icon-images {
+    position: absolute;
+    left: 70px;
+    color: #666;
+    top: 17px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.icon-images {
+    left: 100px;
+}
+.icon-images.active {
+    color: #EF6D57;
 }
 .like-icon {
     position: relative;
@@ -266,14 +265,10 @@ audio {
 .likeThis.active .icon-like, .icon-like:hover {
     color: #EF6D57;
 }
-.icon-font {
-    border-right: 1px solid #dbdbdb;
-    padding-right: 8px;
-}
 .social {
     position: absolute;
-    right: 18px;
-    top: 19px;
+    right: 14px;
+    top: 16px;
 }
 .share a {
     display: inline-block;
@@ -286,28 +281,12 @@ audio {
 .share {
     position: relative;
 }
-.share:after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: 0;
-    width: 1px;
-    background: #eee;
-    height: 24px;
-    top: 0;
-}
 .social > div {
     display: inline-block;
-    font-size: 24px;
+    font-size: 20px;
     color: #666;
     cursor: pointer;
     margin-left: 15px;
-}
-.social > div:last-child {
-    font-size: 22px;
-}
-.social > div:last-child:hover {
-    color: #333;
 }
 #qr {
     z-index: 10;
