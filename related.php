@@ -1,5 +1,5 @@
 <ul>
-<h3><em>NEXT STORY</em><span>
+<h3><em>相 关 文 章</em><span>
     <a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
     <?php previous_post_link('%link', '上一篇'); ?>
     <?php next_post_link('%link', '下一篇'); ?>

@@ -133,7 +133,7 @@ audio {
     margin: 80px 0 0 80px;
 }
 .else h3 {
-    font-size: 36px;
+    font-size: 30px;
     line-height: 1.1;
     margin: 10px 100px 0 80px;
 }
@@ -298,8 +298,8 @@ body.touch #top {
     background: #fff;
     padding: 30px;
     border: 1px solid #999;
-    right: 0;
-    top: 60px;
+    right: 10px;
+    top: 50px;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
