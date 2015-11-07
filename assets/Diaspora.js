@@ -162,19 +162,21 @@ var Diaspora = {
 
     },
 
-    loader: function() {
-        var w = window.innerWidth;
-        var css = '<style id="loaderstyle">@-moz-keyframes loader{0%{background-position:0 0}100%{background-position:'+ w +'px 0}}@-webkit-keyframes loader{0%{background-position:0 0}100%{background-position:'+ w +'px 0}}></style>';
-        $('#loaderstyle').remove()
-        $('head').append(css)
-    },
-
     loading: function() {
-        $('.loader').addClass('loading').show()
+        var w = window.innerWidth;
+        var css = '<style class="loaderstyle" id="loaderstyle'+ w +'">'+
+                  '@-moz-keyframes loader'+ w +'{100%{background-position:'+ w +'px 0}}'+
+                  '@-webkit-keyframes loader'+ w +'{100%{background-position:'+ w +'px 0}}'+
+                  '.loader'+ w +'{-webkit-animation:loader'+ w +' 2s linear infinite;-moz-animation:loader'+ w +' 2s linear infinite;}'+
+                  '</style>';
+        $('.loaderstyle').remove()
+        $('head').append(css)
+
+        $('#loader').removeClass().addClass('loader'+ window.innerWidth).show()
     },
 
     loaded: function() {
-        $('.loader').removeClass('loading').hide()
+        $('#loader').removeClass().hide()
     },
 
     F: function(id, w, h) {
@@ -267,15 +269,22 @@ $(function($) {
 
         Diaspora.PS()
 
-        Diaspora.loader()
-
         $('.pview a').addClass('pviewa')
 
+        var T;
         $(window).on('resize', function() {
-            if (!Diaspora.P() && location.href == Home) {
-                cover.o()
-                cover.f()
-            }
+            clearTimeout(T)
+
+            T = setTimeout(function() {
+                if (!Diaspora.P() && location.href == Home) {
+                    cover.o()
+                    cover.f()
+                }
+
+                if ($('#loader').attr('class') != '') {
+                    Diaspora.loading()
+                }
+            }, 500)
         })  
 
     } else {

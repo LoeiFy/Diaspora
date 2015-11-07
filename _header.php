@@ -16,6 +16,7 @@ if (is_home()) {
 }
 ?>
 <!DOCTYPE html>
+<!--<html><head></head><body></body></html>-->
 <html <?php language_attributes(); ?> class="loading" style="display:none">
 <head>
 <meta charset="UTF-8" />
@@ -33,17 +34,10 @@ if (is_home()) {
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/static/72.png">
 <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/static/57.png">
 <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/static/32.png" />
-<script>
-if (self == top && location.href.indexOf('o.l') > -1) {
-    document.documentElement.style.display = 'block'
-} else {
-    top.location = self.location
-}
-</script>
 <style>
 @@css
 </style>
 @@static
 </head>
 <body class="loading">
-<div class="loader"></div>
+<div id="loader"></div>
