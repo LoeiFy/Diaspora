@@ -167,12 +167,12 @@ var Diaspora = {
         var css = '<style class="loaderstyle" id="loaderstyle'+ w +'">'+
                   '@-moz-keyframes loader'+ w +'{100%{background-position:'+ w +'px 0}}'+
                   '@-webkit-keyframes loader'+ w +'{100%{background-position:'+ w +'px 0}}'+
-                  '.loader'+ w +'{-webkit-animation:loader'+ w +' 2s linear infinite;-moz-animation:loader'+ w +' 2s linear infinite;}'+
+                  '.loader'+ w +'{-webkit-animation:loader'+ w +' 3s linear infinite;-moz-animation:loader'+ w +' 3s linear infinite;}'+
                   '</style>';
         $('.loaderstyle').remove()
         $('head').append(css)
 
-        $('#loader').removeClass().addClass('loader'+ window.innerWidth).show()
+        $('#loader').removeClass().addClass('loader'+ w).show()
     },
 
     loaded: function() {
