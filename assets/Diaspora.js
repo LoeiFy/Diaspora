@@ -131,6 +131,7 @@ var Diaspora = {
                         'position': 'static',
                         'overflow-y': 'auto'
                     })
+                    $('#top').show()
 
                     Diaspora.loaded()
                 }, 500)
