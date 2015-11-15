@@ -286,7 +286,7 @@ $(function($) {
                     cover.f()
                 }
 
-                if ($('#loader').attr('class') != '') {
+                if ($('#loader').attr('class')) {
                     Diaspora.loading()
                 }
             }, 500)
