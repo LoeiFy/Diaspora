@@ -200,6 +200,11 @@ var Diaspora = {
 
 $(function($) {
 
+    if (document.body.childNodes.length > 9) {
+        alert('检测到运营商插入广告，页面将重新加载')
+        location.reload()
+    }
+
     if (Diaspora.P()) {
         $('body').addClass('touch')
     }

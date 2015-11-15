@@ -23,6 +23,10 @@ module.exports = function(grunt) {
 
             plugin: {
 
+                options: {
+                    banner: 'window.DP={};\n'
+                },
+
                 files: {
                     'dist/plugin.js': [
                         'assets/Chocolate.js',
