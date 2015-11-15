@@ -12,9 +12,8 @@
         		basket.require({ url: '<?php echo get_template_directory_uri(); ?>/dist/Diaspora.js', unique: 2.9 })
                 .then(function() {
                     if (!window.$ || !window.DP) {
-                        alert('页面被运营商非法插入广告，页面将重新加载')
+                        alert('页面被运营商非法插入广告，请刷新页面')
                         localStorage.clear()
-                        location.reload()
                     }
                 })
 			})
