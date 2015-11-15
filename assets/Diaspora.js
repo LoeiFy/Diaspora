@@ -319,6 +319,8 @@ $(function($) {
             }
         })
 
+        $('#top').show()
+
     }
 
     $(window).on('scroll', function() {
