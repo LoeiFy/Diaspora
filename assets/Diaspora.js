@@ -425,7 +425,10 @@ $(function($) {
                         $('.zoom img').each(function() {
                             $(this).attr('src', $(this).data('src'))
                         })
-                        $('.zoom').Chocolat()
+
+                        if (!(Diaspora.P() && window.innerWidth < 700)) {
+                            $('.zoom').Chocolat()
+                        }
 
                         var m = 5, r = 120;
                         if (Diaspora.P() && window.innerWidth < 600) {

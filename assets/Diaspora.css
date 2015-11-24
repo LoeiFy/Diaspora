@@ -450,6 +450,9 @@ body.touch .images, body.touch .article {
     opacity: 1;
     top: 50%;
 }
+.touch .zoom:hover:before {
+    opacity: 0;
+}
 
 #Choco_overlay{
     background: #fff;
