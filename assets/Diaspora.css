@@ -422,6 +422,7 @@ body.touch .images, body.touch .article {
 .images a {
     position: absolute;
     display: block;
+    overflow: hidden;
 }
 .images img {
     position: absolute;
@@ -900,7 +901,7 @@ h1.title {
         display: none!important;
     }
     .icon-images {
-        display: none;
+        left: 80px;
     }
     .relate ul {
         width: 90%;

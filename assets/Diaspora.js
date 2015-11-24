@@ -427,7 +427,15 @@ $(function($) {
                         })
                         $('.zoom').Chocolat()
 
-                        $('#jg').justifiedGallery({ margins: 5, rowHeight : 120 }).on('jg.complete', function () {
+                        var m = 5, r = 120;
+                        if (Diaspora.P() && window.innerWidth < 600) {
+                            m = 1;
+                            r = 80;
+                        }
+                        $('#jg').justifiedGallery({
+                            margins: m, 
+                            rowHeight : r,
+                        }).on('jg.complete', function () {
                             $('.section').css('left', 0)
                             $('.icon-images').addClass('tg')
                         })
