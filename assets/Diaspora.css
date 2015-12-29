@@ -760,6 +760,9 @@ h1.title {
     border: 1px solid #ddd;
     border-radius: 3px;
 }
+.friend a:hover {
+    background: #f9f9f9;
+}
 
 @media screen and (max-width: 1200px) {
     #header > div {
