@@ -337,6 +337,10 @@ body.touch .scrollbar {
 }
 body.mu {
     overflow: hidden;
+    height: 100%;
+}
+html.mu {
+    height: 100%;
 }
 body.mu .icon-menu {
     color: #333;

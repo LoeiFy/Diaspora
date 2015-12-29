@@ -357,7 +357,7 @@ $(function($) {
             // nav menu
             case (tag.indexOf('switchmenu') != -1):
                 window.scrollTo(0, 0)
-                $('body').toggleClass('mu')
+                $('html, body').toggleClass('mu')
             break;
 
             // next page
