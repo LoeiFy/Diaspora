@@ -4,7 +4,8 @@
  * @url http://lorem.in
  */
 
-var Home = location.href;
+var Home = location.href,
+    Pages = 4;
 
 var Diaspora = {
 
@@ -362,15 +363,30 @@ $(function($) {
 
             // next page
             case (tag.indexOf('more') != -1):
-                if ($('.more').data('status') == 'loading') return false;
-        
-                $('.more').html('加载中..').data('status', 'loading')
+                tag = $('.more');
+
+                if (tag.data('status') == 'loading') {
+                    return false
+                }
+
+                var num = parseInt(tag.data('page')) || 1;
+
+                if (num == 1) {
+                    tag.data('page', 1)
+                }
+
+                if (num >= Pages) {
+                    return
+                }
+
+                tag.html('加载中..').data('status', 'loading')
                 Diaspora.loading()
 
-                Diaspora.L($('.more').attr('href'), function(data) {
+                Diaspora.L(tag.attr('href'), function(data) {
                     var link = $(data).find('.more').attr('href');
                     if (link != undefined) {
-                        $('.more').attr('href', link).html('加载更多').data('status', 'loaded')
+                        tag.attr('href', link).html('加载更多').data('status', 'loaded')
+                        tag.data('page', parseInt(tag.data('page')) + 1)
                     } else {
                         $('#pager').remove()
                     }
