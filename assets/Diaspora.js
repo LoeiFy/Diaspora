@@ -422,10 +422,6 @@ $(function($) {
                     if ($('.icon-images').hasClass('tg')) {
                         $('.section').css('left', 0)
                     } else {
-                        $('.zoom img').each(function() {
-                            $(this).attr('src', $(this).data('src'))
-                        })
-
                         if (!(Diaspora.P() && window.innerWidth < 700)) {
                             $('.zoom').Chocolat()
                         }
