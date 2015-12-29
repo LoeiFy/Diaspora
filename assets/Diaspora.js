@@ -328,7 +328,7 @@ $(function($) {
     }
 
     $(window).on('scroll', function() {
-        if ($('.scrollbar').length && !Diaspora.P()) {
+        if ($('.scrollbar').length && !Diaspora.P() && !$('.icon-images').hasClass('active')) {
             var st = $(window).scrollTop(),
                 ct = $('.content').height();
 
