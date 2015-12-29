@@ -906,6 +906,9 @@ h1.title {
     .icon-images {
         left: 80px;
     }
+    .icon-pause, .icon-play {
+        left: 50px;
+    }
     .relate ul {
         width: 90%;
     }
@@ -945,8 +948,5 @@ h1.title {
     }
     .stuff span:first-child {
         display: none;
-    }
-    .icon-pause, .icon-play {
-        left: 50px;
     }
 }
