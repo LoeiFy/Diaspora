@@ -5,17 +5,30 @@
  */
 
 var Home = location.href,
-    Pages = 4;
+    Pages = 4,
+    xhr;
 
 var Diaspora = {
 
-    L: function(url, f) {
-        $.ajax({
+    L: function(url, f, err) {
+        if (xhr) {
+            xhr.abort()
+        }
+
+        xhr = null;
+
+        xhr = $.ajax({
             type: 'GET',
             url: url,
             timeout: 10000,
             success: function(data) {f(data)},
-            error: function() {window.location.href = url}
+            error: function(a, b, c) {
+                if (b == 'abort') {
+                    err && err()
+                } else {
+                    window.location.href = url
+                }
+            }
         })
     },
 
@@ -394,6 +407,8 @@ $(function($) {
                     $('#primary').append($(data).find('.post'))
 
                     Diaspora.loaded()
+                }, function() {
+                    tag.html('加载更多').data('status', 'loaded')
                 })
 
                 return false;
