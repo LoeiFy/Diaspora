@@ -368,6 +368,12 @@ $(function($) {
         }
     })
 
+    $(window).on('touchMove', function(e) {
+        if ($('body').hasClass('mu')) {
+            e.preventDefault()
+        }
+    })
+
     $('body').on('click', function(e) {
 
         var tag = $(e.target).attr('class') || '',
