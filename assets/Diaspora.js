@@ -22,8 +22,6 @@ var Diaspora = {
             xhr.abort()
         }
 
-        xhr = null;
-
         xhr = $.ajax({
             type: 'GET',
             url: url,
@@ -63,7 +61,7 @@ var Diaspora = {
             if (state.u == Home) {
                 $('#preview').css('position', 'fixed')
                 setTimeout(function() {
-                    $('#preview').removeClass('show')
+                    $('#preview').removeClass('show').addClass('trans')
                     $('#container').show()
                     window.scrollTo(0, parseInt($('#container').data('scroll')))
                     setTimeout(function() {
@@ -159,7 +157,7 @@ var Diaspora = {
                     $('#preview').css({
                         'position': 'static',
                         'overflow-y': 'auto'
-                    })
+                    }).removeClass('trans')
                     $('#top').show()
 
                     Diaspora.loaded()

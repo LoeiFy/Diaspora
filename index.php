@@ -52,6 +52,6 @@
     <div id="pager"><?php next_posts_link(('加载更多')); ?></div>
   
 </div>
-<div id="preview"></div>
+<div id="preview" class="trans"></div>
 </body>
 </html><!--

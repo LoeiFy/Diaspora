@@ -678,8 +678,16 @@ h1.title {
     transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
     overflow-y: scroll;
 }
+#preview.trans {
+    left: auto;
+    transform: translateX(100%);
+}
 #preview.show {
     left: 0;
+}
+#preview.trans.show {
+    left: auto;
+    transform: translateX(0);
 }
 
 /* article content */
