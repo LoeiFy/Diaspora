@@ -368,7 +368,7 @@ $(function($) {
         }
     })
 
-    $(window).on('touchMove', function(e) {
+    $(window).on('touchmove', function(e) {
         if ($('body').hasClass('mu')) {
             e.preventDefault()
         }
