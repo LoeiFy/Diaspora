@@ -6,11 +6,18 @@
 
 var Home = location.href,
     Pages = 4,
-    xhr;
+    xhr,
+    xhrUrl = '';
 
 var Diaspora = {
 
     L: function(url, f, err) {
+        if (url == xhrUrl) {
+            return false
+        }
+
+        xhrUrl = url;
+
         if (xhr) {
             xhr.abort()
         }
@@ -21,13 +28,17 @@ var Diaspora = {
             type: 'GET',
             url: url,
             timeout: 10000,
-            success: function(data) {f(data)},
+            success: function(data) {
+                f(data)
+                xhrUrl = '';
+            },
             error: function(a, b, c) {
                 if (b == 'abort') {
                     err && err()
                 } else {
                     window.location.href = url
                 }
+                xhrUrl = '';
             }
         })
     },
