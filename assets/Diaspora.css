@@ -681,6 +681,8 @@ h1.title {
 #preview.trans {
     left: auto;
     transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
 }
 #preview.show {
     left: 0;
@@ -688,6 +690,8 @@ h1.title {
 #preview.trans.show {
     left: auto;
     transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
 }
 
 /* article content */
