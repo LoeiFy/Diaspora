@@ -434,16 +434,22 @@ $(function($) {
                 Diaspora.loading()
                 $('.comment').removeClass('link').html('')
 
-                var id = $('.comment').data('id');
+                var id = $('.comment').data('id'),
+                    get_comments = function() {
+                        var el = document.createElement('div');
+                        el.setAttribute('data-thread-key', id)
+                        DUOSHUO.EmbedThread(el)
+                        $('.comment').html(el)
+                        Diaspora.loaded()
+                    };
 
-                $.getScript('http://static.duoshuo.com/embed.js', function() {
-                    var el = document.createElement('div');
-                    el.setAttribute('data-thread-key', id)
-                    DUOSHUO.EmbedThread(el)
-                    $('.comment').html(el)
-
-                    Diaspora.loaded()
-                })
+                if (window.DUOSHUO) {
+                    get_comments()
+                } else {
+                    $.getScript('http://static.duoshuo.com/embed.js', function() {
+                        get_comments()
+                    })
+                }
             break;
 
             // post images
