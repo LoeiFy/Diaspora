@@ -66,6 +66,7 @@ var Diaspora = {
                     window.scrollTo(0, parseInt($('#container').data('scroll')))
                     setTimeout(function() {
                         $('#preview').html('')
+                        $(window).trigger('resize')
                     }, 300)
                 }, 0)
             } else {
@@ -98,6 +99,11 @@ var Diaspora = {
         var state = {d: id, t: title, u: url};
 
         Diaspora.L(url, function(data) {
+
+            if (!$(data).filter('#single').length) {
+                location.href = url;
+                return
+            }
 
             switch (flag) {
 
@@ -226,11 +232,7 @@ var Diaspora = {
 
 }
 
-$(function($) {
-
-    if (document.body.childNodes.length > 9) {
-        alert('检测到运营商插入广告，请刷新页面')
-    }
+$(function() {
 
     if (Diaspora.P()) {
         $('body').addClass('touch')

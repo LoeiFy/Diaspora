@@ -57,7 +57,7 @@ audio {
     background: rgba(255,255,255,.8);
 }
 .icon-logo {
-    display: block;
+    display: inline-block;
     color: #fff;
     font-size: 26px;
     position: relative;
@@ -73,7 +73,7 @@ audio {
 #post0 {
     width: 28%;
     position: absolute;
-    top: 45%;
+    top: 42%;
     left: 10%;
 }
 #post0 p:first-child {
@@ -378,6 +378,9 @@ body.mu .icon-logo {
     width: 100%;
     text-align: center;
     bottom: 30px;
+}
+.nav p:first-letter {
+    font-family: sans-serif;
 }
 
 #container {
@@ -814,7 +817,7 @@ h1.title {
         margin: 50px 0 0 60px;
     }
     .else h3 {
-        font-size: 28px;
+        font-size: 24px;
         margin: 10px 60px 0 60px;
     }
     .else h3 + p {
