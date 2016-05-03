@@ -22,6 +22,7 @@
             <svg viewBox="0 0 2880 1620" height="100%" preserveAspectRatio="xMaxYMax slice">
 				<polygon opacity="0.7" points="2000,1620 0,1620 0,0 600,0 "/>
 			</svg>
+            <div></div>
         </div>
 
         <div id="header"><div>

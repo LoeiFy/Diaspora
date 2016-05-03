@@ -237,67 +237,70 @@ $(function() {
     if (Diaspora.P()) {
         $('body').addClass('touch')
     }
-    
-    var cover = [];
-    cover.t = $('#cover');
-    cover.w = cover.t.attr('width');
-    cover.h = cover.t.attr('height');
-
-    ;(cover.o = function() {
-        //$('#mark').height(window.innerHeight - $('#post0').height() + 30)
-        //if (Diaspora.P() && window.innerWidth <= 480) {
-        $('#mark').height(window.innerHeight)
-        //}
-    })();
-
-    if (cover.t.prop('complete')) {
-        // why setTimeout ?
-        setTimeout(function() { cover.t.load() }, 0)
-    }
-
-    cover.t.on('load', function() {
-
-        ;(cover.f = function() {
-
-            var _w = $('#mark').width(), _h = $('#mark').height(), x, y, i, e;
-
-            e = (_w >= 1000 || _h >= 1000) ? 1000 : 500;
-
-            if (_w >= _h) {
-                i = _w / e * 50;
-                y = i;
-                x = i * _w / _h;
-            } else {
-                i = _h / e * 50;
-                x = i;
-                y = i * _h / _w;
-            }
-
-            $('.layer').css({
-                'width': _w + x,
-                'height': _h + y,
-                'marginLeft': - 0.5 * x,
-                'marginTop': - 0.5 * y
-            })
-
-            Diaspora.F($('#cover')[0], cover.w, cover.h)
-
-        })();
-
-        setTimeout(function() {
-            $('html, body').removeClass('loading')
-        }, 1000)
-
-        $('#mark').parallax()
-
-        var vibrant = new Vibrant(cover.t[0]);
-        var swatches = vibrant.swatches()
-        $('#vibrant polygon').css('fill', swatches['DarkVibrant'].getHex())
-        $('.icon-menu').css('color', swatches['Vibrant'].getHex())
-
-    })
 
     if ($('#preview').length) {
+
+        var cover = {};
+        cover.t = $('#cover');
+        cover.w = cover.t.attr('width');
+        cover.h = cover.t.attr('height');
+
+        ;(cover.o = function() {
+            $('#mark').height(window.innerHeight)
+        })();
+
+        if (cover.t.prop('complete')) {
+            // why setTimeout ?
+            setTimeout(function() { cover.t.load() }, 0)
+        }
+
+        cover.t.on('load', function() {
+
+            ;(cover.f = function() {
+
+                var _w = $('#mark').width(), _h = $('#mark').height(), x, y, i, e;
+
+                e = (_w >= 1000 || _h >= 1000) ? 1000 : 500;
+
+                if (_w >= _h) {
+                    i = _w / e * 50;
+                    y = i;
+                    x = i * _w / _h;
+                } else {
+                    i = _h / e * 50;
+                    x = i;
+                    y = i * _h / _w;
+                }
+
+                $('.layer').css({
+                    'width': _w + x,
+                    'height': _h + y,
+                    'marginLeft': - 0.5 * x,
+                    'marginTop': - 0.5 * y
+                })
+
+                Diaspora.F($('#cover')[0], cover.w, cover.h)
+
+            })();
+
+            setTimeout(function() {
+                $('html, body').removeClass('loading')
+            }, 1000)
+
+            $('#mark').parallax()
+
+            var vibrant = new Vibrant(cover.t[0]);
+            var swatches = vibrant.swatches()
+            console.log(swatches)
+            $('#vibrant polygon').css('fill', swatches['DarkVibrant'].getHex())
+            $('#vibrant div').css('background-color', swatches['DarkVibrant'].getHex())
+            $('.icon-menu').css('color', swatches['Vibrant'].getHex())
+
+        })
+
+        if (!cover.t.attr('src')) {
+            alert('Please set the post thumbnail')
+        }
 
         $('#preview').css('min-height', window.innerHeight)
 
@@ -615,4 +618,7 @@ $(function() {
         }
 
     })
+
+    console.log("%c Github %c","background:#24272A; color:#ffffff","","https://github.com/LoeiFy")
+
 })
