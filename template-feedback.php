@@ -4,6 +4,8 @@ Template Name: feedback
 */
 ?>
 
+<?php require_once('config.php'); ?>
+
 <?php get_header(); ?>
 
 <div id="single" class="page">
@@ -11,7 +13,7 @@ Template Name: feedback
 <?php while ( have_posts() ) : the_post(); ?>
 
     <div id="top">
-        <a class="icon-icon" href="javascript:history.back()"></a>
+        <a class="<?php if (LOGO_FONT) { echo 'icon-icon'; } else { echo 'image-icon'; } ?>" href="javascript:history.back()"></a>
     </div>
 
     <div class="section">
@@ -34,4 +36,4 @@ Template Name: feedback
 </div>
 
 </body>
-</html><!--
+</html>
