@@ -1,5 +1,7 @@
 <?php
 
+require_once('config.php');
+
 /* Archives list v2014 by zwwooooo | http://zww.me */
 function zww_archives_list() {
 	if( !$output = get_option('zww_db_cache_archives_list') ){
@@ -66,6 +68,10 @@ add_action('init', 'register_menu');
 
 // FEATURED IMAGE SUPPORT
 add_theme_support( 'post-thumbnails', array( 'post' ) );
+
+if (!USE_TIMTHUMB) {
+    add_image_size( 'cover', 680, 440, true );
+}
 
 // NEXT PAGE CLASS
 add_filter('next_posts_link_attributes', 'posts_link_attributes');
