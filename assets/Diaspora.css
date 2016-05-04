@@ -166,6 +166,7 @@ audio {
     display: inline-block;
     vertical-align: middle;
     margin-right: 10px;
+    font-family: "icomoon","Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif; 
 }
 .here span:before {
     display: inline-block;
@@ -615,6 +616,7 @@ h1.title {
 }
 .images .downloadlink {
     position: static;
+    display: none;
     margin: 50px auto 70px;
 }
 
@@ -745,9 +747,9 @@ h1.title {
     text-decoration: underline;
 }
 .content hr {
-    height: 1px;
-    width: 30%;
-    margin: 30px 0 30px 35%;
+    height: 2px;
+    width: 90%;
+    margin: 30px 0 30px 5%;
     background: #eee;
     border: none;
 }

@@ -350,7 +350,7 @@ $(function() {
         $('.content img').each(function() {
             if ($(this).attr('src').indexOf('/uploads/2014/downloading.png') > -1) {
                 $(this).hide()
-                $('.downloadlink').attr('href', $(this).parent().attr('href'))
+                $('.downloadlink').attr('href', $(this).parent().attr('href')).css('display', 'block')
             }
         })
 
