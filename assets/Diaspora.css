@@ -63,6 +63,16 @@ audio {
     position: relative;
     z-index: 4;
 }
+.image-logo {
+    z-index: 4;
+    position: relative;
+    display: inline-block;
+    background: url(../images/logo.png) no-repeat center;
+    -webkit-background-size: 62px 26px;
+    -moz-background-size: 62px 26px;
+    width: 62px;
+    height: 26px;
+}
 #vibrant {
     position: absolute;
     top: 0;
@@ -242,6 +252,16 @@ body.touch #top {
     left: 14px;
     top: 16px;
 }
+.image-icon {
+    background: url(../images/logo_min.png) no-repeat center;
+    -webkit-background-size: 24px;
+    -moz-background-size: 24px;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 14px;
+    top: 14px;
+}
 .subtitle {
     color: #666;
     font-size: 14px;
@@ -363,6 +383,11 @@ body.mu .nav {
 }
 body.mu .icon-logo {
     color: #333;
+}
+body.mu .image-logo {
+    background: url(../images/logo_black.png) no-repeat center;
+    -webkit-background-size: 62px 26px;
+    -moz-background-size: 62px 26px;
 }
 
 .menu {

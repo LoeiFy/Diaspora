@@ -1,3 +1,5 @@
+<?php require_once('config.php'); ?>
+
 <?php get_header(); ?>
 
 <div class="nav">
@@ -26,7 +28,7 @@
         </div>
 
         <div id="header"><div>
-            <a class="icon-logo" href="/"></a>
+            <a class="<?php if (LOGO_FONT) { echo 'icon-logo'; } else { echo 'image-logo'; } ?>" href="/"></a>
             <div class="icon-menu switchmenu"></div>
         </div></div>
         <div id="post0">
