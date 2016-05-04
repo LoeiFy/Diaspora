@@ -47,14 +47,14 @@ audio {
 .icon-menu {
     font-size: 20px;
     padding: 6px;
-    border-radius: 3px;
+    border-radius: 2px;
     cursor: pointer;
     position: absolute;
     z-index: 4;
     right: 0;
     top: 0;
     margin-top: -3px;
-    background: rgba(255,255,255,.8);
+    background: rgba(255,255,255,.9);
 }
 .icon-logo {
     display: inline-block;
@@ -76,7 +76,8 @@ audio {
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.3;
+    opacity: 0;
+    background-color: #000;
 }
 #post0 {
     width: 28%;
@@ -899,6 +900,9 @@ h1.title {
     }
     #vibrant svg {
         display: none;
+    }
+    #vibrant div {
+        opacity: 0.3;
     }
     #container {
         padding-bottom: 50px;

@@ -291,10 +291,14 @@ $(function() {
 
             var vibrant = new Vibrant(cover.t[0]);
             var swatches = vibrant.swatches()
-            console.log(swatches)
-            $('#vibrant polygon').css('fill', swatches['DarkVibrant'].getHex())
-            $('#vibrant div').css('background-color', swatches['DarkVibrant'].getHex())
-            $('.icon-menu').css('color', swatches['Vibrant'].getHex())
+
+            if (swatches['DarkVibrant']) {
+                $('#vibrant polygon').css('fill', swatches['DarkVibrant'].getHex())
+                $('#vibrant div').css('background-color', swatches['DarkVibrant'].getHex())
+            }
+            if (swatches['Vibrant']) {
+                $('.icon-menu').css('color', swatches['Vibrant'].getHex())
+            }
 
         })
 
