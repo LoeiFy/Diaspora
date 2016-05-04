@@ -16,7 +16,6 @@ if (is_home()) {
 }
 ?>
 <!DOCTYPE html>
-<!--<html><head></head><body></body></html>-->
 <html <?php language_attributes(); ?> class="loading">
 <head>
 <meta charset="UTF-8" />
@@ -29,11 +28,11 @@ if (is_home()) {
 <meta name="keywords" content="<?php echo $keywords ?>" />
 <meta name="description" content="<?php echo $description ?>" />
 <meta name="author" content="LoeiFy">
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>/static/144.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/static/114.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/static/72.png">
-<link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/static/57.png">
-<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/static/32.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>/images/144.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/images/114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/images/72.png">
+<link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/images/57.png">
+<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/images/32.png" />
 <style>
 @@css
 </style>
