@@ -10,7 +10,7 @@ define ('DEFAULT_WIDTH', 680);
 
 define ('DEFAULT_HEIGHT', 440);
 
-define ('FILE_CACHE_DIRECTORY', './what');
+define ('FILE_CACHE_DIRECTORY', './aksdj4');
 
 define ('DISPLAY_ERROR_MESSAGES', FALSE);
 
