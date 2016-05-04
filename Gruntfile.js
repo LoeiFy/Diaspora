@@ -78,7 +78,7 @@ module.exports = function(grunt) {
                     ]
                 },
                 files: [
-                    {src: ['_header.php'], dest: 'header.php'}
+                    {src: ['assets/header.php'], dest: 'header.php'}
                 ]
             },
 
@@ -96,7 +96,7 @@ module.exports = function(grunt) {
                     ]
                 },
                 files: [
-                    {src: ['_header.php'], dest: 'header.php'}
+                    {src: ['assets/header.php'], dest: 'header.php'}
                 ]
             }
 

@@ -34,8 +34,12 @@ if (is_home()) {
 <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/images/57.png">
 <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/images/32.png" />
 <style>
+.image-logo{background-image:url(<?php echo get_template_directory_uri(); ?>/images/logo.png)}body.mu .image-logo{background-image:url(<?php echo get_template_directory_uri(); ?>/images/logo_black.png)}.image-icon{background-image:url(<?php echo get_template_directory_uri(); ?>/images/logo_min.png)}
+</style>
+<style>
 @@css
 </style>
+
 @@static
 </head>
 <body class="loading">

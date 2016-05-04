@@ -4,8 +4,5 @@
 *~
 .DS_Store
 
-header.php
-
 node_modules/*
-dist/*
 timthumb/what/*
