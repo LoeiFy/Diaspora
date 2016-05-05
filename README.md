@@ -1,31 +1,73 @@
 # Diaspora
-http://guo.lu
+A WordPress theme
 
-## 主题声明
-- 可以 使用供个人网站使用（可以商业网站）
-- 不可以 任何方式散布主题源码
+[Preview Diaspora →](http://guo.lu)
 
-### 设置网站关键字
-`header.php` 第 4 行：$keywords = "这里填写关键字，逗号分割"
+### 相关说明
 
-### 网站 logo 设置
-替换 `static/` 目录下的 32 － 144 图片
+> 评论设置
 
-### duoshuo 留言设置
-主题使用的是 多说 评论，账号设置在 `header.php`  文件 99 行
+主题使用 多说 评论，需要设置多说用户名
 
-`<script>var duoshuoQuery = {short_name:'这里填写你的多说账号'}</script>`
+`header.php` 第 45 行：
 
-### 缩略图设置
-在 wordpress 后台 媒体选项 将 缩略图大小 设置为 宽度 300 高度 0。（可选：其他都设置为 0）
+```html
+<script>var duoshuoQuery = {short_name:location.host.replace('.', '')};</script>
+```
 
-### 可选设置
-guo.lu 首页文章特色图片是通过 timthumb 产生的 680x440 图片，你可以选择使用：将 `post_timthumb.php` 改名为 `post.php` 替换原来文件即可
+替换成：
 
-### 其他
-有 4 个页面模板：
+```html
+<script>var duoshuoQuery = {short_name: '你的多说用户名'};</script>
+```
 
-- `about` 模版：不可评论
-- `Archive` 模版：文章归档
-- `feedback` 模版：可以评论
-- `links` 模版：友情链接
+> 网站图标相关
+
+网站需要 3 个 logo 图片，分别是：
+
+- `images/logo.png` (124x52) 网站首页 logo
+- `images/logo_black.png` (124x52) 网站弹出菜单时候的深色 logo
+- `images/logo_min.png` (48x48) 网站文章详细页面的小 logo
+
+另外 32－144 名字的图片为网站 favicon 以及添加到手机屏幕所需要的小图片
+
+> 缩略图相关
+
+网站正常显示需要每篇文章都必须设置特色图片。
+
+文章页面的显示壁纸 gallery 所需要的缩略图是 300x...，需要在 WordPress 后台 媒体选项 将 缩略图大小 设置为 宽度 300 高度 0。（推荐：其他都设置为 0）
+
+首页显示文章缩略图大小是 680x440，有两种模式产生缩略图，一种是用原生 WordPress 提供的裁切图片功能，一种是使用 timthumb.php。
+
+相关设置：
+
+`config.php` 
+
+```php
+/*
+当 USE_TIMTHUMB 为 FALSE 时表示不是用 timthumb，当为 TRUE 是表示使用
+默认为 FALSE 不使用
+*/
+
+define ('USE_TIMTHUMB', FALSE);
+```
+
+> 文章音乐
+
+主题支持音乐播放，只需要在 WordPress 后台文章编辑页面插入音乐即可，主题会调用音乐播放
+
+> 文章壁纸 Gallery
+
+只需要在文章编辑后台添加图片即可，**注意不需要插入文章内容页面**，主题会调用壁纸显示
+
+### 其他说明
+
+主题有 4 个页面模板：
+
+- `about` 关于模版，不可评论
+- `Archive` 文章归档模版，不可评论
+- `feedback` 评论模版，可以评论
+- `links` 友情链接模版，可以评论
+
+### License
+MIT
