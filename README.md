@@ -69,5 +69,17 @@ define ('USE_TIMTHUMB', FALSE);
 - `feedback` 评论模版，可以评论
 - `links` 友情链接模版，可以评论
 
+### 捐赠相关
+
+如果你觉得这个主题不错，欢迎微信捐赠帮助
+
+![qr](https://cloud.githubusercontent.com/assets/2193211/15043958/e18cd400-1303-11e6-826f-e4495e210d11.jpg)
+
 ### License
 MIT
+
+### Related
+
+<img src="https://cloud.githubusercontent.com/assets/2193211/15043747/08902c0c-1302-11e6-9a38-dcfa9daeec02.jpg" width="200" height="200" />
+
+`Diaspora` by Robert de Boron
