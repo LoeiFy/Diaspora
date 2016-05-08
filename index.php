@@ -16,7 +16,7 @@
 	<div id="screen">
         <div id="mark">
             <div class="layer" data-depth="0.4">
-                <img id="cover" src="<?php echo $cover[0] ?>" width="<?php echo $cover[1] ?>" height="<?php echo $cover[2] ?>"/>
+                <img id="cover" crossorigin="anonymous" src="<?php echo $cover[0] ?>" width="<?php echo $cover[1] ?>" height="<?php echo $cover[2] ?>"/>
             </div>
         </div>
 
