@@ -46,7 +46,7 @@ audio {
 } 
 .icon-menu {
     font-size: 20px;
-    padding: 6px;
+    padding: 6px 6px 5px;
     border-radius: 2px;
     cursor: pointer;
     position: absolute;
@@ -814,6 +814,10 @@ h1.title {
 }
 .friend a:hover {
     background: #f9f9f9;
+}
+
+#preview + canvas {
+    display: none;
 }
 
 @media screen and (max-width: 1200px) {

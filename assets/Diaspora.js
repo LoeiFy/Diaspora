@@ -176,7 +176,13 @@ var Diaspora = {
 
         var p = $('#audio-'+ id +'-1');
 
-        if (!p.length) return;
+        if (!p.length) {
+            $('.icon-play').css({
+                'color': '#dedede',
+                'cursor': 'not-allowed'
+            })
+            return
+        }
 
         p.on({
 
@@ -623,6 +629,6 @@ $(function() {
 
     })
 
-    console.log("%c Github %c","background:#24272A; color:#ffffff","","https://github.com/LoeiFy")
+    console.log("%c Github %c","background:#24272A; color:#ffffff","","https://github.com/LoeiFy/Diaspora")
 
 })
