@@ -2,10 +2,31 @@
 
 <div class="post">
     <?php 
-        if (USE_TIMTHUMB) {
-            $img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
+
+        if (!has_post_thumbnail()) {
+
+            $attachments = get_posts(array(
+                'post_type' => 'attachment',
+                'post_mime_type'=>'image',
+                'posts_per_page' => 0,
+                'post_parent' => $post->ID,
+                'order'=>'ASC'
+            ));
+
+            if ($attachments) {
+                $img = wp_get_attachment_image_src( $attachments[0]->ID, false );
+            } else {
+                $img[0] = get_template_directory_uri() .'/images/default.jpg';
+            }
+
         } else {
-            $img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'cover'); 
+
+            if (USE_TIMTHUMB) {
+                $img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
+            } else {
+                $img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'cover'); 
+            }
+
         }
     ?>
 

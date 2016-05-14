@@ -3,6 +3,16 @@ A WordPress theme
 
 [Preview Diaspora →](http://guo.lu)
 
+### 更新说明
+
+> 1.2.0
+
+自动引用图片作为特色图片
+
+issue：https://github.com/LoeiFy/Diaspora/issues/10
+
+说明：需要在 `images` 目录添加一张默认图片 `default.jpg`
+
 ### 相关说明
 
 > 评论设置

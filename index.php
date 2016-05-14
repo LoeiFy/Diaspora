@@ -11,7 +11,31 @@
 
     <?php if (have_posts()) : $count = 0;  while (have_posts()) : the_post(); $count++; if( $count <= 1 ): ?>
 
-	<?php $cover = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full'); ?>
+    <?php 
+
+    if (has_post_thumbnail()) {
+        $cover = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
+    } else {
+
+        $attachments = get_posts(array(
+            'post_type' => 'attachment',
+            'post_mime_type'=>'image',
+            'posts_per_page' => 0,
+            'post_parent' => $post->ID,
+            'order'=>'ASC'
+        ));
+
+        if ($attachments) {
+            $cover = wp_get_attachment_image_src( $attachments[0]->ID, false );
+        } else {
+            $cover[0] = get_template_directory_uri() .'/images/default.jpg';
+            $cover[1] = 0;
+            $cover[2] = 0;
+        }
+
+    }
+
+    ?>
 	
 	<div id="screen">
         <div id="mark">

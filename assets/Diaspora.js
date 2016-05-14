@@ -285,6 +285,11 @@ $(function() {
                     'marginTop': - 0.5 * y
                 })
 
+                if (!cover.w) {
+                    cover.w = cover.t.width();
+                    cover.h = cover.t.height();
+                }
+
                 Diaspora.F($('#cover')[0], cover.w, cover.h)
 
             })();
