@@ -54,7 +54,10 @@ define ('USE_TIMTHUMB', FALSE);
 
 > 文章音乐
 
-主题支持音乐播放，只需要在 WordPress 后台文章编辑页面插入音乐即可，主题会调用音乐播放
+主题支持音乐播放，两种方式添加：
+
+- 只需要在 WordPress 后台文章编辑页面插入音乐即可，主题会调用音乐播放
+- 使用短代码，在文章编辑源代码使用 `[audio autoplay="auto" loop="ture" src="http://m1.music.126.net/Q2wx7EaeuS_bnqlEJ85u0Q==/2881819977150355.mp3"]` 即可
 
 > 文章壁纸 Gallery
 
