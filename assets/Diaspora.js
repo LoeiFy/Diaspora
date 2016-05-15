@@ -185,19 +185,15 @@ var Diaspora = {
         }
 
         p.on({
-
             'timeupdate': function() {
                 $('.bar').css('width', p[0].currentTime / p[0].duration * 100 +'%')
             },
-
             'ended': function() {
                 $('.icon-pause').removeClass('icon-pause').addClass('icon-play')
             },
-
             'playing': function() {
                 $('.icon-play').removeClass('icon-play').addClass('icon-pause')
             } 
-
         })
 
     },
@@ -355,7 +351,7 @@ $(function() {
 
         Diaspora.player($('.icon-play').data('id'))
 
-        $('.icon-icon').attr('href', '/')
+        $('.icon-icon, .image-icon').attr('href', '/')
 
         // get download link
         $('.content img').each(function() {
