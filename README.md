@@ -13,6 +13,10 @@ issue：https://github.com/LoeiFy/Diaspora/issues/10
 
 说明：需要在 `images` 目录添加一张默认图片 `default.jpg`
 
+> 1.2.2
+
+修复音乐多重播放问题：在文章插入音频时候，需要去掉 `autoplay` 属性，不然会导致音乐多次播放问题。
+
 ### 相关说明
 
 > 评论设置
