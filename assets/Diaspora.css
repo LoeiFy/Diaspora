@@ -69,6 +69,7 @@ audio {
     display: inline-block;
     -webkit-background-size: 62px 26px;
     -moz-background-size: 62px 26px;
+    background-size: 62px 26px;
     background-repeat: no-repeat;
     background-position: center center;
     width: 62px;
@@ -254,8 +255,9 @@ body.touch #top {
     top: 16px;
 }
 .image-icon {
-    -webkit-background-size: 24px;
-    -moz-background-size: 24px;
+    -webkit-background-size: 24px 24px;
+    -moz-background-size: 24px 24px;
+    background-size: 24px 24px;
     background-position: center center;
     background-repeat: no-repeat;
     width: 24px;

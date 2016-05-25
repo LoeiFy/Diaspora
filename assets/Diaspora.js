@@ -46,7 +46,6 @@ var Diaspora = {
     },
 
     PS: function() {
-
         if (!(window.history && history.pushState)) return;
 
         history.replaceState({u: Home, t: document.title}, document.title, Home)
@@ -173,7 +172,6 @@ var Diaspora = {
     },
 
     player: function(id) {
-
         var p = $('#audio-'+ id +'-1');
 
         if (!p.length) {
@@ -183,6 +181,8 @@ var Diaspora = {
             })
             return
         }
+
+        p[0].play()
 
         p.on({
             'timeupdate': function() {
@@ -195,7 +195,6 @@ var Diaspora = {
                 $('.icon-play').removeClass('icon-play').addClass('icon-pause')
             } 
         })
-
     },
 
     loading: function() {
