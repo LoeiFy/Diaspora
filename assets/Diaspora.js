@@ -461,7 +461,7 @@ $(function() {
                 if (window.DUOSHUO) {
                     get_comments()
                 } else {
-                    $.getScript('http://static.duoshuo.com/embed.js', function() {
+                    $.getScript('//static.duoshuo.com/embed.js', function() {
                         get_comments()
                     })
                 }
