@@ -1,7 +1,7 @@
 # Diaspora
 A WordPress theme
 
-[Preview Diaspora →](http://guo.lu)
+[Preview Diaspora →](http://isujin.com)
 
 ### 更新说明
 
