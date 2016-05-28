@@ -86,6 +86,85 @@ define ('USE_TIMTHUMB', FALSE);
 - `feedback` 评论模版，可以评论
 - `links` 友情链接模版，可以评论
 
+### 开发说明
+
+主题使用了 `basket.js` 缓存静态资源，开发时候有点麻烦。
+
+以下操作都在主题主目录下执行
+
+> 安装 node.js
+
+这个很多教程，这里不详细说了
+
+> 安装相关 node 插件
+
+```bash
+# 安装 Grunt
+sudo npm install -g grunt-cli
+
+# 安装插件
+npm i
+```
+
+> 开发
+
+```bash
+grunt dev
+```
+
+涉及修改主题的文件都在 `assets` 目录下：
+
+- Diaspora.css 主题主要 css
+- Diaspora.js 主题主要 js
+
+> 生成正式代码：
+
+代码修改完成，需要更新版本号才能使客户端更新
+
+修改 `assets` 里的 `basket.html` 更新版本号，即 script 标签里面所涉及修改的版本号 unique 值
+
+不需要把全部 unique 值增加，只需要把对应修改了的才增加
+
+```html
+<script>
+	basket.require({ url: '<?php echo get_template_directory_uri(); ?>/dist/Diaspora.css', unique: 12,  execute: false })
+	.then(function(responses) {
+        _stylesheet.appendStyleSheet(responses[0], function() {});
+		basket.require({ url: '<?php echo get_template_directory_uri(); ?>/static/jquery.min.js', unique: 10 })
+		.then(function() {
+			basket.require({ url: '<?php echo get_template_directory_uri(); ?>/dist/plugin.js', unique: 10 })
+			.then(function() {
+        		basket.require({ url: '<?php echo get_template_directory_uri(); ?>/dist/Diaspora.js', unique: 16 })
+                .then(function() {
+                    if (!window.$ || !window.DP) {
+                        localStorage.clear()
+                    }
+                })
+			})
+		})
+	});
+</script>
+```
+
+例如修改了主题主要样式 `Diaspora.css`，需要修改的地方是
+
+```js
+// 修改 " unique: 12 " 为 " unique: 13 " 
+basket.require({ url: '<?php echo get_template_directory_uri(); ?>/dist/Diaspora.css', unique: 12,  execute: false })
+```
+
+版本号修改完成后，运行
+
+```bash
+grunt
+```
+
+这时候 `dist` 目录会生成压缩后的静态文件。
+
+> 线上更新静态文件
+
+替换 `dist` 目录相关文件，同时需要替换 `header.php` 来使客户端更新静态文件版本
+
 ### 捐赠
 
 如果你觉得这个主题不错，欢迎微信捐赠作者
