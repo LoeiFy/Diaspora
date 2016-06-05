@@ -79,7 +79,11 @@ define ('USE_TIMTHUMB', FALSE);
 
 ### 其他说明
 
-主题有 4 个页面模板：
+> 关于主题评论说明：
+
+https://github.com/LoeiFy/Diaspora/issues/19#issuecomment-223790862
+
+> 主题有 4 个页面模板：
 
 - `about` 关于模版，不可评论
 - `Archive` 文章归档模版，不可评论
