@@ -81,5 +81,5 @@
 	<?php endwhile; endif; ?>
 
 </div>       
-</body>
-</html>
+
+<?php get_footer(); ?>

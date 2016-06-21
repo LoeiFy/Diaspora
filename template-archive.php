@@ -30,5 +30,4 @@ Template Name: Archive
 
 </div>
 
-</body>
-</html>
+<?php get_footer(); ?>

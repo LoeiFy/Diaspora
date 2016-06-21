@@ -34,8 +34,6 @@ Template Name: links
 
 <?php endwhile; ?>
 
-
 </div>
 
-</body>
-</html>
+<?php get_footer(); ?>

@@ -35,5 +35,4 @@ Template Name: feedback
 
 </div>
 
-</body>
-</html>
+<?php get_footer(); ?>
