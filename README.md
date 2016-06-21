@@ -5,6 +5,10 @@ A WordPress theme
 
 ### 更新说明
 
+> 1.2.3
+
+方便用户自行修改主题，移除 basket.js 以及相关开发部署插件
+
 > 1.2.0
 
 自动引用图片作为特色图片
@@ -23,10 +27,10 @@ issue：https://github.com/LoeiFy/Diaspora/issues/10
 
 主题使用 多说 评论，需要设置多说用户名
 
-`header.php` 第 45 行：
+`header.php` 第 44 行：
 
 ```html
-<script>var duoshuoQuery = {short_name:location.host.replace('.', '')};</script>
+<script>var duoshuoQuery={short_name:'test123456'}</script>
 ```
 
 替换成：
@@ -71,7 +75,7 @@ define ('USE_TIMTHUMB', FALSE);
 主题支持音乐播放，两种方式添加：
 
 - 只需要在 WordPress 后台文章编辑页面插入音乐即可，主题会调用音乐播放
-- 使用短代码，在文章编辑源代码使用 `[audio autoplay="auto" loop="ture" src="http://m1.music.126.net/Q2wx7EaeuS_bnqlEJ85u0Q==/2881819977150355.mp3"]` 即可
+- 使用短代码，在文章编辑源代码使用 `[audio loop="ture" src="http://m1.music.126.net/Q2wx7EaeuS_bnqlEJ85u0Q==/2881819977150355.mp3"]` 即可
 
 > 文章壁纸 Gallery
 
@@ -92,82 +96,19 @@ https://github.com/LoeiFy/Diaspora/issues/19#issuecomment-223790862
 
 ### 开发说明
 
-主题使用了 `basket.js` 缓存静态资源，开发时候有点麻烦。
+主题使用了 5 个 js 插件：
 
-以下操作都在主题主目录下执行
+- jquery.justifiedGallery.js
+- Chocolate.js
+- jquery.qrcode.js
+- jquery.parallax.js
+- Vibrant.js
 
-> 安装 node.js
+这些插件都合并在一个文件上：`static/plugin.js`
 
-这个很多教程，这里不详细说了
+修改 css 只需要修改 `assets/Diaspora.css`
 
-> 安装相关 node 插件
-
-```bash
-# 安装 Grunt
-sudo npm install -g grunt-cli
-
-# 安装插件
-npm i
-```
-
-> 开发
-
-```bash
-grunt dev
-```
-
-涉及修改主题的文件都在 `assets` 目录下：
-
-- Diaspora.css 主题主要 css
-- Diaspora.js 主题主要 js
-
-> 生成正式代码：
-
-代码修改完成，需要更新版本号才能使客户端更新
-
-修改 `assets` 里的 `basket.html` 更新版本号，即 script 标签里面所涉及修改的版本号 unique 值
-
-不需要把全部 unique 值增加，只需要把对应修改了的才增加
-
-```html
-<script>
-	basket.require({ url: '<?php echo get_template_directory_uri(); ?>/dist/Diaspora.css', unique: 12,  execute: false })
-	.then(function(responses) {
-        _stylesheet.appendStyleSheet(responses[0], function() {});
-		basket.require({ url: '<?php echo get_template_directory_uri(); ?>/static/jquery.min.js', unique: 10 })
-		.then(function() {
-			basket.require({ url: '<?php echo get_template_directory_uri(); ?>/dist/plugin.js', unique: 10 })
-			.then(function() {
-        		basket.require({ url: '<?php echo get_template_directory_uri(); ?>/dist/Diaspora.js', unique: 16 })
-                .then(function() {
-                    if (!window.$ || !window.DP) {
-                        localStorage.clear()
-                    }
-                })
-			})
-		})
-	});
-</script>
-```
-
-例如修改了主题主要样式 `Diaspora.css`，需要修改的地方是
-
-```js
-// 修改 " unique: 12 " 为 " unique: 13 " 
-basket.require({ url: '<?php echo get_template_directory_uri(); ?>/dist/Diaspora.css', unique: 12,  execute: false })
-```
-
-版本号修改完成后，运行
-
-```bash
-grunt
-```
-
-这时候 `dist` 目录会生成压缩后的静态文件。
-
-> 线上更新静态文件
-
-替换 `dist` 目录相关文件，同时需要替换 `header.php` 来使客户端更新静态文件版本
+修改 js 只需要修改 `assets/Diaspora.js`
 
 ### 捐赠
 
