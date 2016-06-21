@@ -36,34 +36,12 @@ if (is_home()) {
 <style>
 .image-logo{background-image:url(<?php echo get_template_directory_uri(); ?>/images/logo.png)}body.mu .image-logo{background-image:url(<?php echo get_template_directory_uri(); ?>/images/logo_black.png)}.image-icon{background-image:url(<?php echo get_template_directory_uri(); ?>/images/logo_min.png)}
 </style>
-<style>
-/* http://lorem.in  @author LoeiFy@gmail.com */ 
 
-body,div,h1,h2,h3,h4,h5,li,p,ul{margin:0;padding:0;font-weight:400;list-style:none}html{-webkit-text-size-adjust:100%}body,html{-webkit-tap-highlight-color:transparent;-webkit-font-smoothing:antialiased;background:#fff}body{position:relative;overflow-x:hidden}body:before{background:grey;position:absolute;content:'';width:14px;height:14px;left:50%;top:50%;margin-left:-7px;margin-top:-7px;border-radius:50%;-webkit-border-radius:50%;-moz-border-radius:50%;-webkit-animation:loading 2s ease-out forwards infinite;-moz-animation:loading 2s ease-out forwards infinite;display:none}body.loading:before{display:block}@-webkit-keyframes loading{0%{-webkit-transform:scale(0.3)}50%{-webkit-transform:scale(1)}100%{-webkit-transform:scale(0.3)}}@-moz-keyframes loading{0%{-moz-transform:scale(0.3)}50%{-moz-transform:scale(1)}100%{-moz-transform:scale(0.3)}}body.loading #container,body.loading #single,body.loading .nav{opacity:0}body.loading,html.loading{height:100%;overflow:hidden}
-</style>
-
-<script>var duoshuoQuery = {short_name:location.host.replace('.', '')};</script>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/Diaspora.css" />
 
 <script>if(self!=top){top.location=self.location}</script>
-<script src="<?php echo get_template_directory_uri(); ?>/static/basket.js?000"></script>
-<script>
-	basket.require({ url: '<?php echo get_template_directory_uri(); ?>/dist/Diaspora.css', unique: 12,  execute: false })
-	.then(function(responses) {
-        _stylesheet.appendStyleSheet(responses[0], function() {});
-		basket.require({ url: '<?php echo get_template_directory_uri(); ?>/static/jquery.min.js', unique: 10 })
-		.then(function() {
-			basket.require({ url: '<?php echo get_template_directory_uri(); ?>/dist/plugin.js', unique: 10 })
-			.then(function() {
-        		basket.require({ url: '<?php echo get_template_directory_uri(); ?>/dist/Diaspora.js', unique: 16 })
-                .then(function() {
-                    if (!window.$ || !window.DP) {
-                        localStorage.clear()
-                    }
-                })
-			})
-		})
-	});
-</script>
+
+<script>var duoshuoQuery={short_name:'test123456'}</script>
 
 </head>
 <body class="loading">
