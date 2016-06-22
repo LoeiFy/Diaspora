@@ -7,7 +7,12 @@ A WordPress theme
 
 > 1.2.3
 
-方便用户自行修改主题，移除 basket.js 以及相关开发部署插件
+- 方便用户自行修改主题，移除 basket.js 以及相关开发部署插件
+- 添加 `<?php wp_head() ?>` 头
+
+> 1.2.2
+
+修复音乐多重播放问题：在文章插入音频时候，需要去掉 `autoplay` 属性，不然会导致音乐多次播放问题。
 
 > 1.2.0
 
@@ -16,10 +21,6 @@ A WordPress theme
 issue：https://github.com/LoeiFy/Diaspora/issues/10
 
 说明：需要在 `images` 目录添加一张默认图片 `default.jpg`
-
-> 1.2.2
-
-修复音乐多重播放问题：在文章插入音频时候，需要去掉 `autoplay` 属性，不然会导致音乐多次播放问题。
 
 ### 相关说明
 
@@ -76,6 +77,8 @@ define ('USE_TIMTHUMB', FALSE);
 
 - 只需要在 WordPress 后台文章编辑页面插入音乐即可，主题会调用音乐播放
 - 使用短代码，在文章编辑源代码使用 `[audio loop="ture" src="http://m1.music.126.net/Q2wx7EaeuS_bnqlEJ85u0Q==/2881819977150355.mp3"]` 即可
+
+***注意要去除 `autoplay` 属性，不然会引起多次播放 bug***
 
 > 文章壁纸 Gallery
 
