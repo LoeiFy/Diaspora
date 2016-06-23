@@ -68,6 +68,8 @@
 
         <div class="comment link" data-id="<?php the_ID(); ?>">添加评论</div>
 
+        <?php //comments_template(); ?> 
+
         </div>
 
     </div>
