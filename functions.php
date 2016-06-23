@@ -60,7 +60,7 @@ function count_words ($text) {
     }   
 }
 
-add_filter('show_admin_bar', '__return_false');
+//add_filter('show_admin_bar', '__return_false');
 
 // MENU SUPPORT
 function register_menu() {

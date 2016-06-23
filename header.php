@@ -43,7 +43,6 @@ if (is_home()) {
 
 <script>var duoshuoQuery={short_name:'test123456'}</script>
 
-<?php wp_head(); ?>
 </head>
 <body class="loading">
 <div id="loader"></div>

@@ -7,8 +7,7 @@ A WordPress theme
 
 > 1.2.3
 
-- 方便用户自行修改主题，移除 basket.js 以及相关开发部署插件
-- 添加 `<?php wp_head() ?>` 头
+方便用户自行修改主题，移除 basket.js 以及相关开发部署插件
 
 > 1.2.2
 
@@ -99,7 +98,7 @@ https://github.com/LoeiFy/Diaspora/issues/19#issuecomment-223790862
 
 ### 开发说明
 
-主题使用了 5 个 js 插件：
+> 主题使用了 5 个 js 插件：
 
 - jquery.justifiedGallery.js
 - Chocolate.js
@@ -112,6 +111,12 @@ https://github.com/LoeiFy/Diaspora/issues/19#issuecomment-223790862
 修改 css 只需要修改 `assets/Diaspora.css`
 
 修改 js 只需要修改 `assets/Diaspora.js`
+
+> 插件问题
+
+主题默认去掉 `<?php wp_head() ?>` 以及 `<?php wp_footer() ?>` 。这时候会导致一些插件使用不了，你可以按你自己需求加回去
+
+之所以去掉原因是这两个函数会带一堆无关资源加载
 
 ### 捐赠
 
