@@ -66,9 +66,11 @@
 		    <?php the_content(); ?>
         </div>
 
+        <?php if (!DEFAULT_COMMENT) { ?>
         <div class="comment link" data-id="<?php the_ID(); ?>">添加评论</div>
+        <?php } ?>
 
-        <?php //comments_template(); ?> 
+        <?php if (DEFAULT_COMMENT) { comments_template(); } ?> 
 
         </div>
 
