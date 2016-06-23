@@ -5,6 +5,10 @@ A WordPress theme
 
 ### 更新说明
 
+> 1.2.4
+
+添加自带评论支持
+
 > 1.2.3
 
 方便用户自行修改主题，移除 basket.js 以及相关开发部署插件
@@ -63,7 +67,7 @@ issue：https://github.com/LoeiFy/Diaspora/issues/10
 
 ```php
 /*
-当 USE_TIMTHUMB 为 FALSE 时表示不是用 timthumb，当为 TRUE 是表示使用
+当 USE_TIMTHUMB 为 FALSE 时表示不使用 timthumb，当为 TRUE 是表示使用
 默认为 FALSE 不使用
 */
 
@@ -87,7 +91,18 @@ define ('USE_TIMTHUMB', FALSE);
 
 > 关于主题评论说明：
 
-https://github.com/LoeiFy/Diaspora/issues/19#issuecomment-223790862
+`config.php`
+
+```php
+/*
+当 DEFAULT_COMMENT 为 FALSE 时表示不使用默认评论，当为 TRUE 是表示使用
+默认为 FALSE 不使用
+*/
+
+define ('DEFAULT_COMMENT', FALSE);
+```
+
+注：默认评论需要自行添加样式
 
 > 主题有 4 个页面模板：
 
