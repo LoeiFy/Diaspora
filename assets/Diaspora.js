@@ -445,7 +445,7 @@ $(function() {
             break;
 
             // comment
-            case (tag.indexOf('comment') != -1):
+            case (tag.indexOf('comment') != -1 && tag.indexOf('link') != -1):
                 Diaspora.loading()
                 $('.comment').removeClass('link').html('')
 
