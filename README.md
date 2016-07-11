@@ -3,6 +3,10 @@ A WordPress theme
 
 [Preview Diaspora →](http://isujin.com)
 
+> ghost 版，感谢 @PeterCxy
+
+https://github.com/PeterCxy/ghost-diaspora
+
 ### 更新说明
 
 > 1.2.4
