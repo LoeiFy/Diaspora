@@ -41,7 +41,8 @@ if (is_home()) {
 
 <script>if(self!=top){top.location=self.location}</script>
 
-<script>var duoshuoQuery={short_name:'test123456'}</script>
+<script>var duoshuoQuery = { short_name: 'test123456' }</script>
+<script>var disqus_shortname = 'acyort'</script>
 
 </head>
 <body class="loading">
