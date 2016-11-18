@@ -7,45 +7,21 @@ A WordPress theme
 
 https://github.com/PeterCxy/ghost-diaspora
 
-### 更新说明
-
-> 1.2.4
-
-添加关闭多说评论功能。PS：自带评论并无样式，需要自己添加
-
-> 1.2.3
-
-方便用户自行修改主题，移除 basket.js 以及相关开发部署插件
-
-> 1.2.2
-
-修复音乐多重播放问题：在文章插入音频时候，需要去掉 `autoplay` 属性，不然会导致音乐多次播放问题。
-
-> 1.2.0
-
-自动引用图片作为特色图片
-
-issue：https://github.com/LoeiFy/Diaspora/issues/10
-
-说明：需要在 `images` 目录添加一张默认图片 `default.jpg`
-
 ### 相关说明
 
 > 评论设置
 
-主题使用 多说 评论，需要设置多说用户名
+主题使用 `多说` 或者 `disqus` 评论，需要设置相关用户名
 
 `header.php` 第 44 行：
 
 ```html
 <script>var duoshuoQuery={short_name:'test123456'}</script>
+
+<script>var disqus_shortname = 'your_disqus_name_here'</script>
 ```
 
-替换成：
-
-```html
-<script>var duoshuoQuery = {short_name: '你的多说用户名'};</script>
-```
+多说，disqus 只能使用一个，如果两个都填，会使用 disqus
 
 > 网站图标相关
 
@@ -64,6 +40,12 @@ issue：https://github.com/LoeiFy/Diaspora/issues/10
 文章页面的显示壁纸 gallery 所需要的缩略图是 300x...，需要在 WordPress 后台 媒体选项 将 缩略图大小 设置为 宽度 300 高度 0。（推荐：其他都设置为 0）
 
 首页显示文章缩略图大小是 680x440，有两种模式产生缩略图，一种是用原生 WordPress 提供的裁切图片功能，一种是使用 timthumb.php。
+
+> 自动引用图片作为特色图片
+
+issue：https://github.com/LoeiFy/Diaspora/issues/10
+
+说明：需要在 `images` 目录添加一张默认图片 `default.jpg`
 
 相关设置：
 
