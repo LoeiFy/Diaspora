@@ -39,8 +39,6 @@ if (is_home()) {
 
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/Diaspora.css" />
 
-<script>if(self!=top){top.location=self.location}</script>
-
 <script>var duoshuoQuery = { short_name: '' }</script>
 <script>var disqus_shortname = ''</script>
 
