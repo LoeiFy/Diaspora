@@ -7,7 +7,7 @@
 <p>&copy; <?php echo date("Y"); ?> <?php bloginfo('name'); ?>. Powered by WordPress</p>
 </div>
 
-<div id="container">	
+<div id="container">    
 
     <?php if (have_posts()) : $count = 0;  while (have_posts()) : the_post(); $count++; if( $count <= 1 ): ?>
 
@@ -29,15 +29,15 @@
             $cover = wp_get_attachment_image_src( $attachments[0]->ID, false );
         } else {
             $cover[0] = get_template_directory_uri() .'/images/default.jpg';
-            $cover[1] = 0;
-            $cover[2] = 0;
+            $cover[1] = 1400;
+            $cover[2] = 905;
         }
 
     }
 
     ?>
-	
-	<div id="screen">
+    
+    <div id="screen">
         <div id="mark">
             <div class="layer" data-depth="0.4">
                 <img id="cover" crossorigin="anonymous" src="<?php echo $cover[0] ?>" width="<?php echo $cover[1] ?>" height="<?php echo $cover[2] ?>"/>
@@ -46,8 +46,8 @@
 
         <div id="vibrant">
             <svg viewBox="0 0 2880 1620" height="100%" preserveAspectRatio="xMaxYMax slice">
-				<polygon opacity="0.7" points="2000,1620 0,1620 0,0 600,0 "/>
-			</svg>
+                <polygon opacity="0.7" points="2000,1620 0,1620 0,0 600,0 "/>
+            </svg>
             <div></div>
         </div>
 
@@ -60,11 +60,11 @@
             <h2><a data-id="<?php the_ID() ?>" class="posttitle" href="<?php the_permalink(); ?>" /><?php the_title(); ?></a></h2>
             <p><?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 100,"..."); ?></p>
         </div>
-	</div>
+    </div>
 
-	<div style="display: none;">
-	    <?php get_template_part( 'post' ); ?>
-	</div>
+    <div style="display: none;">
+        <?php get_template_part( 'post' ); ?>
+    </div>
 
     <div id="primary">
 
