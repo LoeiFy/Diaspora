@@ -66,12 +66,10 @@
 		    <?php the_content(); ?>
         </div>
 
-        <?php if (!DEFAULT_COMMENT) { ?>
-        <div class="comment link" data-id="<?php the_ID(); ?>">添加评论</div>
-        <?php } ?>
-
-        <!-- 自带评论请自行添加样式相关，已经无力弄这个 -->
-        <?php if (DEFAULT_COMMENT) { comments_template(); } ?> 
+        <div class="comment-wrap">
+        <div class="comment link">添加评论</div>
+        <?php comments_template(); ?> 
+        </div>
 
         </div>
 

@@ -25,7 +25,10 @@ Template Name: feedback
 		    <?php the_content(); ?>
         </div>
         
-        <div class="comment link" data-id="<?php the_ID(); ?>">添加评论</div>
+        <div class="comment-wrap">
+        <div class="comment link">添加评论</div>
+        <?php comments_template(); ?> 
+        </div>
 
         </div>
         </div>

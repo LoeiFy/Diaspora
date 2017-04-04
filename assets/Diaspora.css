@@ -682,7 +682,7 @@ h1.title {
 .stuff .count {
     color: #666;
 }
-.comment {
+.comment.link {
     margin: 50px auto 0;
 }
 .comment.link, .downloadlink {
@@ -877,6 +877,88 @@ h1.title {
 
 #preview + canvas {
     display: none;
+}
+
+#reply-title {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 16px;
+}
+.comment-notes {
+    display: none;
+}
+#commentform input, #commentform textarea {
+    display: block;
+    vertical-align: top;
+    border: 1px solid #e2e2e2;
+    padding: 10px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 14px;
+}
+#commentform label {
+    display: block;
+    font-size: 14px;
+    color: #444;
+    margin: 10px 0 5px;
+}
+#commentform input[type=submit] {
+    width: 140px;
+    text-align: center;
+    margin: 30px auto 0;
+    color: #fff;
+    background: #545454;
+    cursor: pointer;
+}
+#comments ol {
+    padding-left: 0;
+}
+#comments li {
+    position: relative;
+    margin-top: 30px;
+    border-bottom: 1px solid #eee;
+}
+.says {
+    display: none;
+}
+.comment-author {
+    display: inline-block;
+}
+.comment-author img {
+    display: inline-block;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    vertical-align: top;
+    margin-right: 10px;
+}
+.comment-author a {
+    color: #EF6D57;
+    font-style: normal;
+    font-size: 14px;
+}
+.comment-meta {
+    margin: -14px 0 0 54px;
+    font-size: 12px;
+}
+.comment-meta + p {
+    margin-top: 14px;
+    font-size: 14px;
+    color: #333;
+}
+.comment-meta a {
+    color: #666;
+}
+.reply {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    font-size: 14px;
+}
+.reply a {
+    color: #EF6D57;
+    text-decoration: underline;
 }
 
 @media screen and (max-width: 1200px) {

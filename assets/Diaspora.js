@@ -444,63 +444,6 @@ $(function() {
                 return false;
             break;
 
-            // comment
-            case (tag.indexOf('comment') != -1 && tag.indexOf('link') != -1):
-                Diaspora.loading()
-                $('.comment').removeClass('link').html('')
-
-                var id = $('.comment').data('id');
-                
-                if (window.disqus_shortname) {
-                    $('.comment').append('<div id="disqus_thread"></div>')
-
-                    window.disqus_config = function() {
-                        this.page.identifier = id
-                        this.page.url = location.href
-                        this.page.title = document.title
-                    }
-
-                    var get_disqus = function() {
-
-                        DISQUS.reset({
-                            reload: true,
-                            config: function () {
-                                this.page.identifier = id
-                                this.page.url = location.href.split('?')[0]
-                                this.page.title = document.title
-                            }
-                        })
-
-                        Diaspora.loaded()
-                    }
-
-                    if (window.DISQUS) {
-                        get_disqus()
-                    } else {
-                        $.getScript('//' + window.disqus_shortname + '.disqus.com/embed.js', function() {
-                            get_disqus()
-                        })
-                    }
-
-                } else {
-                    var get_comments = function() {
-                            var el = document.createElement('div');
-                            el.setAttribute('data-thread-key', id)
-                            DUOSHUO.EmbedThread(el)
-                            $('.comment').html(el)
-                            Diaspora.loaded()
-                        };
-
-                    if (window.DUOSHUO) {
-                        get_comments()
-                    } else {
-                        $.getScript('//static.duoshuo.com/embed.js', function() {
-                            get_comments()
-                        })
-                    }
-                } 
-            break;
-
             // post images
             case (tag.indexOf('icon-images') != -1):
                 window.scrollTo(0, 0)
