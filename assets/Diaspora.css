@@ -879,10 +879,14 @@ h1.title {
     display: none;
 }
 
+#comments {
+    display: none;
+}
 #reply-title {
     font-size: 18px;
     color: #333;
     margin-bottom: 16px;
+    margin-top: 30px;
 }
 .comment-notes {
     display: none;
@@ -918,6 +922,7 @@ h1.title {
 #comments li {
     position: relative;
     margin-top: 30px;
+    padding-bottom: 20px;
     border-bottom: 1px solid #eee;
 }
 .says {
@@ -934,6 +939,9 @@ h1.title {
     margin-right: 10px;
 }
 .comment-author a {
+    color: inherit;
+}
+.comment-author cite {
     color: #EF6D57;
     font-style: normal;
     font-size: 14px;
@@ -959,6 +967,16 @@ h1.title {
 .reply a {
     color: #EF6D57;
     text-decoration: underline;
+}
+ol.children {
+    margin-left: 30px;
+}
+li.depth-2 .children {
+    margin-left: 0;
+}
+ol.children li {
+    border-bottom: none!important;
+    padding-bottom: 10px!important;
 }
 
 @media screen and (max-width: 1200px) {

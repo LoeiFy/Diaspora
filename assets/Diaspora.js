@@ -444,6 +444,11 @@ $(function() {
                 return false;
             break;
 
+            case (tag.indexOf('comment link') != -1):
+                $('.comment.link').removeClass('link').html('')
+                $('#comments').show()
+            break;
+
             // post images
             case (tag.indexOf('icon-images') != -1):
                 window.scrollTo(0, 0)
