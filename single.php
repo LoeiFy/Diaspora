@@ -67,7 +67,6 @@
         </div>
 
         <div class="comment-wrap">
-        <div class="comment link">添加评论</div>
         <?php comments_template(); ?> 
         </div>
 

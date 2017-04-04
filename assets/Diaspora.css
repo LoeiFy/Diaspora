@@ -879,14 +879,16 @@ h1.title {
     display: none;
 }
 
-#comments {
-    display: none;
-}
 #reply-title {
     font-size: 18px;
     color: #333;
     margin-bottom: 16px;
     margin-top: 30px;
+}
+#reply-title a {
+    margin: 0 5px;
+    color: #333;
+    text-decoration: underline;
 }
 .comment-notes {
     display: none;
@@ -909,12 +911,16 @@ h1.title {
     margin: 10px 0 5px;
 }
 #commentform input[type=submit] {
+    cursor: pointer;
+    letter-spacing: 5px;
+    border: 1px solid #dadada;
     width: 140px;
     text-align: center;
+    color: #666;
+    font-size: 14px;
+    padding: 10px 0;
+    background: #fff;
     margin: 30px auto 0;
-    color: #fff;
-    background: #545454;
-    cursor: pointer;
 }
 #comments ol {
     padding-left: 0;
