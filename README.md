@@ -9,20 +9,6 @@ https://github.com/PeterCxy/ghost-diaspora
 
 ### 相关说明
 
-> 评论设置
-
-主题使用 `多说` 或者 `disqus` 评论，需要设置相关用户名
-
-`header.php` 第 44 行：
-
-```html
-<script>var duoshuoQuery={short_name:'test123456'}</script>
-
-<script>var disqus_shortname = 'your_disqus_name_here'</script>
-```
-
-多说，disqus 只能使用一个，如果两个都填，会使用 disqus
-
 > 网站图标相关
 
 网站需要 3 个 logo 图片，分别是：
@@ -74,21 +60,6 @@ define ('USE_TIMTHUMB', FALSE);
 只需要在文章编辑后台添加图片即可，***注意不需要插入文章内容页面***，主题会调用壁纸显示
 
 ### 其他说明
-
-> 关于主题评论说明：
-
-`config.php`
-
-```php
-/*
-当 DEFAULT_COMMENT 为 FALSE 时表示不使用默认评论，当为 TRUE 是表示使用
-默认为 FALSE 不使用
-*/
-
-define ('DEFAULT_COMMENT', FALSE);
-```
-
-注：默认评论需要自行添加样式
 
 > 主题有 4 个页面模板：
 
