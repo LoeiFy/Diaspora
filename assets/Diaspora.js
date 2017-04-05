@@ -337,15 +337,10 @@ $(function() {
     } else {
 
         $('#single').css('min-height', window.innerHeight)
-
-        setTimeout(function() {
-            $('html, body').removeClass('loading')
-        }, 1000)
-
+        $('html, body').removeClass('loading')
+        
         window.addEventListener('popstate', function(e) {
-
             if (e.state) location.href = e.state.u;
-
         })
 
         Diaspora.player($('.icon-play').data('id'))

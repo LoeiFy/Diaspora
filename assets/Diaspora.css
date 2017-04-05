@@ -922,6 +922,13 @@ h1.title {
     background: #fff;
     margin: 30px auto 0;
 }
+#comments {
+    margin-top: 70px;
+}
+#comments > h2 {
+    color: #333;
+    font-size: 18px;
+}
 #comments ol {
     padding-left: 0;
 }
@@ -967,7 +974,7 @@ h1.title {
 .reply {
     position: absolute;
     right: 0;
-    top: 10px;
+    top: 0;
     font-size: 14px;
 }
 .reply a {
@@ -983,6 +990,9 @@ li.depth-2 .children {
 ol.children li {
     border-bottom: none!important;
     padding-bottom: 10px!important;
+}
+.logged-in-as a, .must-log-in a {
+    color: #EF6D57;
 }
 
 @media screen and (max-width: 1200px) {
@@ -1142,7 +1152,7 @@ ol.children li {
     .relate li div a {
         font-size: 18px;
     }
-    .comment.link {
+    .comment.link, #commentform input[type=submit] {
         width: 140px;
         padding: 5px 0;
     }
