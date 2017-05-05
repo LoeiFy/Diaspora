@@ -7,9 +7,9 @@ A WordPress theme
 
 https://github.com/PeterCxy/ghost-diaspora
 
-### 相关说明
+## 相关说明
 
-> 网站图标相关
+### 网站图标相关
 
 网站需要 3 个 logo 图片，分别是：
 
@@ -19,13 +19,12 @@ https://github.com/PeterCxy/ghost-diaspora
 
 另外 32－144 名字的图片为网站 favicon 以及添加到手机屏幕所需要的小图片
 
-> 缩略图相关
+### 缩略图相关
 
 网站正常显示需要每篇文章都必须设置特色图片。
 
-文章页面的显示壁纸 gallery 所需要的缩略图是 300x...，需要在 WordPress 后台 媒体选项 将 缩略图大小 设置为 宽度 300 高度 0。（推荐：其他都设置为 0）
-
-首页显示文章缩略图大小是 680x440，有两种模式产生缩略图，一种是用原生 WordPress 提供的裁切图片功能，一种是使用 timthumb.php。
+- 显示壁纸 gallery 所需要的缩略图是 300x...，需要在 WordPress 后台 媒体选项 将 缩略图大小 设置为 宽度 300 高度 0。（推荐：其他都设置为 0）
+- 首页显示文章缩略图大小是 680x440，有两种模式产生缩略图，一种是用原生 WordPress 提供的裁切图片功能，一种是使用 timthumb.php。
 
 > 自动引用图片作为特色图片
 
@@ -46,7 +45,7 @@ issue：https://github.com/LoeiFy/Diaspora/issues/10
 define ('USE_TIMTHUMB', FALSE);
 ```
 
-> 文章音乐
+### 文章音乐
 
 主题支持音乐播放，两种方式添加：
 
@@ -55,22 +54,22 @@ define ('USE_TIMTHUMB', FALSE);
 
 ***注意要去除 `autoplay` 属性，不然会引起多次播放 bug***
 
-> 文章壁纸 Gallery
+### 文章壁纸 Gallery
 
 只需要在文章编辑后台添加图片即可，***注意不需要插入文章内容页面***，主题会调用壁纸显示
 
-### 其他说明
+## 其他说明
 
-> 主题有 4 个页面模板：
+主题有 4 个页面模板：
 
 - `about` 关于模版，不可评论
 - `Archive` 文章归档模版，不可评论
 - `feedback` 评论模版，可以评论
 - `links` 友情链接模版，可以评论
 
-### 开发说明
+## 开发说明
 
-> 主题使用了 5 个 js 插件：
+主题使用了 5 个 js 插件：
 
 - jquery.justifiedGallery.js
 - Chocolate.js
@@ -90,16 +89,16 @@ define ('USE_TIMTHUMB', FALSE);
 
 之所以去掉原因是这两个函数会带一堆无关资源加载
 
-### 捐赠
+## 捐赠
 
 如果你觉得这个主题不错，欢迎微信捐赠作者
 
 ![qr](https://cloud.githubusercontent.com/assets/2193211/15043958/e18cd400-1303-11e6-826f-e4495e210d11.jpg)
 
-### License
+## License
 MIT
 
-### Related
+## Related
 
 <img src="https://cloud.githubusercontent.com/assets/2193211/15043747/08902c0c-1302-11e6-9a38-dcfa9daeec02.jpg" width="200" height="200" />
 
