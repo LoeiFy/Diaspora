@@ -162,7 +162,7 @@ function tz_printLikes($post_id) {
 		$who = ' person likes ';
 	} //if
 	
-	if(isset($_COOKIE["like_" + $post_id])) {
+	if(isset($_COOKIE["like_" . $post_id])) {
 
 	print '<a href="javascript:;" class="likeThis active" id="like-'.$post_id.'"><span class="icon-like"></span><span class="count">'.$likes.'</span></a>';
 		return;

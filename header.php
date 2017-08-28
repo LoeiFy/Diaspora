@@ -37,6 +37,7 @@ if (is_home()) {
 .image-logo{background-image:url(<?php echo get_template_directory_uri(); ?>/images/logo.png)}body.mu .image-logo{background-image:url(<?php echo get_template_directory_uri(); ?>/images/logo_black.png)}.image-icon{background-image:url(<?php echo get_template_directory_uri(); ?>/images/logo_min.png)}
 </style>
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/Diaspora.css" />
+<?php wp_head(); ?>
 </head>
 <body class="loading">
 <div id="loader"></div>
