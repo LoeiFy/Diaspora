@@ -194,4 +194,10 @@ function checkHeaders() {
 add_action ('publish_post', 'setUpPostLikes');
 add_action ('init', 'checkHeaders');
 
+add_action( 'wp_print_styles', 'del_mediaelement', 100 );
+function del_mediaelement() {
+        wp_deregister_style( 'mediaelement' );
+        wp_deregister_script( 'mediaelement' );
+}
+
 ?>
