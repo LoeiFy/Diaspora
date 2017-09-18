@@ -58,7 +58,7 @@
         <div id="post0">
             <p><?php the_time('F j, Y'); ?></p>
             <h2><a data-id="<?php the_ID() ?>" class="posttitle" href="<?php the_permalink(); ?>" /><?php the_title(); ?></a></h2>
-            <p><?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 100,"..."); ?></p>
+            <p><?php if(post_password_required()): ?> 该文章受密码保护 <?php else : ?><?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 100,"..."); ?><?php endif; ?></p>
         </div>
     </div>
 
