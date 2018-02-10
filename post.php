@@ -1,7 +1,7 @@
 <?php require_once('config.php'); ?>
 
 <div class="post">
-    <?php 
+    <?php
 
         if (!has_post_thumbnail()) {
 
@@ -24,7 +24,7 @@
             if (USE_TIMTHUMB) {
                 $img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
             } else {
-                $img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'cover'); 
+                $img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'cover');
             }
 
         }
@@ -46,7 +46,7 @@
     <div class="else">
         <p><?php the_time('F j, Y'); ?></p>
         <h3><a data-id="<?php the_ID() ?>" class="posttitle" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-        <p><?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 100,"..."); ?></p>
+        <p><?php echo wp_trim_words( get_the_content(), 100, '...' ); ?></p>
         <p class="here">
             <span class="icon-letter"><?php echo count_words ($text); ?></span>
             <span class="icon-view"><?php echo getPostViews(get_the_ID()); ?></span>

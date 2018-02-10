@@ -7,11 +7,11 @@
 <p>&copy; <?php echo date("Y"); ?> <?php bloginfo('name'); ?>. Powered by WordPress</p>
 </div>
 
-<div id="container">    
+<div id="container">
 
     <?php if (have_posts()) : $count = 0;  while (have_posts()) : the_post(); $count++; if( $count <= 1 ): ?>
 
-    <?php 
+    <?php
 
     if (has_post_thumbnail()) {
         $cover = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
@@ -36,7 +36,7 @@
     }
 
     ?>
-    
+
     <div id="screen">
         <div id="mark">
             <div class="layer" data-depth="0.4">
@@ -58,7 +58,7 @@
         <div id="post0">
             <p><?php the_time('F j, Y'); ?></p>
             <h2><a data-id="<?php the_ID() ?>" class="posttitle" href="<?php the_permalink(); ?>" /><?php the_title(); ?></a></h2>
-            <p><?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 100,"..."); ?></p>
+            <p><?php echo wp_trim_words( get_the_content(), 100, '...' ); ?></p>
         </div>
     </div>
 
@@ -75,9 +75,9 @@
     <?php endif; endwhile; endif; ?>
 
     </div>
-    
+
     <div id="pager"><?php next_posts_link(('加载更多')); ?></div>
-  
+
 </div>
 <div id="preview" class="trans"></div>
 

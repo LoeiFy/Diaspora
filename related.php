@@ -31,7 +31,7 @@ if ( $posttags ) {
             <img class="relateimg" src="<?php echo $thumbnail[0]; ?>" alt="<?php the_title(); ?>" />
          </a>
     </li>
- 
+
     <?php
         $exclude_id .= ',' . $post->ID; $i ++;
     } wp_reset_query();
@@ -51,7 +51,7 @@ if ( $i < $post_num ) { // 當 tags 文章數量不足, 再取 category 補足.
     <li>
         <div>
             <a class="relatea" data-id="<?php the_ID() ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-            <p><?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 170,"..."); ?></p>
+            <p><?php echo wp_trim_words( get_the_content(), 170, '...' ); ?></p>
          </div><!--
       --><a data-id="<?php the_ID() ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
             <img class="relateimg" src="<?php echo $thumbnail[0]; ?>" alt="<?php the_title(); ?>" />
