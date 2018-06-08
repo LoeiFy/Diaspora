@@ -3,9 +3,10 @@ A WordPress theme
 
 [Preview Diaspora →](http://isujin.com)
 
-> ghost 版，感谢 @PeterCxy
+现在有移植版本
 
-https://github.com/PeterCxy/ghost-diaspora
+- Ghost：https://github.com/PeterCxy/ghost-diaspora
+- Hexo：https://github.com/Fechin/hexo-theme-diaspora
 
 ## 相关说明
 
