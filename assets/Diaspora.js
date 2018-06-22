@@ -434,8 +434,6 @@ $(function() {
                     $(window).scrollTop(tempScrollTop);
                     Diaspora.loaded()
                     $('html,body').animate({ scrollTop: tempScrollTop + 400 }, 500);
-
-                    Diaspora.loaded()
                 }, function() {
                     tag.html('加载更多').data('status', 'loaded')
                 })
