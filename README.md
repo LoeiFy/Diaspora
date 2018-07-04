@@ -7,6 +7,9 @@ A WordPress theme
 
 - Ghost：https://github.com/PeterCxy/ghost-diaspora
 - Hexo：https://github.com/Fechin/hexo-theme-diaspora
+- 微信小程序: https://github.com/LoeiFy/Softtyms 
+
+![px](https://user-images.githubusercontent.com/2193211/42122301-3b0b4ba4-7c72-11e8-80a0-f7b62ae03f9b.jpg)
 
 ## 相关说明
 
