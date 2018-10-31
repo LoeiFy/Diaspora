@@ -17,6 +17,7 @@
             <h1>404 Not Found</h1>
             <p>The page you were looking for is no longer available.</p>
         </div>
+		get_search_form();
 
         </div>
         </div>
