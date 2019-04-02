@@ -1,8 +1,8 @@
 <?php
 
-define ('LIMIT_ON', TRUE);
+define ('LIMIT_ON', true);
 
-define ('ALLOW_EXTERNAL', FALSE);
+define ('ALLOW_EXTERNAL', false);
 
 define ('BROWSER_CACHE_MAX_AGE', 86400000);
 
@@ -12,6 +12,6 @@ define ('DEFAULT_HEIGHT', 440);
 
 define ('FILE_CACHE_DIRECTORY', './what');
 
-define ('DISPLAY_ERROR_MESSAGES', FALSE);
+define ('DISPLAY_ERROR_MESSAGES', false);
 
 ?>
