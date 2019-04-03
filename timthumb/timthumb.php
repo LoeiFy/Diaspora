@@ -32,9 +32,9 @@ if(! defined('MEMORY_LIMIT') )				define ('MEMORY_LIMIT', '30M');							// Set P
 if(! defined('BLOCK_EXTERNAL_LEECHERS') ) 	define ('BLOCK_EXTERNAL_LEECHERS', false);				// If the image or webshot is being loaded on an external site, display a red "No Hotlinking" gif.
 if(! defined('DISPLAY_ERROR_MESSAGES') )	define ('DISPLAY_ERROR_MESSAGES', true);				// Display error messages. Set to false to turn off errors (good for production websites)
 //Image fetching and caching
-if(! defined('ALLOW_EXTERNAL') )			define ('ALLOW_EXTERNAL', TRUE);						// Allow image fetching from external websites. Will check against ALLOWED_SITES if ALLOW_ALL_EXTERNAL_SITES is false
+if(! defined('ALLOW_EXTERNAL') )			define ('ALLOW_EXTERNAL', true);						// Allow image fetching from external websites. Will check against ALLOWED_SITES if ALLOW_ALL_EXTERNAL_SITES is false
 if(! defined('ALLOW_ALL_EXTERNAL_SITES') ) 	define ('ALLOW_ALL_EXTERNAL_SITES', false);				// Less secure. 
-if(! defined('FILE_CACHE_ENABLED') ) 		define ('FILE_CACHE_ENABLED', TRUE);					// Should we store resized/modified images on disk to speed things up?
+if(! defined('FILE_CACHE_ENABLED') ) 		define ('FILE_CACHE_ENABLED', true);					// Should we store resized/modified images on disk to speed things up?
 if(! defined('FILE_CACHE_TIME_BETWEEN_CLEANS'))	define ('FILE_CACHE_TIME_BETWEEN_CLEANS', 86400);	// How often the cache is cleaned 
 
 if(! defined('FILE_CACHE_MAX_FILE_AGE') ) 	define ('FILE_CACHE_MAX_FILE_AGE', 86400);				// How old does a file have to be to be deleted from the cache
@@ -54,7 +54,7 @@ if(! defined('MAX_WIDTH') )					define ('MAX_WIDTH', 1500);								// Maximum im
 if(! defined('MAX_HEIGHT') )				define ('MAX_HEIGHT', 1500);							// Maximum image height
 if(! defined('NOT_FOUND_IMAGE') )			define ('NOT_FOUND_IMAGE', '');							// Image to serve if any 404 occurs 
 if(! defined('ERROR_IMAGE') )				define ('ERROR_IMAGE', '');								// Image to serve if an error occurs instead of showing error message 
-if(! defined('PNG_IS_TRANSPARENT') )		define ('PNG_IS_TRANSPARENT', FALSE);					// Define if a png image should have a transparent background color. Use False value if you want to display a custom coloured canvas_colour 
+if(! defined('PNG_IS_TRANSPARENT') )		define ('PNG_IS_TRANSPARENT', false);					// Define if a png image should have a transparent background color. Use False value if you want to display a custom coloured canvas_colour 
 if(! defined('DEFAULT_Q') )					define ('DEFAULT_Q', 90);								// Default image quality. Allows overrid in timthumb-config.php
 if(! defined('DEFAULT_ZC') )				define ('DEFAULT_ZC', 1);								// Default zoom/crop setting. Allows overrid in timthumb-config.php
 if(! defined('DEFAULT_F') )					define ('DEFAULT_F', '');								// Default image filters. Allows overrid in timthumb-config.php
@@ -1060,7 +1060,7 @@ class timthumb {
 			return true;
 		}
 		$content = file_get_contents ($this->cachefile);
-		if ($content != FALSE) {
+		if ($content != false) {
 			$content = substr($content, strlen($this->filePrependSecurityBlock) + 6);
 			echo $content;
 			$this->debug(3, "Served using file_get_contents and echo");
@@ -1199,9 +1199,9 @@ class timthumb {
 			$curl = curl_init($url);
 			curl_setopt ($curl, CURLOPT_TIMEOUT, CURL_TIMEOUT);
 			curl_setopt ($curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.122 Safari/534.30");
-			curl_setopt ($curl, CURLOPT_RETURNTRANSFER, TRUE);
+			curl_setopt ($curl, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt ($curl, CURLOPT_HEADER, 0);
-			curl_setopt ($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
+			curl_setopt ($curl, CURLOPT_SSL_VERIFYPEER, false);
 			curl_setopt ($curl, CURLOPT_WRITEFUNCTION, 'timthumb::curlWrite');
 			@curl_setopt ($curl, CURLOPT_FOLLOWLOCATION, true);
 			@curl_setopt ($curl, CURLOPT_MAXREDIRS, 10);
@@ -1261,7 +1261,7 @@ class timthumb {
 			return true;
 		}
 		$content = @file_get_contents ($file);
-		if ($content != FALSE){
+		if ($content != false){
 			echo $content;
 			return true;
 		}
