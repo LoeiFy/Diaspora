@@ -10,7 +10,7 @@ A WordPress theme
 - 微信小程序: https://github.com/LoeiFy/Softtyms 
 - Ghost: https://github.com/MoeLoli/Diaspora-Ghost
 - Typecho: https://github.com/MoeLoli/Diaspora-Typecho
-- Typecho: https://github.com/honjun/hugo-theme-diaspora
+- hugo: https://github.com/honjun/hugo-theme-diaspora
 
 ![px](https://user-images.githubusercontent.com/2193211/42122301-3b0b4ba4-7c72-11e8-80a0-f7b62ae03f9b.jpg)
 
