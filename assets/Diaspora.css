@@ -1293,4 +1293,104 @@ ol.children li {
 .icon-icon:before {
     content: "\e60e";
 }
+/* Append Style */
+* {
+	transition: all .4s ease;
+}
+.comment-form-cookies-consent{
+	display: none;
+}
+.content h1, .content h2, .content h3, .content h4 , .content p, .content ul, .content ol{
+	margin: 0 0 1.35em;
+}
 
+.content blockquote {
+    border-left: 3px solid #ffb11b;
+}
+
+.content h2::before {
+	content: "√";
+	font-weight: bold;
+	color: #ffb11b;
+	margin-right: 5px;
+}
+
+/* 覆盖先前hr样式 */
+.content hr{
+	  height:1px;
+	  padding:0;
+	  border:none;
+	  border-top:medium solidid #333;
+	  text-align:center;
+	  background-image:linear-gradient(to right,rgba(231, 93, 109,0.3),rgba(255, 159, 150,0.75),rgba(255, 216, 181,0.3))
+}
+
+.content strong, .content b{
+	color: #e75d6d;
+}
+
+.content strong::before, .content b::before{
+	content: "「";
+}
+
+.content strong::after, .content b::after{
+  content: '」';
+}
+
+/* 行内代码样式 */
+.content p code, .content li code {
+    font-size: 14px;
+    word-wrap: break-word;
+    padding: 2px 4px;
+    border-radius: 4px;
+    margin: 0 2px;
+/* 行内代码颜色 */
+	color: #e75d6d;	
+    background-color: rgba(27,31,35,.05);
+    font-family: Operator Mono, Consolas, Monaco, Menlo, monospace;
+    word-break: break-all;
+}
+
+/* 代码块盒子样式 */
+.content pre {
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.55) 0px 2px 10px;
+	overflow:auto;
+}
+/* 代码容器样式，模仿自 mdnice */
+.content pre::before{
+	content: '';
+	display: block;
+	background: url(https://media.beatree.cn/media/bar.png);
+    background-color: rgba(0, 0, 0, 0);
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-size: auto;
+	width: 100%;
+	background-size: 40px;
+	background-repeat: no-repeat;
+	background-color: #f8f8f8;
+	margin-bottom: -7px;
+	border-radius: 5px;
+	background-position: 10px 10px;
+}
+
+.content pre code{
+	padding: 18px;
+	display: block;
+}
+
+.section img{
+	border-radius: 5px;
+  	box-shadow:0px 6px 12px #84A1A8;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.post img:hover{
+	transform: scale(1.1);
+}
+/* .post .posttitle:hover{
+	color: #e75d6d;
+} */
