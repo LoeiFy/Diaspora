@@ -1297,9 +1297,9 @@ ol.children li {
 * {
 	transition: all .4s ease;
 }
-.comment-form-cookies-consent{
+/* .comment-form-cookies-consent{
 	display: none;
-}
+} */
 .content h1, .content h2, .content h3, .content h4 , .content p, .content ul, .content ol{
 	margin: 0 0 1.35em;
 }
