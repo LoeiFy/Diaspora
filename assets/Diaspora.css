@@ -1361,7 +1361,7 @@ ol.children li {
 .content pre::before{
 	content: '';
 	display: block;
-	background: url(https://media.beatree.cn/media/bar.png);
+	background: url(../images/bar.png);
     background-color: rgba(0, 0, 0, 0);
     background-position-x: 0%;
     background-position-y: 0%;
