@@ -1,13 +1,19 @@
 # Diaspora
 A WordPress theme
 
-[Preview Diaspora →](http://isujin.com)
+[Preview（失效中）](http://isujin.com)
+
+> 由于域名失效，网站也没有继续维护，预览也没有了，所以只能看截图了
+>
+> https://github.com/LoeiFy/Diaspora/tree/master/shots
+
+<br />
 
 现在有移植版本
 
 - Ghost：https://github.com/PeterCxy/ghost-diaspora
 - Hexo：https://github.com/Fechin/hexo-theme-diaspora
-- 微信小程序: https://github.com/LoeiFy/Softtyms 
+- 微信小程序: https://github.com/LoeiFy/Softtyms
 - Ghost: https://github.com/MoeLoli/Diaspora-Ghost
 - Typecho: https://github.com/MoeLoli/Diaspora-Typecho
 - hugo: https://github.com/honjun/hugo-theme-diaspora
@@ -41,7 +47,7 @@ issue：https://github.com/LoeiFy/Diaspora/issues/10
 
 相关设置：
 
-`config.php` 
+`config.php`
 
 ```php
 /*
