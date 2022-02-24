@@ -1,9 +1,9 @@
 # Diaspora
 A WordPress theme
 
-[Preview（失效中）](http://isujin.com)
+[Preview](https://w.laborers.cn/?theme-switch=Diaspora)
 
-> 由于域名失效，网站也没有继续维护，预览也没有了，所以只能看截图了
+> 截图
 >
 > https://github.com/LoeiFy/Diaspora/tree/master/shots
 
@@ -57,6 +57,8 @@ issue：https://github.com/LoeiFy/Diaspora/issues/10
 
 define ('USE_TIMTHUMB', FALSE);
 ```
+
+> 如果 timthumb 出错，可以尝试在 timthumb 目录添加 `what` 目录，并 `chmod o+w -R timthumb` 目录
 
 ### 文章音乐
 
